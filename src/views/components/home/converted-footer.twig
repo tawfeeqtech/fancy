@@ -1,0 +1,57 @@
+{#
+| Variable | Type | Description |
+|----------|------|-------------|
+| component.footer_cta2_text | string | Footer Cta2 Text |
+| component.footer_description | string | Footer Description |
+| component.footer_cta1_link | items | Footer Cta1 Link |
+| component.footer_cta1_text | string | Footer Cta1 Text |
+| component.footer_cta2_link | items | Footer Cta2 Link |
+| position | int | Sort order (0-based) |
+#}
+
+<footer class="footer" dir="auto" role="contentinfo">
+<div class="container">
+<div class="footer__grid">
+<div>
+<div class="footer__brand">نور<span>ا</span></div>
+<p class="footer__text">{{ component.footer_description }}</p>
+<div class="footer__social">
+<a aria-label="انستغرام" href="{{ component.footer_cta1_link }}">{{ component.footer_cta1_text }}</a>
+<a aria-label="تويتر" href="{{ component.footer_cta2_link }}">{{ component.footer_cta2_text }}</a>
+<a aria-label="يوتيوب" href="#"><i class="fab fa-youtube"></i></a>
+<a aria-label="تيك توك" href="#"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+<div class="footer__links">
+<h4>التسوق</h4>
+<ul>
+<li><a href="#">العبايات</a></li>
+<li><a href="#">الحجابات</a></li>
+<li><a href="#">الجلابيات</a></li>
+<li><a href="#">الإكسسوارات</a></li>
+</ul>
+</div>
+<div class="footer__links">
+<h4>المساعدة</h4>
+<ul>
+<li><a href="#">الشحن والتوصيل</a></li>
+<li><a href="#">الاستبدال والاسترجاع</a></li>
+<li><a href="#">مقاسات</a></li>
+<li><a href="#">الأسئلة الشائعة</a></li>
+</ul>
+</div>
+<div class="footer__links">
+<h4>نورا</h4>
+<ul>
+<li><a href="#">من نحن</a></li>
+<li><a href="#">اتصل بنا</a></li>
+<li><a href="#">سياسة الخصوصية</a></li>
+<li><a href="#">شروط الاستخدام</a></li>
+</ul>
+</div>
+</div>
+<div class="footer__bottom">
+                    © 2026 نورا. جميع الحقوق محفوظة.
+                </div>
+</div>
+</footer>
