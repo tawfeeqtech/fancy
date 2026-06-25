@@ -236,6 +236,537 @@
       "required": false,
       "value": false,
       "selected": false
+    },
+    {
+      "type": "static",
+      "format": "line",
+      "id": "line_converted_separator"
+    },
+    {
+      "type": "static",
+      "format": "title",
+      "id": "label_colors_group",
+      "value": "<div style='background:#059669;padding:12px;border-radius:8px;text-align:center'><h6 style='color:#fff;font-weight:bold;font-size:14px;'>🎨 الألوان الرئيسية</h6></div>",
+      "variant": "h6"
+    },
+    {
+      "id": "primary_color",
+      "type": "string",
+      "format": "color",
+      "label": "اللون الأساسي (الأزرار والتمييز)",
+      "value": "#059669"
+    },
+    {
+      "id": "primary_dark",
+      "type": "string",
+      "format": "color",
+      "label": "اللون الأساسي الداكن (hover)",
+      "value": "#047857"
+    },
+    {
+      "id": "secondary_color",
+      "type": "string",
+      "format": "color",
+      "label": "اللون الثانوي (الشارات والحدود)",
+      "value": "#d97706"
+    },
+    {
+      "id": "site_bg_color",
+      "type": "string",
+      "format": "color",
+      "label": "لون خلفية الصفحة العامة",
+      "value": "#ffffff"
+    },
+    {
+      "id": "site_text_color",
+      "type": "string",
+      "format": "color",
+      "label": "لون النص الأساسي",
+      "value": "#171717"
+    },
+    {
+      "id": "heading_color",
+      "type": "string",
+      "format": "color",
+      "label": "لون العناوين الرئيسية",
+      "value": "#111827"
+    },
+    {
+      "type": "static",
+      "format": "line",
+      "id": "line_fonts_group"
+    },
+    {
+      "type": "static",
+      "format": "title",
+      "id": "label_fonts_group",
+      "value": "<div style='background:#059669;padding:12px;border-radius:8px;text-align:center'><h6 style='color:#fff;font-weight:bold;font-size:14px;'>✏️ الخطوط</h6></div>",
+      "variant": "h6"
+    },
+    {
+      "id": "font_main",
+      "type": "items",
+      "format": "dropdown-list",
+      "label": "الخط الرئيسي (النصوص والأزرار)",
+      "source": "Manual",
+      "required": false,
+      "selected": [
+        {
+          "label": "Noto Kufi Arabic (الافتراضي)",
+          "value": "Noto Kufi Arabic",
+          "key": "8150998d-0ff7-4f5c-9a93-eaa8513cd315"
+        }
+      ],
+      "options": [
+        {
+          "label": "Noto Kufi Arabic (الافتراضي)",
+          "value": "Noto Kufi Arabic",
+          "key": "8150998d-0ff7-4f5c-9a93-eaa8513cd315"
+        },
+        {
+          "label": "Cairo",
+          "value": "Cairo",
+          "key": "3ae9acdd-f190-4e52-9b7a-06ffe1a05374"
+        },
+        {
+          "label": "Tajawal",
+          "value": "Tajawal",
+          "key": "ffa188d4-7f14-4d8c-a7c7-d853f7b8204a"
+        },
+        {
+          "label": "Almarai",
+          "value": "Almarai",
+          "key": "c58da57a-7750-4e4b-a739-ae3579c82ca8"
+        },
+        {
+          "label": "IBM Plex Sans Arabic",
+          "value": "IBM Plex Sans Arabic",
+          "key": "d269be74-0ed5-4a97-b975-e9b3685c683f"
+        },
+        {
+          "label": "Inter (لاتيني)",
+          "value": "Inter",
+          "key": "695f7d9e-00c9-444a-ac90-2c8c52a87dd9"
+        }
+      ]
+    },
+    {
+      "id": "font_heading",
+      "type": "items",
+      "format": "dropdown-list",
+      "label": "خط العناوين الرئيسية",
+      "source": "Manual",
+      "required": false,
+      "selected": [
+        {
+          "label": "Noto Kufi Arabic",
+          "value": "Noto Kufi Arabic",
+          "key": "36ae47ad-20a5-4b74-8212-3f1d0c2be0fb"
+        }
+      ],
+      "options": [
+        {
+          "label": "Noto Kufi Arabic",
+          "value": "Noto Kufi Arabic",
+          "key": "36ae47ad-20a5-4b74-8212-3f1d0c2be0fb"
+        },
+        {
+          "label": "Cairo",
+          "value": "Cairo",
+          "key": "ec2536ca-6097-417e-8958-3e6fff342261"
+        },
+        {
+          "label": "Tajawal",
+          "value": "Tajawal",
+          "key": "8db3fa96-c431-4e43-95cb-a1833a873c78"
+        },
+        {
+          "label": "Almarai",
+          "value": "Almarai",
+          "key": "fc3edcd0-db6c-4805-baf2-a9635efe6cf4"
+        }
+      ]
+    },
+    {
+      "id": "font_size_base",
+      "type": "number",
+      "format": "number",
+      "label": "حجم الخط الأساسي (px)",
+      "value": 16
+    },
+    {
+      "type": "static",
+      "format": "line",
+      "id": "line_layout_group"
+    },
+    {
+      "type": "static",
+      "format": "title",
+      "id": "label_layout_group",
+      "value": "<div style='background:#059669;padding:12px;border-radius:8px;text-align:center'><h6 style='color:#fff;font-weight:bold;font-size:14px;'>📐 التخطيط العام</h6></div>",
+      "variant": "h6"
+    },
+    {
+      "id": "layout_type",
+      "type": "items",
+      "format": "dropdown-list",
+      "label": "نوع تخطيط الصفحة",
+      "source": "Manual",
+      "required": false,
+      "selected": [
+        {
+          "label": "عرض كامل (Full Width)",
+          "value": "full-width",
+          "key": "2de81fcd-90f3-45bf-b65c-e5622de90419"
+        }
+      ],
+      "options": [
+        {
+          "label": "عرض كامل (Full Width)",
+          "value": "full-width",
+          "key": "2de81fcd-90f3-45bf-b65c-e5622de90419"
+        },
+        {
+          "label": "محاط (Boxed)",
+          "value": "boxed",
+          "key": "fa63d4cc-190e-4e0f-8b59-502de2141b9f"
+        }
+      ]
+    },
+    {
+      "id": "container_max_width",
+      "type": "number",
+      "format": "number",
+      "label": "أقصى عرض للمحتوى (px)",
+      "value": 1280
+    },
+    {
+      "id": "section_spacing",
+      "type": "items",
+      "format": "dropdown-list",
+      "label": "التباعد العمودي بين الأقسام",
+      "source": "Manual",
+      "required": false,
+      "selected": [
+        {
+          "label": "صغير (py-10)",
+          "value": "sm",
+          "key": "8f57b5ef-0b84-4679-bd27-a4bd0a034ecd"
+        }
+      ],
+      "options": [
+        {
+          "label": "صغير (py-10)",
+          "value": "sm",
+          "key": "8f57b5ef-0b84-4679-bd27-a4bd0a034ecd"
+        },
+        {
+          "label": "متوسط (py-20)",
+          "value": "md",
+          "key": "c812ce77-cb29-436c-90cd-a1886144802f"
+        },
+        {
+          "label": "كبير (py-32)",
+          "value": "lg",
+          "key": "684c6e2a-16c6-496e-b2ca-ccbd907adea0"
+        }
+      ]
+    },
+    {
+      "id": "border_radius_style",
+      "type": "items",
+      "format": "dropdown-list",
+      "label": "انحناء زوايا الأزرار والبطاقات",
+      "source": "Manual",
+      "required": false,
+      "selected": [
+        {
+          "label": "بدون انحناء (rounded-none)",
+          "value": "none",
+          "key": "c9bfae77-0cc9-48b1-871f-f901d977a523"
+        }
+      ],
+      "options": [
+        {
+          "label": "بدون انحناء (rounded-none)",
+          "value": "none",
+          "key": "c9bfae77-0cc9-48b1-871f-f901d977a523"
+        },
+        {
+          "label": "انحناء خفيف (rounded-md)",
+          "value": "md",
+          "key": "418661d7-21af-4b1c-a9b3-7bafbaa369b2"
+        },
+        {
+          "label": "دائري كامل (rounded-full)",
+          "value": "full",
+          "key": "b8dfe01d-4b62-497c-8100-ffbf90639622"
+        }
+      ]
+    },
+    {
+      "type": "static",
+      "format": "line",
+      "id": "line_header_footer_group"
+    },
+    {
+      "type": "static",
+      "format": "title",
+      "id": "label_header_footer_group",
+      "value": "<div style='background:#059669;padding:12px;border-radius:8px;text-align:center'><h6 style='color:#fff;font-weight:bold;font-size:14px;'>🧭 الرأس والتذييل</h6></div>",
+      "variant": "h6"
+    },
+    {
+      "id": "site_logo",
+      "type": "string",
+      "format": "image",
+      "label": "شعار المتجر (PNG شفاف — 200×60 px)",
+      "required": false
+    },
+    {
+      "id": "favicon",
+      "type": "string",
+      "format": "image",
+      "label": "أيقونة المتجر المصغرة (Favicon 32×32)",
+      "required": false
+    },
+    {
+      "id": "header_bg_color",
+      "type": "string",
+      "format": "color",
+      "label": "لون خلفية شريط التنقل العلوي",
+      "value": "#ffffff"
+    },
+    {
+      "id": "footer_bg_color",
+      "type": "string",
+      "format": "color",
+      "label": "لون خلفية التذييل",
+      "value": "#0a0a0a"
+    },
+    {
+      "type": "static",
+      "format": "line",
+      "id": "line_visibility_group"
+    },
+    {
+      "type": "static",
+      "format": "title",
+      "id": "label_visibility_group",
+      "value": "<div style='background:#059669;padding:12px;border-radius:8px;text-align:center'><h6 style='color:#fff;font-weight:bold;font-size:14px;'>👁️ إظهار وإخفاء الأقسام</h6></div>",
+      "variant": "h6"
+    },
+    {
+      "id": "show_hero",
+      "type": "boolean",
+      "format": "switch",
+      "label": "إظهار قسم الترحيب الرئيسي",
+      "value": true,
+      "selected": true
+    },
+    {
+      "id": "show_stats",
+      "type": "boolean",
+      "format": "switch",
+      "label": "إظهار قسم الإحصائيات",
+      "value": true,
+      "selected": true
+    },
+    {
+      "id": "show_features",
+      "type": "boolean",
+      "format": "switch",
+      "label": "إظهار قسم المميزات",
+      "value": true,
+      "selected": true
+    },
+    {
+      "id": "show_testimonials",
+      "type": "boolean",
+      "format": "switch",
+      "label": "إظهار قسم آراء العملاء",
+      "value": true,
+      "selected": true
+    },
+    {
+      "id": "show_faq",
+      "type": "boolean",
+      "format": "switch",
+      "label": "إظهار قسم الأسئلة الشائعة",
+      "value": true,
+      "selected": true
+    },
+    {
+      "id": "show_cta",
+      "type": "boolean",
+      "format": "switch",
+      "label": "إظهار قسم الدعوة للتحرك",
+      "value": true,
+      "selected": true
+    },
+    {
+      "type": "static",
+      "format": "line",
+      "id": "line_stats_group"
+    },
+    {
+      "type": "static",
+      "format": "title",
+      "id": "label_stats_group",
+      "value": "<div style='background:#059669;padding:12px;border-radius:8px;text-align:center'><h6 style='color:#fff;font-weight:bold;font-size:14px;'>📊 إحصائيات الإنجاز القابلة للتعديل</h6></div>",
+      "variant": "h6"
+    },
+    {
+      "id": "stat_1_value",
+      "type": "string",
+      "format": "text",
+      "label": "قيمة الإحصاء الأول",
+      "placeholder": "500+",
+      "value": "500+"
+    },
+    {
+      "id": "stat_1_label",
+      "type": "string",
+      "format": "text",
+      "label": "تسمية الإحصاء الأول",
+      "placeholder": "عميل راضٍ",
+      "value": "عميل راضٍ"
+    },
+    {
+      "id": "stat_2_value",
+      "type": "string",
+      "format": "text",
+      "label": "قيمة الإحصاء الثاني",
+      "placeholder": "10 سنوات",
+      "value": "10 سنوات"
+    },
+    {
+      "id": "stat_2_label",
+      "type": "string",
+      "format": "text",
+      "label": "تسمية الإحصاء الثاني",
+      "placeholder": "خبرة احترافية",
+      "value": "خبرة احترافية"
+    },
+    {
+      "type": "static",
+      "format": "line",
+      "id": "line_contact_group"
+    },
+    {
+      "type": "static",
+      "format": "title",
+      "id": "label_contact_group",
+      "value": "<div style='background:#059669;padding:12px;border-radius:8px;text-align:center'><h6 style='color:#fff;font-weight:bold;font-size:14px;'>📞 معلومات التواصل</h6></div>",
+      "variant": "h6"
+    },
+    {
+      "id": "contact_phone",
+      "type": "string",
+      "format": "text",
+      "label": "رقم الهاتف",
+      "placeholder": "+966 5X XXX XXXX"
+    },
+    {
+      "id": "contact_whatsapp",
+      "type": "string",
+      "format": "text",
+      "label": "رقم واتساب",
+      "placeholder": "+966 5X XXX XXXX"
+    },
+    {
+      "id": "contact_email",
+      "type": "string",
+      "format": "text",
+      "label": "البريد الإلكتروني",
+      "placeholder": "info@example.com"
+    },
+    {
+      "id": "contact_location",
+      "type": "string",
+      "format": "text",
+      "label": "الموقع / المدينة",
+      "placeholder": "الرياض، المملكة العربية السعودية"
+    },
+    {
+      "id": "contact_hours",
+      "type": "string",
+      "format": "text",
+      "label": "ساعات العمل",
+      "placeholder": "السبت – الأربعاء، 9ص – 6م"
+    },
+    {
+      "type": "static",
+      "format": "line",
+      "id": "line_social_group"
+    },
+    {
+      "type": "static",
+      "format": "title",
+      "id": "label_social_group",
+      "value": "<div style='background:#059669;padding:12px;border-radius:8px;text-align:center'><h6 style='color:#fff;font-weight:bold;font-size:14px;'>🔗 روابط التواصل الاجتماعي</h6></div>",
+      "variant": "h6"
+    },
+    {
+      "id": "social_instagram",
+      "type": "string",
+      "format": "text",
+      "label": "رابط إنستغرام",
+      "placeholder": "https://instagram.com/..."
+    },
+    {
+      "id": "social_twitter",
+      "type": "string",
+      "format": "text",
+      "label": "رابط تويتر / X",
+      "placeholder": "https://x.com/..."
+    },
+    {
+      "id": "social_snapchat",
+      "type": "string",
+      "format": "text",
+      "label": "رابط سناب شات",
+      "placeholder": "https://snapchat.com/..."
+    },
+    {
+      "id": "social_youtube",
+      "type": "string",
+      "format": "text",
+      "label": "رابط يوتيوب",
+      "placeholder": "https://youtube.com/..."
+    },
+    {
+      "type": "static",
+      "format": "line",
+      "id": "line_section_bgs_group"
+    },
+    {
+      "type": "static",
+      "format": "title",
+      "id": "label_section_bgs_group",
+      "value": "<div style='background:#059669;padding:12px;border-radius:8px;text-align:center'><h6 style='color:#fff;font-weight:bold;font-size:14px;'>🖼️ خلفيات الأقسام الرئيسية</h6></div>",
+      "variant": "h6"
+    },
+    {
+      "id": "hero_bg_color",
+      "type": "string",
+      "format": "color",
+      "label": "لون خلفية قسم الترحيب",
+      "value": "#0f172a"
+    },
+    {
+      "id": "pricing_bg_color",
+      "type": "string",
+      "format": "color",
+      "label": "لون خلفية قسم الأسعار",
+      "value": "#f8fafc"
+    },
+    {
+      "id": "testimonials_bg_color",
+      "type": "string",
+      "format": "color",
+      "label": "لون خلفية قسم الشهادات",
+      "value": "#f1f5f9"
     }
   ],
   "components": [
@@ -1080,7 +1611,7 @@
       ]
     },
     {
-      "key": "c4d10e97-9b3a-4cf0-9098-141bea61c537",
+      "key": "c7baeec2-7c64-47bf-9c46-2795865bf7a3",
       "title": {
         "en": "Featured Products",
         "ar": "المنتجات المميزة"
@@ -1101,17 +1632,6 @@
           "maxLength": 100
         },
         {
-          "id": "featured_products_title",
-          "type": "string",
-          "format": "text",
-          "label": "Featured Products Title",
-          "icon": "sicon-format-text-alt",
-          "value": "الوافد الجديد",
-          "required": true,
-          "multilanguage": true,
-          "maxLength": 100
-        },
-        {
           "id": "featured_products_cta2_text",
           "type": "string",
           "format": "text",
@@ -1119,6 +1639,17 @@
           "icon": "sicon-format-text-alt",
           "value": "",
           "required": false,
+          "multilanguage": true,
+          "maxLength": 100
+        },
+        {
+          "id": "featured_products_title",
+          "type": "string",
+          "format": "text",
+          "label": "Featured Products Title",
+          "icon": "sicon-format-text-alt",
+          "value": "الوافد الجديد",
+          "required": true,
           "multilanguage": true,
           "maxLength": 100
         },
@@ -1199,7 +1730,7 @@
       ]
     },
     {
-      "key": "5bfe37b0-123a-4bbe-be6a-59086458bc6d",
+      "key": "f14d2cb7-f360-4311-8c32-383151b35756",
       "title": {
         "en": "Hero",
         "ar": "البانر الرئيسي"
@@ -1209,15 +1740,15 @@
       "image": "",
       "fields": [
         {
-          "id": "hero_description",
+          "id": "hero_cta1_text",
           "type": "string",
-          "format": "textarea",
-          "label": "Hero Description",
-          "icon": "sicon-typography",
-          "value": "اكتشفي مجموعتنا الجديدة من العبايات الفاخرة المصممة لتبرز أنوثتك",
+          "format": "text",
+          "label": "Hero Cta1 Text",
+          "icon": "sicon-format-text-alt",
+          "value": "تسوقي الآن",
           "required": false,
           "multilanguage": true,
-          "maxLength": 400
+          "maxLength": 100
         },
         {
           "id": "hero_title",
@@ -1231,20 +1762,20 @@
           "maxLength": 100
         },
         {
-          "id": "hero_cta1_text",
+          "id": "hero_description",
           "type": "string",
-          "format": "text",
-          "label": "Hero Cta1 Text",
-          "icon": "sicon-format-text-alt",
-          "value": "تسوقي الآن",
+          "format": "textarea",
+          "label": "Hero Description",
+          "icon": "sicon-typography",
+          "value": "اكتشفي مجموعتنا الجديدة من العبايات الفاخرة المصممة لتبرز أنوثتك",
           "required": false,
           "multilanguage": true,
-          "maxLength": 100
+          "maxLength": 400
         }
       ]
     },
     {
-      "key": "7d90b6a2-3a5d-4532-814b-dc52cedab093",
+      "key": "ca2c8401-0f80-4a1e-b6be-5b74a1ce17ac",
       "title": {
         "en": "Featured Products",
         "ar": "المنتجات المميزة"
@@ -1265,6 +1796,17 @@
           "maxLength": 100
         },
         {
+          "id": "featured_products_title",
+          "type": "string",
+          "format": "text",
+          "label": "Featured Products Title",
+          "icon": "sicon-format-text-alt",
+          "value": "الوافد الجديد",
+          "required": true,
+          "multilanguage": true,
+          "maxLength": 100
+        },
+        {
           "id": "featured_products_cta2_text",
           "type": "string",
           "format": "text",
@@ -1337,22 +1879,11 @@
               "value": "custom"
             }
           ]
-        },
-        {
-          "id": "featured_products_title",
-          "type": "string",
-          "format": "text",
-          "label": "Featured Products Title",
-          "icon": "sicon-format-text-alt",
-          "value": "الوافد الجديد",
-          "required": true,
-          "multilanguage": true,
-          "maxLength": 100
         }
       ]
     },
     {
-      "key": "bc8fae13-67e4-43bd-8045-244b91d26557",
+      "key": "83671d47-7d73-4d6a-a2a1-19b446b7d688",
       "title": {
         "en": "Featured Products",
         "ar": "المنتجات المميزة"
@@ -1373,6 +1904,17 @@
           "maxLength": 100
         },
         {
+          "id": "featured_products_title",
+          "type": "string",
+          "format": "text",
+          "label": "Featured Products Title",
+          "icon": "sicon-format-text-alt",
+          "value": "الأفضل مبيعاً",
+          "required": true,
+          "multilanguage": true,
+          "maxLength": 100
+        },
+        {
           "id": "featured_products_cta2_text",
           "type": "string",
           "format": "text",
@@ -1445,22 +1987,11 @@
               "value": "custom"
             }
           ]
-        },
-        {
-          "id": "featured_products_title",
-          "type": "string",
-          "format": "text",
-          "label": "Featured Products Title",
-          "icon": "sicon-format-text-alt",
-          "value": "الأفضل مبيعاً",
-          "required": true,
-          "multilanguage": true,
-          "maxLength": 100
         }
       ]
     },
     {
-      "key": "bac090ad-4176-4b34-a3c7-31f3796964bb",
+      "key": "ad468e8d-519e-40e4-92d4-7b6933328729",
       "title": {
         "en": "Newsletter",
         "ar": "النشرة البريدية"
@@ -1469,17 +2000,6 @@
       "path": "home.converted-newsletter",
       "image": "",
       "fields": [
-        {
-          "id": "newsletter_title",
-          "type": "string",
-          "format": "text",
-          "label": "Newsletter Title",
-          "icon": "sicon-format-text-alt",
-          "value": "انضمي إلى قائمتنا",
-          "required": true,
-          "multilanguage": true,
-          "maxLength": 100
-        },
         {
           "id": "newsletter_description",
           "type": "string",
@@ -1490,6 +2010,17 @@
           "required": false,
           "multilanguage": true,
           "maxLength": 400
+        },
+        {
+          "id": "newsletter_title",
+          "type": "string",
+          "format": "text",
+          "label": "Newsletter Title",
+          "icon": "sicon-format-text-alt",
+          "value": "انضمي إلى قائمتنا",
+          "required": true,
+          "multilanguage": true,
+          "maxLength": 100
         },
         {
           "id": "newsletter_cta1_text",
@@ -1505,7 +2036,7 @@
       ]
     },
     {
-      "key": "df528c2f-878f-45a3-9405-816e500c4691",
+      "key": "867b4476-da22-44c5-9f90-8e9f357c5c4a",
       "title": {
         "en": "Footer",
         "ar": "تذييل الصفحة"
@@ -1526,21 +2057,10 @@
           "maxLength": 100
         },
         {
-          "id": "footer_description",
-          "type": "string",
-          "format": "textarea",
-          "label": "Footer Description",
-          "icon": "sicon-typography",
-          "value": "أزياء محتشمه فاخرة تعكس أناقتكِ وجمالكِ في كل مناسبة",
-          "required": false,
-          "multilanguage": true,
-          "maxLength": 400
-        },
-        {
-          "id": "footer_cta2_link",
+          "id": "footer_cta1_link",
           "type": "items",
           "format": "variable-list",
-          "label": "Footer Cta2 Link",
+          "label": "Footer Cta1 Link",
           "icon": "sicon-link",
           "value": "#",
           "required": false,
@@ -1611,10 +2131,10 @@
           "maxLength": 100
         },
         {
-          "id": "footer_cta1_link",
+          "id": "footer_cta2_link",
           "type": "items",
           "format": "variable-list",
-          "label": "Footer Cta1 Link",
+          "label": "Footer Cta2 Link",
           "icon": "sicon-link",
           "value": "#",
           "required": false,
@@ -1672,6 +2192,17 @@
               "value": "custom"
             }
           ]
+        },
+        {
+          "id": "footer_description",
+          "type": "string",
+          "format": "textarea",
+          "label": "Footer Description",
+          "icon": "sicon-typography",
+          "value": "أزياء محتشمه فاخرة تعكس أناقتكِ وجمالكِ في كل مناسبة",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 400
         }
       ]
     }
