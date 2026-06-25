@@ -1080,7 +1080,7 @@
       ]
     },
     {
-      "key": "ee298a62-c4e1-4a52-8dd8-f1bfc255cbe4",
+      "key": "c4d10e97-9b3a-4cf0-9098-141bea61c537",
       "title": {
         "en": "Featured Products",
         "ar": "المنتجات المميزة"
@@ -1089,6 +1089,28 @@
       "path": "home.converted-featured-products",
       "image": "",
       "fields": [
+        {
+          "id": "featured_products_cta1_text",
+          "type": "string",
+          "format": "text",
+          "label": "Featured Products Cta1 Text",
+          "icon": "sicon-format-text-alt",
+          "value": "عرض الكل",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100
+        },
+        {
+          "id": "featured_products_title",
+          "type": "string",
+          "format": "text",
+          "label": "Featured Products Title",
+          "icon": "sicon-format-text-alt",
+          "value": "الوافد الجديد",
+          "required": true,
+          "multilanguage": true,
+          "maxLength": 100
+        },
         {
           "id": "featured_products_cta2_text",
           "type": "string",
@@ -1110,17 +1132,6 @@
           "required": false,
           "multilanguage": true,
           "maxLength": 400
-        },
-        {
-          "id": "featured_products_cta1_text",
-          "type": "string",
-          "format": "text",
-          "label": "Featured Products Cta1 Text",
-          "icon": "sicon-format-text-alt",
-          "value": "عرض الكل",
-          "required": false,
-          "multilanguage": true,
-          "maxLength": 100
         },
         {
           "id": "featured_products_cta2_link",
@@ -1184,22 +1195,11 @@
               "value": "custom"
             }
           ]
-        },
-        {
-          "id": "featured_products_title",
-          "type": "string",
-          "format": "text",
-          "label": "Featured Products Title",
-          "icon": "sicon-format-text-alt",
-          "value": "الوافد الجديد",
-          "required": true,
-          "multilanguage": true,
-          "maxLength": 100
         }
       ]
     },
     {
-      "key": "e2b45cb3-11e9-4a1a-983a-94c05189aed5",
+      "key": "5bfe37b0-123a-4bbe-be6a-59086458bc6d",
       "title": {
         "en": "Hero",
         "ar": "البانر الرئيسي"
@@ -1209,15 +1209,15 @@
       "image": "",
       "fields": [
         {
-          "id": "hero_cta1_text",
+          "id": "hero_description",
           "type": "string",
-          "format": "text",
-          "label": "Hero Cta1 Text",
-          "icon": "sicon-format-text-alt",
-          "value": "تسوقي الآن",
+          "format": "textarea",
+          "label": "Hero Description",
+          "icon": "sicon-typography",
+          "value": "اكتشفي مجموعتنا الجديدة من العبايات الفاخرة المصممة لتبرز أنوثتك",
           "required": false,
           "multilanguage": true,
-          "maxLength": 100
+          "maxLength": 400
         },
         {
           "id": "hero_title",
@@ -1231,20 +1231,20 @@
           "maxLength": 100
         },
         {
-          "id": "hero_description",
+          "id": "hero_cta1_text",
           "type": "string",
-          "format": "textarea",
-          "label": "Hero Description",
-          "icon": "sicon-typography",
-          "value": "اكتشفي مجموعتنا الجديدة من العبايات الفاخرة المصممة لتبرز أنوثتك",
+          "format": "text",
+          "label": "Hero Cta1 Text",
+          "icon": "sicon-format-text-alt",
+          "value": "تسوقي الآن",
           "required": false,
           "multilanguage": true,
-          "maxLength": 400
+          "maxLength": 100
         }
       ]
     },
     {
-      "key": "cbe6e999-840d-432f-8cb9-81d566fe9c3b",
+      "key": "7d90b6a2-3a5d-4532-814b-dc52cedab093",
       "title": {
         "en": "Featured Products",
         "ar": "المنتجات المميزة"
@@ -1352,7 +1352,7 @@
       ]
     },
     {
-      "key": "73b0a061-1b42-44b3-a873-20e630e3c0f0",
+      "key": "bc8fae13-67e4-43bd-8045-244b91d26557",
       "title": {
         "en": "Featured Products",
         "ar": "المنتجات المميزة"
@@ -1460,7 +1460,7 @@
       ]
     },
     {
-      "key": "44887fe3-f313-4bdb-8ee0-6255937c0dca",
+      "key": "bac090ad-4176-4b34-a3c7-31f3796964bb",
       "title": {
         "en": "Newsletter",
         "ar": "النشرة البريدية"
@@ -1469,17 +1469,6 @@
       "path": "home.converted-newsletter",
       "image": "",
       "fields": [
-        {
-          "id": "newsletter_cta1_text",
-          "type": "string",
-          "format": "text",
-          "label": "Newsletter Cta1 Text",
-          "icon": "sicon-format-text-alt",
-          "value": "اشتراك",
-          "required": false,
-          "multilanguage": true,
-          "maxLength": 100
-        },
         {
           "id": "newsletter_title",
           "type": "string",
@@ -1501,11 +1490,22 @@
           "required": false,
           "multilanguage": true,
           "maxLength": 400
+        },
+        {
+          "id": "newsletter_cta1_text",
+          "type": "string",
+          "format": "text",
+          "label": "Newsletter Cta1 Text",
+          "icon": "sicon-format-text-alt",
+          "value": "اشتراك",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100
         }
       ]
     },
     {
-      "key": "bb2cf1f7-c613-4510-bbed-81cafe250aa4",
+      "key": "df528c2f-878f-45a3-9405-816e500c4691",
       "title": {
         "en": "Footer",
         "ar": "تذييل الصفحة"
@@ -1515,10 +1515,32 @@
       "image": "",
       "fields": [
         {
-          "id": "footer_cta1_link",
+          "id": "footer_cta2_text",
+          "type": "string",
+          "format": "text",
+          "label": "Footer Cta2 Text",
+          "icon": "sicon-format-text-alt",
+          "value": "",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100
+        },
+        {
+          "id": "footer_description",
+          "type": "string",
+          "format": "textarea",
+          "label": "Footer Description",
+          "icon": "sicon-typography",
+          "value": "أزياء محتشمه فاخرة تعكس أناقتكِ وجمالكِ في كل مناسبة",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 400
+        },
+        {
+          "id": "footer_cta2_link",
           "type": "items",
           "format": "variable-list",
-          "label": "Footer Cta1 Link",
+          "label": "Footer Cta2 Link",
           "icon": "sicon-link",
           "value": "#",
           "required": false,
@@ -1578,28 +1600,6 @@
           ]
         },
         {
-          "id": "footer_cta2_text",
-          "type": "string",
-          "format": "text",
-          "label": "Footer Cta2 Text",
-          "icon": "sicon-format-text-alt",
-          "value": "",
-          "required": false,
-          "multilanguage": true,
-          "maxLength": 100
-        },
-        {
-          "id": "footer_description",
-          "type": "string",
-          "format": "textarea",
-          "label": "Footer Description",
-          "icon": "sicon-typography",
-          "value": "أزياء محتشمه فاخرة تعكس أناقتكِ وجمالكِ في كل مناسبة",
-          "required": false,
-          "multilanguage": true,
-          "maxLength": 400
-        },
-        {
           "id": "footer_cta1_text",
           "type": "string",
           "format": "text",
@@ -1611,10 +1611,10 @@
           "maxLength": 100
         },
         {
-          "id": "footer_cta2_link",
+          "id": "footer_cta1_link",
           "type": "items",
           "format": "variable-list",
-          "label": "Footer Cta2 Link",
+          "label": "Footer Cta1 Link",
           "icon": "sicon-link",
           "value": "#",
           "required": false,
