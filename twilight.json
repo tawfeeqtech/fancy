@@ -1080,7 +1080,7 @@
       ]
     },
     {
-      "key": "ad22d53f-c519-4b26-a1e2-70e0311f8e3e",
+      "key": "20d17482-9a76-402b-8bf0-2f695750be28",
       "title": {
         "en": "Featured Products",
         "ar": "المنتجات المميزة"
@@ -1090,34 +1090,23 @@
       "image": "",
       "fields": [
         {
-          "id": "featured_products_title",
-          "type": "string",
-          "format": "text",
-          "label": "Featured Products Title",
-          "icon": "sicon-format-text-alt",
-          "value": "الوافد الجديد",
-          "required": true,
-          "multilanguage": true,
-          "maxLength": 100
-        },
-        {
-          "id": "featured_products_description",
-          "type": "string",
-          "format": "textarea",
-          "label": "Featured Products Description",
-          "icon": "sicon-typography",
-          "value": "",
-          "required": false,
-          "multilanguage": true,
-          "maxLength": 400
-        },
-        {
           "id": "featured_products_cta2_text",
           "type": "string",
           "format": "text",
           "label": "Featured Products Cta2 Text",
           "icon": "sicon-format-text-alt",
           "value": "",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100
+        },
+        {
+          "id": "featured_products_cta1_text",
+          "type": "string",
+          "format": "text",
+          "label": "Featured Products Cta1 Text",
+          "icon": "sicon-format-text-alt",
+          "value": "عرض الكل",
           "required": false,
           "multilanguage": true,
           "maxLength": 100
@@ -1186,20 +1175,31 @@
           ]
         },
         {
-          "id": "featured_products_cta1_text",
+          "id": "featured_products_title",
           "type": "string",
           "format": "text",
-          "label": "Featured Products Cta1 Text",
+          "label": "Featured Products Title",
           "icon": "sicon-format-text-alt",
-          "value": "عرض الكل",
-          "required": false,
+          "value": "الوافد الجديد",
+          "required": true,
           "multilanguage": true,
           "maxLength": 100
+        },
+        {
+          "id": "featured_products_description",
+          "type": "string",
+          "format": "textarea",
+          "label": "Featured Products Description",
+          "icon": "sicon-typography",
+          "value": "",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 400
         }
       ]
     },
     {
-      "key": "d9366976-8327-40b5-9ed6-98118fe93c86",
+      "key": "a7a5f480-3e99-4d1a-a409-224234e8cfcc",
       "title": {
         "en": "Hero",
         "ar": "البانر الرئيسي"
@@ -1220,17 +1220,6 @@
           "maxLength": 400
         },
         {
-          "id": "hero_cta1_text",
-          "type": "string",
-          "format": "text",
-          "label": "Hero Cta1 Text",
-          "icon": "sicon-format-text-alt",
-          "value": "تسوقي الآن",
-          "required": false,
-          "multilanguage": true,
-          "maxLength": 100
-        },
-        {
           "id": "hero_title",
           "type": "string",
           "format": "text",
@@ -1240,11 +1229,22 @@
           "required": true,
           "multilanguage": true,
           "maxLength": 100
+        },
+        {
+          "id": "hero_cta1_text",
+          "type": "string",
+          "format": "text",
+          "label": "Hero Cta1 Text",
+          "icon": "sicon-format-text-alt",
+          "value": "تسوقي الآن",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100
         }
       ]
     },
     {
-      "key": "29f3cb84-169c-4cb9-a48f-34112a031247",
+      "key": "4586e0a7-2e57-4e09-b00b-2727445dfdb3",
       "title": {
         "en": "Featured Products",
         "ar": "المنتجات المميزة"
@@ -1253,6 +1253,17 @@
       "path": "home.converted-featured-products-2",
       "image": "",
       "fields": [
+        {
+          "id": "featured_products_cta1_text",
+          "type": "string",
+          "format": "text",
+          "label": "Featured Products Cta1 Text",
+          "icon": "sicon-format-text-alt",
+          "value": "عرض الكل",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100
+        },
         {
           "id": "featured_products_cta1_link",
           "type": "items",
@@ -1323,17 +1334,6 @@
           "label": "Featured Products Cta2 Text",
           "icon": "sicon-format-text-alt",
           "value": "",
-          "required": false,
-          "multilanguage": true,
-          "maxLength": 100
-        },
-        {
-          "id": "featured_products_cta1_text",
-          "type": "string",
-          "format": "text",
-          "label": "Featured Products Cta1 Text",
-          "icon": "sicon-format-text-alt",
-          "value": "عرض الكل",
           "required": false,
           "multilanguage": true,
           "maxLength": 100
@@ -1352,7 +1352,7 @@
       ]
     },
     {
-      "key": "5c25d636-fd38-45ae-b220-bbdf3ce7cbe7",
+      "key": "4436a442-54f8-49cb-889d-42164db00115",
       "title": {
         "en": "Featured Products",
         "ar": "المنتجات المميزة"
@@ -1361,6 +1361,17 @@
       "path": "home.converted-featured-products-3",
       "image": "",
       "fields": [
+        {
+          "id": "featured_products_cta1_text",
+          "type": "string",
+          "format": "text",
+          "label": "Featured Products Cta1 Text",
+          "icon": "sicon-format-text-alt",
+          "value": "عرض الكل",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100
+        },
         {
           "id": "featured_products_cta1_link",
           "type": "items",
@@ -1436,17 +1447,6 @@
           "maxLength": 100
         },
         {
-          "id": "featured_products_cta1_text",
-          "type": "string",
-          "format": "text",
-          "label": "Featured Products Cta1 Text",
-          "icon": "sicon-format-text-alt",
-          "value": "عرض الكل",
-          "required": false,
-          "multilanguage": true,
-          "maxLength": 100
-        },
-        {
           "id": "featured_products_title",
           "type": "string",
           "format": "text",
@@ -1460,7 +1460,7 @@
       ]
     },
     {
-      "key": "a7d60ddb-8313-408e-b572-0e1c6db7a8a5",
+      "key": "f6b75b8f-2102-4b45-8348-3230bdd0bf78",
       "title": {
         "en": "Newsletter",
         "ar": "النشرة البريدية"
@@ -1469,6 +1469,17 @@
       "path": "home.converted-newsletter",
       "image": "",
       "fields": [
+        {
+          "id": "newsletter_title",
+          "type": "string",
+          "format": "text",
+          "label": "Newsletter Title",
+          "icon": "sicon-format-text-alt",
+          "value": "انضمي إلى قائمتنا",
+          "required": true,
+          "multilanguage": true,
+          "maxLength": 100
+        },
         {
           "id": "newsletter_description",
           "type": "string",
@@ -1490,22 +1501,11 @@
           "required": false,
           "multilanguage": true,
           "maxLength": 100
-        },
-        {
-          "id": "newsletter_title",
-          "type": "string",
-          "format": "text",
-          "label": "Newsletter Title",
-          "icon": "sicon-format-text-alt",
-          "value": "انضمي إلى قائمتنا",
-          "required": true,
-          "multilanguage": true,
-          "maxLength": 100
         }
       ]
     },
     {
-      "key": "9061eac5-8274-4898-b1b4-f03f53975848",
+      "key": "7978f868-3f2f-4549-9377-bf18241d906e",
       "title": {
         "en": "Footer",
         "ar": "تذييل الصفحة"
@@ -1515,15 +1515,67 @@
       "image": "",
       "fields": [
         {
-          "id": "footer_cta2_text",
-          "type": "string",
-          "format": "text",
-          "label": "Footer Cta2 Text",
-          "icon": "sicon-format-text-alt",
-          "value": "",
+          "id": "footer_cta2_link",
+          "type": "items",
+          "format": "variable-list",
+          "label": "Footer Cta2 Link",
+          "icon": "sicon-link",
+          "value": "#",
           "required": false,
-          "multilanguage": true,
-          "maxLength": 100
+          "searchable": true,
+          "source": "custom",
+          "sources": [
+            {
+              "label": "منتج",
+              "key": "products",
+              "value": "products"
+            },
+            {
+              "label": "تصنيف",
+              "key": "categories",
+              "value": "categories"
+            },
+            {
+              "label": "ماركة تجارية",
+              "key": "brands",
+              "value": "brands"
+            },
+            {
+              "label": "صفحة تعريفية",
+              "key": "pages",
+              "value": "pages"
+            },
+            {
+              "label": "مقالة",
+              "key": "blog_articles",
+              "value": "blog_articles"
+            },
+            {
+              "label": "تصنيف ضمن المدونة",
+              "key": "blog_categories",
+              "value": "blog_categories"
+            },
+            {
+              "label": "التخفيضات",
+              "key": "offers_link",
+              "value": "offers_link"
+            },
+            {
+              "label": "الماركات التجارية",
+              "key": "brands_link",
+              "value": "brands_link"
+            },
+            {
+              "label": "المدونة",
+              "key": "blog_link",
+              "value": "blog_link"
+            },
+            {
+              "label": "رابط خارجي",
+              "key": "custom",
+              "value": "custom"
+            }
+          ]
         },
         {
           "id": "footer_description",
@@ -1535,6 +1587,17 @@
           "required": false,
           "multilanguage": true,
           "maxLength": 400
+        },
+        {
+          "id": "footer_cta1_text",
+          "type": "string",
+          "format": "text",
+          "label": "Footer Cta1 Text",
+          "icon": "sicon-format-text-alt",
+          "value": "",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100
         },
         {
           "id": "footer_cta1_link",
@@ -1600,78 +1663,15 @@
           ]
         },
         {
-          "id": "footer_cta1_text",
+          "id": "footer_cta2_text",
           "type": "string",
           "format": "text",
-          "label": "Footer Cta1 Text",
+          "label": "Footer Cta2 Text",
           "icon": "sicon-format-text-alt",
           "value": "",
           "required": false,
           "multilanguage": true,
           "maxLength": 100
-        },
-        {
-          "id": "footer_cta2_link",
-          "type": "items",
-          "format": "variable-list",
-          "label": "Footer Cta2 Link",
-          "icon": "sicon-link",
-          "value": "#",
-          "required": false,
-          "searchable": true,
-          "source": "custom",
-          "sources": [
-            {
-              "label": "منتج",
-              "key": "products",
-              "value": "products"
-            },
-            {
-              "label": "تصنيف",
-              "key": "categories",
-              "value": "categories"
-            },
-            {
-              "label": "ماركة تجارية",
-              "key": "brands",
-              "value": "brands"
-            },
-            {
-              "label": "صفحة تعريفية",
-              "key": "pages",
-              "value": "pages"
-            },
-            {
-              "label": "مقالة",
-              "key": "blog_articles",
-              "value": "blog_articles"
-            },
-            {
-              "label": "تصنيف ضمن المدونة",
-              "key": "blog_categories",
-              "value": "blog_categories"
-            },
-            {
-              "label": "التخفيضات",
-              "key": "offers_link",
-              "value": "offers_link"
-            },
-            {
-              "label": "الماركات التجارية",
-              "key": "brands_link",
-              "value": "brands_link"
-            },
-            {
-              "label": "المدونة",
-              "key": "blog_link",
-              "value": "blog_link"
-            },
-            {
-              "label": "رابط خارجي",
-              "key": "custom",
-              "value": "custom"
-            }
-          ]
         }
       ]
     }
