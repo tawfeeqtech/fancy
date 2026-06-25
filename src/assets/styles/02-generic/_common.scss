@@ -1,0 +1,129 @@
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--space-6);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: repeat(3, 1fr);
+                gap: var(--space-5);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-2 {
+    grid-template-columns: repeat(4, 1fr);
+                gap: var(--space-6);
+  }
+}
+
+@media (min-width: 768px) {
+  .top-nav {
+    padding: var(--space-4) var(--space-6);
+  }
+}
+
+@media (min-width: 768px) {
+  .top-nav__logo {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .bottom-nav {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    min-height: 520px;
+                border-radius: var(--radius-lg);
+                margin: var(--space-4) var(--space-6) var(--space-7);
+  }
+}
+
+@media (min-width: 768px) {
+  .hero__title {
+    font-size: 3.2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero__image {
+    right: 5%;
+                opacity: 0.08;
+                width: 40%;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-header__title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .product-card__quick-add {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .drawer--side {
+    max-width: 400px;
+                border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .toast {
+    bottom: 40px;
+                right: 40px;
+                left: auto;
+                transform: translateY(20px);
+  }
+}
+
+@media (min-width: 768px) {
+  .toast.show {
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .newsletter__form {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .newsletter__form input {
+    flex: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer__grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .pdp-sticky {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .hide-mobile {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .hide-desktop {
+    display: none;
+  }
+}
