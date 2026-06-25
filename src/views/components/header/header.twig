@@ -1,23 +1,88 @@
-<nav aria-label="القائمة الرئيسية" class="top-nav" role="navigation">
-<div class="container">
-<button aria-label="فتح القائمة" class="hide-desktop" onclick="openDrawer('categoryDrawer')">
-<i class="fas fa-bars"></i>
-</button>
-<a class="top-nav__logo" href="#">نور<span>ا</span></a>
-<div class="top-nav__actions">
-<button aria-label="بحث" onclick="openDrawer('searchDrawer')">
-<i class="fas fa-search"></i>
-</button>
-<button aria-label="حسابي" class="hide-mobile" onclick="openDrawer('accountDrawer')">
-<i class="fas fa-user"></i>
-</button>
-<button aria-label="المفضلة" class="hide-mobile">
-<i class="far fa-heart"></i>
-</button>
-<button aria-label="سلة التسوق" onclick="openDrawer('cartDrawer')">
-<i class="fas fa-shopping-bag"></i>
-<span class="top-nav__cart-badge">3</span>
-</button>
-</div>
-</div>
-</nav>
+<header class="store-header sticky top-0 z-50"
+  style="background-color: {{ theme.settings.get('header_bg_color', '#ffffff') }};">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between py-3">
+
+      {# ── Logo ── #}
+      <a href="{{ link('/') }}" class="flex-shrink-0">
+        {% if theme.settings.get('site_logo') %}
+          <img src="{{ theme.settings.get('site_logo') }}" alt="{{ store.name }}" class="h-10 w-auto">
+        {% else %}
+          <img src="{{ store.logo }}" alt="{{ store.name }}" class="h-10 w-auto">
+        {% endif %}
+      </a>
+
+      {# ── Desktop navigation ── #}
+      <nav class="hidden lg:flex items-center gap-6" aria-label="{{ trans('common.elements.main_menu') }}">
+        {% for menu in menus %}
+          <div class="relative group">
+            <a href="{{ menu.url }}" class="text-sm font-medium hover:opacity-80 transition-opacity">
+              {{ menu.title }}
+            </a>
+            {% if menu.children is not empty %}
+              <div class="absolute top-full right-0 mt-2 bg-white shadow-lg rounded-lg py-2 min-w-[200px]
+                          opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                {% for child in menu.children %}
+                  <a href="{{ child.url }}" class="block px-4 py-2 text-sm hover:bg-gray-50">
+                    {{ child.title }}
+                  </a>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </nav>
+
+      {# ── Actions ── #}
+      <div class="flex items-center gap-3">
+        <salla-search></salla-search>
+        <salla-cart-icon></salla-cart-icon>
+        {% if user.isLoggedIn %}
+          <salla-user-icon></salla-user-icon>
+        {% else %}
+          <a href="{{ link('login') }}" class="text-sm font-medium hover:underline">
+            {{ trans('common.elements.login') }}
+          </a>
+        {% endif %}
+
+        {# ── Mobile menu toggle ── #}
+        <button class="lg:hidden p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                aria-label="{{ trans('common.elements.menu') }}">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    {# ── Breadcrumbs (non-home pages) ── #}
+    {% if breadcrumbs is defined and breadcrumbs is not empty %}
+      <nav class="py-2 text-sm border-t" aria-label="Breadcrumb"
+           style="border-color: {{ theme.settings.get('header_bg_color', '#ffffff') }}1a;">
+        <ol class="flex items-center gap-1 flex-wrap">
+          {% for crumb in breadcrumbs %}
+            <li>
+              {% if not loop.last %}
+                <a href="{{ crumb.url }}" class="hover:underline opacity-70">{{ crumb.title }}</a>
+                <span class="mx-2 opacity-40">/</span>
+              {% else %}
+                <span class="opacity-100 font-medium">{{ crumb.title }}</span>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ol>
+      </nav>
+    {% endif %}
+  </div>
+
+  {# ── Mobile menu (hidden by default) ── #}
+  <div id="mobile-menu" class="hidden lg:hidden border-t bg-white px-4 py-3">
+    <nav class="flex flex-col gap-2">
+      {% for menu in menus %}
+        <a href="{{ menu.url }}" class="py-2 text-sm font-medium border-b last:border-0">
+          {{ menu.title }}
+        </a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>

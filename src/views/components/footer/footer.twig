@@ -1,46 +1,102 @@
-<footer class="footer" role="contentinfo">
-<div class="container">
-<div class="footer__grid">
-<div>
-<div class="footer__brand">نور<span>ا</span></div>
-<p class="footer__text">أزياء محتشمه فاخرة تعكس أناقتكِ وجمالكِ في كل مناسبة</p>
-<div class="footer__social">
-<a aria-label="انستغرام" href="#"><i class="fab fa-instagram"></i></a>
-<a aria-label="تويتر" href="#"><i class="fab fa-twitter"></i></a>
-<a aria-label="يوتيوب" href="#"><i class="fab fa-youtube"></i></a>
-<a aria-label="تيك توك" href="#"><i class="fab fa-tiktok"></i></a>
-</div>
-</div>
-<div class="footer__links">
-<h4>التسوق</h4>
-<ul>
-<li><a href="#">العبايات</a></li>
-<li><a href="#">الحجابات</a></li>
-<li><a href="#">الجلابيات</a></li>
-<li><a href="#">الإكسسوارات</a></li>
-</ul>
-</div>
-<div class="footer__links">
-<h4>المساعدة</h4>
-<ul>
-<li><a href="#">الشحن والتوصيل</a></li>
-<li><a href="#">الاستبدال والاسترجاع</a></li>
-<li><a href="#">مقاسات</a></li>
-<li><a href="#">الأسئلة الشائعة</a></li>
-</ul>
-</div>
-<div class="footer__links">
-<h4>نورا</h4>
-<ul>
-<li><a href="#">من نحن</a></li>
-<li><a href="#">اتصل بنا</a></li>
-<li><a href="#">سياسة الخصوصية</a></li>
-<li><a href="#">شروط الاستخدام</a></li>
-</ul>
-</div>
-</div>
-<div class="footer__bottom">
-                    © 2026 نورا. جميع الحقوق محفوظة.
-                </div>
-</div>
+<footer class="store-footer"
+  style="background-color: {{ theme.settings.get('footer_bg_color', '#0a0a0a') }};
+         color: {{ theme.settings.get('footer_text_color', '#ffffff') }};">
+  <div class="container mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+      {# ── Store info + social ── #}
+      <div class="md:col-span-1">
+        <a href="{{ link('/') }}" class="block mb-4">
+          {% if theme.settings.get('footer_logo') %}
+            <img src="{{ theme.settings.get('footer_logo') }}"
+                 alt="{{ store.name }}"
+                 loading="lazy"
+                 style="max-width: {{ theme.settings.get('footer_logo_width', '150') }}px;">
+          {% else %}
+            <h3 class="text-xl font-bold">{{ store.name }}</h3>
+          {% endif %}
+        </a>
+        {% if store.description %}
+          <p class="text-sm opacity-80 leading-relaxed mb-4">{{ store.description|raw }}</p>
+        {% endif %}
+
+        {% if theme.settings.get('footer_show_social', true) and footer.social_links is not empty %}
+          <div class="flex gap-3">
+            {% for link in footer.social_links %}
+              <a href="{{ link.url }}" title="{{ link.name }}"
+                 class="hover:opacity-80 transition-opacity" target="_blank" rel="noopener">
+                <i class="{{ link.icon }} text-xl"></i>
+              </a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      {# ── Quick links ── #}
+      {% if theme.settings.get('footer_show_pages', true) and footer.pages is not empty %}
+        <div>
+          <h4 class="font-bold mb-3">{{ trans('blocks.footer.quick_links') }}</h4>
+          <ul class="space-y-2">
+            {% for page in footer.pages %}
+              <li>
+                <a href="{{ page.link }}" class="text-sm hover:underline opacity-80">
+                  {{ page.name }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {# ── Contacts ── #}
+      {% if theme.settings.get('footer_show_contacts', true) and footer.contacts is not empty %}
+        <div>
+          <h4 class="font-bold mb-3">{{ trans('blocks.footer.contact_us') }}</h4>
+          <ul class="space-y-2">
+            {% for contact in footer.contacts %}
+              <li>
+                <a href="{{ contact.url }}" class="text-sm hover:underline opacity-80 flex items-center gap-2">
+                  <i class="{{ contact.icon }}"></i>
+                  <span>{{ contact.value }}</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {# ── Payment methods ── #}
+      {% if theme.settings.get('footer_show_payments', true) and footer.payment_methods is not empty %}
+        <div>
+          <h4 class="font-bold mb-3">{{ trans('blocks.footer.payment_methods') }}</h4>
+          <div class="flex flex-wrap gap-2">
+            {% for method in footer.payment_methods %}
+              <img src="{{ method.image }}" alt="{{ method.name }}"
+                   class="h-8 rounded" loading="lazy" title="{{ method.name }}">
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+    </div>
+
+    {# ── Copyright bar ── #}
+    <div class="border-t mt-8 pt-6 flex flex-col md:flex-row items-center justify-between text-sm opacity-70"
+         style="border-color: {{ theme.settings.get('footer_text_color', '#ffffff') }}1a;">
+      <span>{% hook copyright %}</span>
+      {% if theme.settings.get('show_powered_by', true) %}
+        <span class="mt-2 md:mt-0">
+          {{ trans('blocks.footer.powered_by') }}
+          <a href="https://salla.sa" target="_blank" rel="noopener" class="underline">Salla</a>
+        </span>
+      {% endif %}
+    </div>
+
+    {# ── Map (optional) ── #}
+    {% if theme.settings.get('footer_show_map', false) and theme.settings.get('footer_map_embed') %}
+      <div class="mt-8 rounded-lg overflow-hidden">
+        {{ theme.settings.get('footer_map_embed')|raw }}
+      </div>
+    {% endif %}
+  </div>
 </footer>
