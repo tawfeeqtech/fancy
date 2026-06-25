@@ -3,9 +3,14 @@
         "ar": "ثيم المحول",
         "en": "Converted Theme"
     },
+    "description": {
+        "ar": "ثيم تم تحويله تلقائياً باستخدام Salla Compiler",
+        "en": "Theme automatically converted by Salla Compiler"
+    },
     "repository": "",
     "author_email": "",
     "features": [],
+    "support_url": "https://salla.com/",
     "settings": [
         {
             "id": "static-line-start",
