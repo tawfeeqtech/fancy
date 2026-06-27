@@ -109,7 +109,7 @@ class ProductCard extends HTMLElement {
     }
 
     if (this.product.status === 'sale' && this.product.type === 'booking') {
-      return salla.lang.get('pages.cart.book_now'); 
+      return salla.lang.get('pages.cart.book_now');
     }
 
     if (this.product.status === 'sale') {
@@ -184,7 +184,10 @@ class ProductCard extends HTMLElement {
     this.shadowOnHover?  this.classList.add('s-product-card-shadow') : '';
     this.product?.is_out_of_stock?  this.classList.add('s-product-card-out-of-stock') : '';
     this.isInWishlist = !salla.config.isGuest() && salla.storage.get('salla::wishlist', []).includes(Number(this.product.id));
-    this.innerHTML = `
+    this.effectiveStatus = (this.product.is_out_of_stock && window.notify_when_available_in_card && !['donating', 'financial_support'].includes(this.product?.type))
+      ? 'out-and-notify'
+      : this.product.status;
+      this.innerHTML = `
         <div class="${!this.fullImage ? 's-product-card-image' : 's-product-card-image-full'}">
           <a href="${this.product?.url}" aria-label="${this.escapeHTML(this.product?.image?.alt || this.product.name)}">
            <img 
@@ -192,10 +195,10 @@ class ProductCard extends HTMLElement {
                 ? 'contain'
                 : this.fitImageHeight
                 ? this.fitImageHeight
-                : 'cover'} lazy"
-              src="${this.placeholder}"
+                : 'cover'}"
+              src="${this.product?.image?.url || this.product?.thumbnail || this.placeholder || ''}"
               alt="${this.escapeHTML(this.product?.image?.alt || this.product.name)}"
-              data-src="${this.product?.image?.url || this.product?.thumbnail || ''}"
+              loading="lazy"
             />
             ${!this.fullImage && !this.minimal ? this.getProductBadge() : ''}
           </a>
@@ -240,7 +243,7 @@ class ProductCard extends HTMLElement {
           ${this.product?.donation && !this.minimal && !this.fullImage ?
           `<salla-progress-bar donation=${JSON.stringify(this.product?.donation)}></salla-progress-bar>
           <div class="s-product-card-donation-input">
-            ${this.product?.donation?.can_donate ?
+            ${this.product?.donation?.can_donate && this.product?.donation?.custom_amount_enabled  ?
               `<label for="donation-amount-${this.product.id}">${this.donationAmount} <span>*</span></label>
               <input
                 type="text"
@@ -275,9 +278,9 @@ class ProductCard extends HTMLElement {
             `<div class="s-product-card-content-footer gap-2">
               <salla-add-product-button fill="outline" width="wide"
                 product-id="${this.product.id}"
-                product-status="${this.product.status}"
+                product-status="${this.effectiveStatus}"
                 product-type="${this.product.type}">
-                ${this.product.status == 'sale' ? 
+                ${this.product.status == 'sale' ?
                     `<i class="text-base sicon-${ this.product.type == 'booking' ? 'calendar-time' : 'shopping-bag'}"></i>` : ``
                   }
                 <span>${this.product.add_to_cart_label ? this.product.add_to_cart_label : this.getAddButtonLabel() }</span>
@@ -310,11 +313,18 @@ class ProductCard extends HTMLElement {
         });
       })
 
-      document.lazyLoadInstance?.update(this.querySelectorAll('.lazy'));
-
       if (this.product?.quantity && this.isSpecial) {
         this.initCircleBar();
       }
+
+      // Optimistic & Per-card wishlist toggle
+      this.querySelectorAll('.s-product-card-wishlist-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const willBeAdded = !btn.classList.contains('s-product-card-wishlist-added');
+          app.toggleElementClassIf(btn, 's-product-card-wishlist-added', 'not-added', () => willBeAdded);
+          app.toggleElementClassIf(btn, 'pulse-anime', 'un-favorited', () => willBeAdded);
+        });
+      });
     }
 }
 

@@ -1,0 +1,266 @@
+{#
+| Variable | Type | Description |
+|----------|------|-------------|
+| component.featured_products_description | string | Featured Products Description |
+| component.featured_products_cta2_text | string | Featured Products Cta2 Text |
+| component.featured_products_cta2_link | items | Featured Products Cta2 Link |
+| component.featured_products_title | string | Featured Products Title |
+| component.featured_products_cta1_text | string | Featured Products Cta1 Text |
+| position | int | Sort order (0-based) |
+#}
+
+<main dir="auto">
+<!-- ============================================
+        HERO BANNER
+        ============================================ -->
+<section aria-label="العرض الرئيسي" class="hero">
+<div class="container" style="position:relative;z-index:2">
+<div class="hero__content">
+<span class="hero__badge">مجموعة الربيع</span>
+<h1 class="hero__title">{{ component.hero_title }}</h1>
+<p class="hero__subtitle">{{ component.hero_description }}</p>
+<button class="btn btn-primary" onclick="showToast('جاري التوجيه للمجموعة...')">{{ component.hero_cta1_text }}</button>
+</div>
+</div>
+<div aria-hidden="true" class="hero__image">
+<i class="fas fa-tshirt" style="font-size:200px;color:var(--color-primary);opacity:0.3"></i>
+</div>
+</section>
+<!-- ============================================
+        FEATURED COLLECTIONS
+        ============================================ -->
+<section aria-labelledby="collections-title" class="section section--sm">
+<div class="container">
+<div class="section-header">
+<h2 class="section-header__title" id="collections-title">{{ component.generic_content_title }}</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)">
+<div class="category-card animate-in animate-in--delay-1">
+<div style="background:var(--color-primary-subtle);height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+<i class="fas fa-moon"></i>
+</div>
+<div class="category-card__overlay">
+<span class="category-card__title">المسائية</span>
+</div>
+</div>
+<div class="category-card animate-in animate-in--delay-2">
+<div style="background:var(--color-primary-subtle);height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+<i class="fas fa-sun"></i>
+</div>
+<div class="category-card__overlay">
+<span class="category-card__title">النهارية</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================
+        SHOP BY CATEGORY
+        ============================================ -->
+<section aria-labelledby="categories-title" class="section section--sm">
+<div class="container">
+<div class="section-header">
+<h2 class="section-header__title" id="categories-title">{{ component.generic_content_title }}</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-2);text-align:center">
+<div onclick="showToast('جاري التوجيه للعبايات...')" style="cursor:pointer">
+<div onmouseover="this.style.background='var(--color-border)'" style="width:64px;height:64px;border-radius:var(--radius-full);background:var(--color-primary-subtle);margin:0 auto var(--space-1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--color-secondary);transition:var(--transition-smooth)">
+<i class="fas fa-tshirt"></i>
+</div>
+<span style="font-size:0.75rem;font-weight:500">عبايات</span>
+</div>
+<div onclick="showToast('جاري التوجيه للحجابات...')" style="cursor:pointer">
+<div onmouseover="this.style.background='var(--color-border)'" style="width:64px;height:64px;border-radius:var(--radius-full);background:var(--color-primary-subtle);margin:0 auto var(--space-1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--color-secondary);transition:var(--transition-smooth)">
+<i class="fas fa-scarf"></i>
+</div>
+<span style="font-size:0.75rem;font-weight:500">حجابات</span>
+</div>
+<div onclick="showToast('جاري التوجيه للجلابيات...')" style="cursor:pointer">
+<div onmouseover="this.style.background='var(--color-border)'" style="width:64px;height:64px;border-radius:var(--radius-full);background:var(--color-primary-subtle);margin:0 auto var(--space-1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--color-secondary);transition:var(--transition-smooth)">
+<i class="fas fa-dress"></i>
+</div>
+<span style="font-size:0.75rem;font-weight:500">جلابيات</span>
+</div>
+<div onclick="showToast('جاري التوجيه للإكسسوارات...')" style="cursor:pointer">
+<div onmouseover="this.style.background='var(--color-border)'" style="width:64px;height:64px;border-radius:var(--radius-full);background:var(--color-primary-subtle);margin:0 auto var(--space-1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--color-secondary);transition:var(--transition-smooth)">
+<i class="fas fa-gem"></i>
+</div>
+<span style="font-size:0.75rem;font-weight:500">إكسسوارات</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================
+        NEW ARRIVALS
+        ============================================ -->
+<section aria-labelledby="new-arrivals-title" class="section">
+<div class="container">
+<div class="section-header">
+<h2 class="section-header__title" id="new-arrivals-title">{{ component.featured_products_title }}</h2>
+<a class="section-header__link" href="{{ component.featured_products_cta1_link }}">{{ component.featured_products_cta1_text }}</a>
+</div>
+<div class="grid-2">
+<!-- Product Card 1 -->
+
+  {% for item in component.products %}
+  <div class="product-card animate-in animate-in--delay-1">
+<div class="product-card__image-wrapper">
+<div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+<i class="fas fa-tshirt"></i>
+</div>
+<div class="product-card__badges">
+<span class="product-card__badge product-card__badge--new">جديد</span>
+</div>
+<button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">{{ component.featured_products_cta2_text }}</button>
+<button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
+<i class="fas fa-plus"></i> أضف للسلة
+                            </button>
+</div>
+<div class="product-card__info">
+<div class="product-card__title">عباية كشمير فاخرة بتطريز يدوي</div>
+<div class="product-card__price">
+<span class="product-card__price-current">1,200 ر.س</span>
+<span class="product-card__price-original">1,500 ر.س</span>
+</div>
+</div>
+</div>
+  {% endfor %}
+<!-- Product Card 2 -->
+
+<!-- Product Card 3 (hide on mobile, show on tablet+) -->
+
+<!-- Product Card 4 (hide on mobile, show on tablet+) -->
+
+</div>
+</div>
+</section>
+<!-- ============================================
+        SEASON COLLECTION BANNER
+        ============================================ -->
+<section class="section section--sm">
+<div class="container">
+<div style="background:var(--color-primary-subtle);border-radius:var(--radius-lg);padding:var(--space-6) var(--space-4);text-align:center">
+<span style="display:inline-block;background:var(--color-accent);color:white;padding:var(--space-1) var(--space-4);border-radius:var(--radius-full);font-size:0.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:var(--space-3)">
+                        مجموعة الصيف
+                    </span>
+<h2 style="font-family:var(--font-primary);font-size:1.8rem;font-weight:600;margin-bottom:var(--space-2)">{{ component.generic_content_title }}</h2>
+<p style="color:var(--color-text-secondary);margin-bottom:var(--space-4);max-width:400px;margin-left:auto;margin-right:auto">{{ component.generic_content_description }}</p>
+<button class="btn btn-primary" onclick="showToast('جاري التوجيه للمجموعة...')">{{ component.generic_content_cta1_text }}</button>
+</div>
+</div>
+</section>
+<!-- ============================================
+        BEST SELLERS
+        ============================================ -->
+<section aria-labelledby="bestsellers-title" class="section">
+<div class="container">
+<div class="section-header">
+<h2 class="section-header__title" id="bestsellers-title">{{ component.featured_products_title }}</h2>
+<a class="section-header__link" href="{{ component.featured_products_cta1_link }}">{{ component.featured_products_cta1_text }}</a>
+</div>
+<div class="grid-2">
+<div class="product-card animate-in">
+<div class="product-card__image-wrapper">
+<div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+<i class="fas fa-tshirt"></i>
+</div>
+<button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">{{ component.featured_products_cta2_text }}</button>
+<button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
+<i class="fas fa-plus"></i> أضف للسلة
+                            </button>
+</div>
+<div class="product-card__info">
+<div class="product-card__title">عباية بيضاء أنيقة</div>
+<div class="product-card__price">
+<span class="product-card__price-current">1,050 ر.س</span>
+</div>
+</div>
+</div>
+<div class="product-card animate-in animate-in--delay-1">
+<div class="product-card__image-wrapper">
+<div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+<i class="fas fa-tshirt"></i>
+</div>
+<button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">
+<i class="far fa-heart"></i>
+</button>
+<button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
+<i class="fas fa-plus"></i> أضف للسلة
+                            </button>
+</div>
+<div class="product-card__info">
+<div class="product-card__title">عباية زرقاء داكنة فاخرة</div>
+<div class="product-card__price">
+<span class="product-card__price-current">1,300 ر.س</span>
+<span class="product-card__price-original">1,600 ر.س</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================
+        NEWSLETTER
+        ============================================ -->
+<section aria-labelledby="newsletter-title" class="section">
+<div class="container">
+<div class="newsletter">
+<h2 class="newsletter__title" id="newsletter-title">{{ component.newsletter_title }}</h2>
+<p class="newsletter__subtitle">{{ component.newsletter_description }}</p>
+<form class="newsletter__form" onsubmit="event.preventDefault();showToast('شكراً لانضمامك!')">
+<input aria-label="البريد الإلكتروني" placeholder="بريدك الإلكتروني" required="" type="email"/>
+<button class="btn btn-primary" type="submit">{{ component.newsletter_cta1_text }}</button>
+</form>
+</div>
+</div>
+</section>
+<!-- ============================================
+        FOOTER
+        ============================================ -->
+<footer class="footer" role="contentinfo">
+<div class="container">
+<div class="footer__grid">
+<div>
+<div class="footer__brand">نور<span>ا</span></div>
+<p class="footer__text">{{ component.footer_description }}</p>
+<div class="footer__social">
+<a aria-label="انستغرام" href="{{ component.footer_cta1_link }}">{{ component.footer_cta1_text }}</a>
+<a aria-label="تويتر" href="{{ component.footer_cta2_link }}">{{ component.footer_cta2_text }}</a>
+<a aria-label="يوتيوب" href="#"><i class="fab fa-youtube"></i></a>
+<a aria-label="تيك توك" href="#"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+<div class="footer__links">
+<h4>التسوق</h4>
+<ul>
+<li><a href="#">العبايات</a></li>
+<li><a href="#">الحجابات</a></li>
+<li><a href="#">الجلابيات</a></li>
+<li><a href="#">الإكسسوارات</a></li>
+</ul>
+</div>
+<div class="footer__links">
+<h4>المساعدة</h4>
+<ul>
+<li><a href="#">الشحن والتوصيل</a></li>
+<li><a href="#">الاستبدال والاسترجاع</a></li>
+<li><a href="#">مقاسات</a></li>
+<li><a href="#">الأسئلة الشائعة</a></li>
+</ul>
+</div>
+<div class="footer__links">
+<h4>نورا</h4>
+<ul>
+<li><a href="#">من نحن</a></li>
+<li><a href="#">اتصل بنا</a></li>
+<li><a href="#">سياسة الخصوصية</a></li>
+<li><a href="#">شروط الاستخدام</a></li>
+</ul>
+</div>
+</div>
+<div class="footer__bottom">
+                    © 2026 نورا. جميع الحقوق محفوظة.
+                </div>
+</div>
+</footer>
+</main>

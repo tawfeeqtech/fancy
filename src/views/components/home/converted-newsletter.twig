@@ -1,0 +1,21 @@
+{#
+| Variable | Type | Description |
+|----------|------|-------------|
+| component.newsletter_description | string | Newsletter Description |
+| component.newsletter_title | string | Newsletter Title |
+| component.newsletter_cta1_text | string | Newsletter Cta1 Text |
+| position | int | Sort order (0-based) |
+#}
+
+<section aria-labelledby="newsletter-title" class="section" dir="auto">
+<div class="container">
+<div class="newsletter">
+<h2 class="newsletter__title" id="newsletter-title">{{ component.newsletter_title }}</h2>
+<p class="newsletter__subtitle">{{ component.newsletter_description }}</p>
+<form class="newsletter__form" onsubmit="event.preventDefault();showToast('شكراً لانضمامك!')">
+<input aria-label="البريد الإلكتروني" placeholder="بريدك الإلكتروني" required="" type="email"/>
+<button class="btn btn-primary" type="submit">{{ component.newsletter_cta1_text }}</button>
+</form>
+</div>
+</div>
+</section>

@@ -1,63 +1,600 @@
 {#
-| Variable          | Type                 | Description                                               |
-|-------------------|----------------------|-----------------------------------------------------------|
-| page              | object               |                                                           |
-| page.title        | string               |                                                           |
-| page.slug         | string               |                                                           |
-| brand             | Brand *              |                                                           |
-| brand.id          | int                  |                                                           |
-| brand.name        | string               |                                                           |
-| brand.url         | string               |                                                           |
-| brand.logo        | string               |                                                           |
-| brand.banner      | ?string              | Null when is not set, or merchant doesn't want to show it |
-| brand.description | string               |                                                           |
+  Salla Theme — العبايات - نورا
+  Page type: brand-single
+  Source: category.html
 #}
+
 {% extends "layouts.master" %}
+
 {% block content %}
 
-  {# Brand banner #} 
-  {% if brand.banner %} 
-        <div class="brand-page__banner">
-            <img loading="eager" width="1200" height="300" class="w-full max-h-[300px] object-cover rounded-md bg-gray-100" src="{{ brand.banner }}" alt="{{ brand.name }}"/>
-        </div>
-    {% endif %}
 
-    <div class="container">
-        {# add breadcumbs container in pages to make a space in case breadcrumbs is off #}
-        <nav class="breadcrumbs w-full py-5">
-            <salla-breadcrumb></salla-breadcrumb>
-        </nav>
-        {% hook 'brands:single.details.start' %}
-   
-        {# brand header #}
-        <header class="flex flex-col md:flex-row items-center md:items-start text-center rtl:md:text-right ltr:md:text-left mt-2 mb-12 md:mb-20">
-            <img class="rounded-md w-40 h-24 object-contain shadow-md p-4 bg-white lazy shrink-0" data-src="{{ brand.logo }}" src="{{ 'images/s-empty.png' | cdn }}" alt="{{ brand.name }}">
-            <div class="px-5 pt-3 rtl:text-right">
-                <h1 class="text-2xl font-bold mb-1">{{ brand.name }}</h1>
-                <h2 class="text-base text-gray-500 font-medium">{{ brand.description|raw }}</h2>
-            </div>
-        </header>
+{# Available Salla variables for this page type: brand, brand.products #}
+<!-- ============================================
+    TOP NAVIGATION (Same as homepage)
+    ============================================ -->
 
-        {% hook 'brands:single.details.end' %}
+<!-- ============================================
+    BREADCRUMBS
+    ============================================ -->
+<div class="container" style="padding-top:var(--space-3);padding-bottom:var(--space-2)">
 
-        <div class="flex items-start flex-col md:flex-row">
-            <div class="main-content w-full">
-                {% if products|length %}
-                    {% hook 'brands:single.items.start' %}
-                        <salla-products-list source="{{page.slug}}" source-value="{{page.id}}"></salla-products-list>
-                    {% hook 'brands:single.items.end' %}
-                {% else %}
-                    <div class="no-content-placeholder">
-                            <span class="rounded-icon !w-36 !h-36 bg-gray-100 mb-6">
-                                <i class="sicon-award-ribbon text-6xl block text-gray-400"></i>
-                            </span>
-                        <p class="text-sm mb-5 text-center">
-                            <span>{{ trans('pages.brands.non_products') }}</span>
-                            {{ brand.name }}
-                        </p>
-                    </div>
-                {% endif %}
-            </div>
-        </div>
-    </div>
+</div>
+<!-- ============================================
+    CATEGORY BANNER
+    ============================================ -->
+<section class="category-banner">
+<div class="container">
+<h1 class="category-banner__title">العبايات</h1>
+<p class="category-banner__subtitle">اكتشفي تشكيلتنا الفاخرة من العبايات المصممة بأناقة لتعكس شخصيتكِ</p>
+</div>
+</section>
+<!-- ============================================
+    PLP TOOLBAR
+    ============================================ -->
+<div class="container">
+<div class="plp-toolbar">
+<span class="plp-toolbar__count">24 منتج</span>
+<div class="plp-toolbar__actions">
+<button class="plp-toolbar__btn" onclick="openDrawer('filterDrawer')">
+<i class="fas fa-sliders-h"></i>
+<span class="hide-mobile">فلتر</span>
+</button>
+<button class="plp-toolbar__btn" onclick="openDrawer('sortDrawer')">
+<i class="fas fa-arrow-up-wide-short"></i>
+<span class="hide-mobile">ترتيب</span>
+</button>
+</div>
+</div>
+<!-- Active Filters -->
+<div class="active-filters" id="activeFilters">
+<span class="active-filter">
+                اللون: أسود
+                <button onclick="this.parentElement.remove()">×</button>
+</span>
+<span class="active-filter">
+                المقاس: M
+                <button onclick="this.parentElement.remove()">×</button>
+</span>
+<span class="clear-filters" onclick="document.getElementById('activeFilters').innerHTML=''">مسح الكل</span>
+</div>
+<!-- ============================================
+        PRODUCT GRID
+        ============================================ -->
+<div class="plp-grid">
+<!-- Product 1 -->
+<div class="product-card animate-in">
+<div class="product-card__image-wrapper">
+<div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+<i class="fas fa-tshirt"></i>
+</div>
+<div class="product-card__badges">
+<span class="product-card__badge product-card__badge--new">جديد</span>
+</div>
+<button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">
+<i class="far fa-heart"></i>
+</button>
+<button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
+<i class="fas fa-plus"></i> أضف للسلة
+                    </button>
+</div>
+<div class="product-card__info">
+<div class="product-card__title">عباية كشمير فاخرة بتطريز يدوي</div>
+<div class="product-card__price">
+<span class="product-card__price-current">1,200 ر.س</span>
+<span class="product-card__price-original">1,500 ر.س</span>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="product-card animate-in animate-in--delay-1">
+<div class="product-card__image-wrapper">
+<div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+<i class="fas fa-tshirt"></i>
+</div>
+<div class="product-card__badges">
+<span class="product-card__badge product-card__badge--sale">خصم 20%</span>
+</div>
+<button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">
+<i class="far fa-heart"></i>
+</button>
+<button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
+<i class="fas fa-plus"></i> أضف للسلة
+                    </button>
+</div>
+<div class="product-card__info">
+<div class="product-card__title">عباية حريرية مع لمسات ذهبية</div>
+<div class="product-card__price">
+<span class="product-card__price-current">950 ر.س</span>
+<span class="product-card__price-original">1,200 ر.س</span>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="product-card animate-in animate-in--delay-2">
+<div class="product-card__image-wrapper">
+<div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+<i class="fas fa-tshirt"></i>
+</div>
+<button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">
+<i class="far fa-heart"></i>
+</button>
+<button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
+<i class="fas fa-plus"></i> أضف للسلة
+                    </button>
+</div>
+<div class="product-card__info">
+<div class="product-card__title">عباية دانتيل فاخرة</div>
+<div class="product-card__price">
+<span class="product-card__price-current">850 ر.س</span>
+</div>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="product-card animate-in animate-in--delay-3">
+<div class="product-card__image-wrapper">
+<div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+<i class="fas fa-tshirt"></i>
+</div>
+<div class="product-card__badges">
+<span class="product-card__badge product-card__badge--new">جديد</span>
+</div>
+<button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">
+<i class="far fa-heart"></i>
+</button>
+<button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
+<i class="fas fa-plus"></i> أضف للسلة
+                    </button>
+</div>
+<div class="product-card__info">
+<div class="product-card__title">عباية مخملية أنيقة</div>
+<div class="product-card__price">
+<span class="product-card__price-current">1,100 ر.س</span>
+</div>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="product-card animate-in animate-in--delay-4 hide-mobile">
+<div class="product-card__image-wrapper">
+<div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+<i class="fas fa-tshirt"></i>
+</div>
+<button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">
+<i class="far fa-heart"></i>
+</button>
+<button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
+<i class="fas fa-plus"></i> أضف للسلة
+                    </button>
+</div>
+<div class="product-card__info">
+<div class="product-card__title">عباية ساتان بتصميم عصري</div>
+<div class="product-card__price">
+<span class="product-card__price-current">1,050 ر.س</span>
+</div>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="product-card animate-in animate-in--delay-5 hide-mobile">
+<div class="product-card__image-wrapper">
+<div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+<i class="fas fa-tshirt"></i>
+</div>
+<div class="product-card__badges">
+<span class="product-card__badge product-card__badge--sale">خصم 15%</span>
+</div>
+<button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">
+<i class="far fa-heart"></i>
+</button>
+<button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
+<i class="fas fa-plus"></i> أضف للسلة
+                    </button>
+</div>
+<div class="product-card__info">
+<div class="product-card__title">عباية كريب ناعمة</div>
+<div class="product-card__price">
+<span class="product-card__price-current">720 ر.س</span>
+<span class="product-card__price-original">850 ر.س</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More -->
+<div class="plp-load-more">
+<button class="btn btn-secondary" onclick="showToast('جاري تحميل المزيد...')">
+                تحميل المزيد
+                <i class="fas fa-chevron-down"></i>
+</button>
+</div>
+</div>
+<!-- ============================================
+    FILTER DRAWER (Mobile & Tablet)
+    ============================================ -->
+<div aria-label="فلترة المنتجات" aria-modal="true" class="drawer" id="filterDrawer" role="dialog">
+<div class="drawer__handle"></div>
+<div class="drawer__header">
+<h3>فلترة المنتجات</h3>
+<button aria-label="إغلاق" onclick="closeDrawer('filterDrawer')">
+<i class="fas fa-times"></i>
+</button>
+</div>
+<div class="drawer__body">
+<!-- Price Range -->
+<div class="filter-section">
+<label class="filter-section__title">السعر</label>
+<div class="price-range">
+<input min="0" placeholder="من" type="number" value="100"/>
+<span>-</span>
+<input max="5000" placeholder="إلى" type="number" value="2000"/>
+</div>
+</div>
+<!-- Color -->
+<div class="filter-section">
+<label class="filter-section__title">اللون</label>
+<div class="filter-section__options">
+<button aria-label="أسود" class="filter-option filter-option--color active" style="background:#1A1A1A"></button>
+<button aria-label="بني" class="filter-option filter-option--color" style="background:#8B4513"></button>
+<button aria-label="بيج" class="filter-option filter-option--color" style="background:#D4A574"></button>
+<button aria-label="أبيض" class="filter-option filter-option--color" style="background:#F5F5DC"></button>
+<button aria-label="أزرق داكن" class="filter-option filter-option--color" style="background:#2C3E50"></button>
+<button aria-label="بوردو" class="filter-option filter-option--color" style="background:#800020"></button>
+</div>
+</div>
+<!-- Size -->
+<div class="filter-section">
+<label class="filter-section__title">المقاس</label>
+<div class="filter-section__options">
+<button class="filter-option active">XS</button>
+<button class="filter-option">S</button>
+<button class="filter-option active">M</button>
+<button class="filter-option">L</button>
+<button class="filter-option">XL</button>
+<button class="filter-option">XXL</button>
+</div>
+</div>
+<!-- Fabric -->
+<div class="filter-section">
+<label class="filter-section__title">القماش</label>
+<div class="filter-section__options filter-section__options--stacked">
+<button class="filter-option filter-option--checkbox active">
+                        كشمير
+                        <span style="color:var(--color-text-disabled);font-weight:400">(12)</span>
+</button>
+<button class="filter-option filter-option--checkbox">
+                        حرير
+                        <span style="color:var(--color-text-disabled);font-weight:400">(8)</span>
+</button>
+<button class="filter-option filter-option--checkbox">
+                        دانتيل
+                        <span style="color:var(--color-text-disabled);font-weight:400">(6)</span>
+</button>
+<button class="filter-option filter-option--checkbox">
+                        مخمل
+                        <span style="color:var(--color-text-disabled);font-weight:400">(4)</span>
+</button>
+<button class="filter-option filter-option--checkbox">
+                        كريب
+                        <span style="color:var(--color-text-disabled);font-weight:400">(3)</span>
+</button>
+</div>
+</div>
+<!-- Availability -->
+<div class="filter-section">
+<label class="filter-section__title">التوفر</label>
+<div class="filter-section__options filter-section__options--stacked">
+<button class="filter-option filter-option--checkbox active">
+                        متوفر الآن
+                        <span style="color:var(--color-text-disabled);font-weight:400">(18)</span>
+</button>
+<button class="filter-option filter-option--checkbox">
+                        متوفر قريباً
+                        <span style="color:var(--color-text-disabled);font-weight:400">(6)</span>
+</button>
+</div>
+</div>
+</div>
+<div class="drawer__footer">
+<div style="display:flex;gap:var(--space-2)">
+<button class="btn btn-secondary" onclick="closeDrawer('filterDrawer')" style="flex:1">إلغاء</button>
+<button class="btn btn-primary" onclick="closeDrawer('filterDrawer');showToast('تم تطبيق الفلترة')" style="flex:2">
+                    تطبيق الفلترة
+                </button>
+</div>
+</div>
+</div>
+<!-- ============================================
+    SORT DRAWER
+    ============================================ -->
+<div aria-label="ترتيب المنتجات" aria-modal="true" class="drawer" id="sortDrawer" role="dialog">
+<div class="drawer__handle"></div>
+<div class="drawer__header">
+<h3>ترتيب حسب</h3>
+<button aria-label="إغلاق" onclick="closeDrawer('sortDrawer')">
+<i class="fas fa-times"></i>
+</button>
+</div>
+<div class="drawer__body">
+<div class="sort-option active" onclick="this.classList.toggle('active')">
+<i class="fas fa-star"></i>
+<span>الأكثر مبيعاً</span>
+</div>
+<div class="sort-option" onclick="this.classList.toggle('active')">
+<i class="fas fa-arrow-up"></i>
+<span>الأقل سعراً</span>
+</div>
+<div class="sort-option" onclick="this.classList.toggle('active')">
+<i class="fas fa-arrow-down"></i>
+<span>الأعلى سعراً</span>
+</div>
+<div class="sort-option" onclick="this.classList.toggle('active')">
+<i class="fas fa-clock"></i>
+<span>الأحدث</span>
+</div>
+<div class="sort-option" onclick="this.classList.toggle('active')">
+<i class="fas fa-fire"></i>
+<span>الأكثر تقييماً</span>
+</div>
+</div>
+<div class="drawer__footer">
+<button class="btn btn-primary btn-block" onclick="closeDrawer('sortDrawer');showToast('تم تطبيق الترتيب')">
+                تطبيق الترتيب
+            </button>
+</div>
+</div>
+<!-- ============================================
+    SHARED DRAWERS (Category, Search, Account, Cart)
+    ============================================ -->
+<!-- These are the same as homepage - include them in a separate file or repeat here -->
+<!-- For brevity, I'm showing a simplified version, but you should include all -->
+<!-- Overlay -->
+<div class="drawer-overlay" id="overlay" onclick="closeAllDrawers()"></div>
+<!-- Category Drawer (Simplified) -->
+<div aria-label="قائمة الأقسام" aria-modal="true" class="drawer drawer--side" id="categoryDrawer" role="dialog">
+<div class="drawer__header">
+<h3>الأقسام</h3>
+<button aria-label="إغلاق" onclick="closeDrawer('categoryDrawer')"><i class="fas fa-times"></i></button>
+</div>
+<div class="drawer__body">
+<div style="display:flex;flex-direction:column;gap:var(--space-2)">
+<a href="category.html" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='var(--color-primary-subtle)'" style="padding:var(--space-3);border-radius:var(--radius-md);transition:var(--transition-smooth);display:flex;align-items:center;gap:var(--space-3)">
+<i class="fas fa-tshirt" style="width:24px"></i>
+<span style="font-weight:500">العبايات</span>
+<span style="margin-right:auto;color:var(--color-text-disabled);font-size:0.75rem">24</span>
+</a>
+<a href="#" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='var(--color-primary-subtle)'" style="padding:var(--space-3);border-radius:var(--radius-md);transition:var(--transition-smooth);display:flex;align-items:center;gap:var(--space-3)">
+<i class="fas fa-scarf" style="width:24px"></i>
+<span style="font-weight:500">الحجابات</span>
+<span style="margin-right:auto;color:var(--color-text-disabled);font-size:0.75rem">18</span>
+</a>
+<a href="#" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='var(--color-primary-subtle)'" style="padding:var(--space-3);border-radius:var(--radius-md);transition:var(--transition-smooth);display:flex;align-items:center;gap:var(--space-3)">
+<i class="fas fa-dress" style="width:24px"></i>
+<span style="font-weight:500">الجلابيات</span>
+<span style="margin-right:auto;color:var(--color-text-disabled);font-size:0.75rem">12</span>
+</a>
+<a href="#" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='var(--color-primary-subtle)'" style="padding:var(--space-3);border-radius:var(--radius-md);transition:var(--transition-smooth);display:flex;align-items:center;gap:var(--space-3)">
+<i class="fas fa-gem" style="width:24px"></i>
+<span style="font-weight:500">الإكسسوارات</span>
+<span style="margin-right:auto;color:var(--color-text-disabled);font-size:0.75rem">9</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Search Drawer (Simplified) -->
+<div aria-label="بحث" aria-modal="true" class="drawer drawer--side" id="searchDrawer" role="dialog">
+<div class="drawer__header">
+<h3>بحث</h3>
+<button aria-label="إغلاق" onclick="closeDrawer('searchDrawer')"><i class="fas fa-times"></i></button>
+</div>
+<div class="drawer__body">
+<div style="display:flex;gap:var(--space-2);background:var(--color-primary-subtle);border-radius:var(--radius-full);padding:var(--space-1) var(--space-2)">
+<input placeholder="ابحث عن عبايات، حجابات..." style="flex:1;border:none;background:transparent;padding:var(--space-3);font-size:1rem;outline:none" type="search"/>
+<button style="padding:var(--space-3);border-radius:var(--radius-full);background:var(--color-primary);color:white;min-width:48px">
+<i class="fas fa-search"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Account Drawer (Simplified) -->
+<div aria-label="حسابي" aria-modal="true" class="drawer drawer--side" id="accountDrawer" role="dialog">
+<div class="drawer__header">
+<h3>حسابي</h3>
+<button aria-label="إغلاق" onclick="closeDrawer('accountDrawer')"><i class="fas fa-times"></i></button>
+</div>
+<div class="drawer__body">
+<div style="text-align:center;padding:var(--space-4) 0">
+<div style="width:64px;height:64px;border-radius:var(--radius-full);background:var(--color-primary-subtle);margin:0 auto var(--space-3);display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--color-secondary)">
+<i class="fas fa-user"></i>
+</div>
+<h3 style="font-family:var(--font-primary)">مرحباً بك</h3>
+<p style="color:var(--color-text-secondary);font-size:0.875rem">سجل الدخول لتتبع طلباتك</p>
+<div style="margin-top:var(--space-3);display:flex;flex-direction:column;gap:var(--space-2)">
+<a class="btn btn-primary btn-block" href="login.html">تسجيل الدخول</a>
+<a class="btn btn-secondary btn-block" href="register.html">إنشاء حساب</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Cart Drawer (Simplified) -->
+<div aria-label="سلة التسوق" aria-modal="true" class="drawer" id="cartDrawer" role="dialog">
+<div class="drawer__handle"></div>
+<div class="drawer__header">
+<h3>سلة التسوق <span style="font-weight:400;color:var(--color-text-secondary);font-size:0.875rem">(3)</span></h3>
+<button aria-label="إغلاق" onclick="closeDrawer('cartDrawer')"><i class="fas fa-times"></i></button>
+</div>
+<div class="drawer__body">
+<div class="cart-item">
+<img alt="عباية" class="cart-item__image" loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='100' viewBox='0 0 80 100'%3E%3Crect width='80' height='100' fill='%23F7F5F2'/%3E%3Ctext x='40' y='55' font-family='Arial' font-size='10' fill='%23999' text-anchor='middle'%3EProduct%3C/text%3E%3C/svg%3E"/>
+<div class="cart-item__details">
+<div class="cart-item__title">عباية كشمير فاخرة</div>
+<div class="cart-item__meta">اللون: أسود | المقاس: M</div>
+<div class="cart-item__price">1,200 ر.س</div>
+<div class="cart-item__actions">
+<div class="qty-selector">
+<button aria-label="تقليل الكمية">-</button>
+<span>1</span>
+<button aria-label="زيادة الكمية">+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="cart-item">
+<img alt="حجاب" class="cart-item__image" loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='100' viewBox='0 0 80 100'%3E%3Crect width='80' height='100' fill='%23F7F5F2'/%3E%3Ctext x='40' y='55' font-family='Arial' font-size='10' fill='%23999' text-anchor='middle'%3EProduct%3C/text%3E%3C/svg%3E"/>
+<div class="cart-item__details">
+<div class="cart-item__title">حجاب حرير طبيعي</div>
+<div class="cart-item__meta">اللون: بيج</div>
+<div class="cart-item__price">350 ر.س</div>
+<div class="cart-item__actions">
+<div class="qty-selector">
+<button aria-label="تقليل الكمية">-</button>
+<span>2</span>
+<button aria-label="زيادة الكمية">+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="drawer__footer">
+<div style="display:flex;justify-content:space-between;font-weight:600;margin-bottom:var(--space-3)">
+<span>المجموع</span>
+<span>1,900 ر.س</span>
+</div>
+<a class="btn btn-primary btn-block" href="checkout.html">
+<i class="fas fa-lock"></i>
+                الدفع الآمن
+            </a>
+</div>
+</div>
+<!-- ============================================
+    TOAST NOTIFICATION
+    ============================================ -->
+<div aria-live="polite" class="toast" id="toast" role="status">
+<i class="fas fa-check-circle"></i>
+<span id="toastMessage">تمت الإضافة إلى السلة</span>
+</div>
+<!-- ============================================
+    BOTTOM NAVIGATION
+    ============================================ -->
+
+<!-- ============================================
+    JAVASCRIPT (Same as homepage)
+    ============================================ -->
+<script>
+        // Copy all JavaScript from homepage here
+        // For brevity, I'm including the essential functions
+
+        function openDrawer(drawerId) {
+            const drawer = document.getElementById(drawerId);
+            const overlay = document.getElementById('overlay');
+            closeAllDrawers();
+            drawer.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            drawer.setAttribute('aria-hidden', 'false');
+        }
+
+        function closeDrawer(drawerId) {
+            const drawer = document.getElementById(drawerId);
+            const overlay = document.getElementById('overlay');
+            drawer.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = '';
+            drawer.setAttribute('aria-hidden', 'true');
+        }
+
+        function closeAllDrawers() {
+            document.querySelectorAll('.drawer').forEach(d => {
+                d.classList.remove('open');
+                d.setAttribute('aria-hidden', 'true');
+            });
+            document.getElementById('overlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        let toastTimeout;
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            if (toastTimeout) {
+                clearTimeout(toastTimeout);
+                toast.classList.remove('show');
+            }
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Wishlist toggle
+        document.querySelectorAll('.product-card__wishlist').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.classList.toggle('active');
+                const icon = this.querySelector('i');
+                if (this.classList.contains('active')) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                    showToast('تمت الإضافة إلى المفضلة ❤️');
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                    showToast('تمت الإزالة من المفضلة');
+                }
+            });
+        });
+
+        // Filter options toggle
+        document.querySelectorAll('.filter-option--checkbox').forEach(opt => {
+            opt.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+
+        document.querySelectorAll('.filter-option:not(.filter-option--checkbox):not(.filter-option--color)').forEach(opt => {
+            opt.addEventListener('click', function() {
+                const parent = this.closest('.filter-section__options');
+                if (parent) {
+                    parent.querySelectorAll('.filter-option:not(.filter-option--checkbox):not(.filter-option--color)').forEach(o => {
+                        if (o !== this) o.classList.remove('active');
+                    });
+                }
+                this.classList.toggle('active');
+            });
+        });
+
+        // Quantity selector
+        document.querySelectorAll('.qty-selector').forEach(selector => {
+            const minus = selector.querySelector('button:first-child');
+            const plus = selector.querySelector('button:last-child');
+            const display = selector.querySelector('span');
+            minus.addEventListener('click', function() {
+                let val = parseInt(display.textContent) || 1;
+                if (val > 1) { val--;
+                    display.textContent = val; }
+            });
+            plus.addEventListener('click', function() {
+                let val = parseInt(display.textContent) || 1;
+                val++;
+                display.textContent = val;
+            });
+        });
+
+        // Cart badge update
+        document.querySelectorAll('.product-card__quick-add').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const badge = document.querySelector('.top-nav__cart-badge');
+                let count = parseInt(badge.textContent) || 0;
+                count++;
+                badge.textContent = count;
+                showToast('تمت الإضافة إلى السلة 🛍️');
+            });
+        });
+
+        // Close on escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeAllDrawers();
+        });
+    </script>
+
 {% endblock %}

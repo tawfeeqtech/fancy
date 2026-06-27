@@ -1,0 +1,57 @@
+{#
+| Variable | Type | Description |
+|----------|------|-------------|
+| component.featured_products_cta2_text | string | Featured Products Cta2 Text |
+| component.featured_products_title | string | Featured Products Title |
+| component.featured_products_cta1_text | string | Featured Products Cta1 Text |
+| component.featured_products_cta1_link | items | Featured Products Cta1 Link |
+| position | int | Sort order (0-based) |
+#}
+
+<section aria-labelledby="bestsellers-title" class="section" dir="auto">
+<div class="container">
+<div class="section-header">
+<h2 class="section-header__title" id="bestsellers-title">{{ component.featured_products_title }}</h2>
+<a class="section-header__link" href="{{ component.featured_products_cta1_link }}">{{ component.featured_products_cta1_text }}</a>
+</div>
+<div class="grid-2">
+<div class="product-card animate-in">
+<div class="product-card__image-wrapper">
+<div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+<i class="fas fa-tshirt"></i>
+</div>
+<button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">{{ component.featured_products_cta2_text }}</button>
+<button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
+<i class="fas fa-plus"></i> أضف للسلة
+                            </button>
+</div>
+<div class="product-card__info">
+<div class="product-card__title">عباية بيضاء أنيقة</div>
+<div class="product-card__price">
+<span class="product-card__price-current">1,050 ر.س</span>
+</div>
+</div>
+</div>
+<div class="product-card animate-in animate-in--delay-1">
+<div class="product-card__image-wrapper">
+<div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+<i class="fas fa-tshirt"></i>
+</div>
+<button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">
+<i class="far fa-heart"></i>
+</button>
+<button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
+<i class="fas fa-plus"></i> أضف للسلة
+                            </button>
+</div>
+<div class="product-card__info">
+<div class="product-card__title">عباية زرقاء داكنة فاخرة</div>
+<div class="product-card__price">
+<span class="product-card__price-current">1,300 ر.س</span>
+<span class="product-card__price-original">1,600 ر.س</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>

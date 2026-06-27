@@ -1,0 +1,84 @@
+{#
+  Salla Theme — إنشاء حساب - نورا
+  Page type: static-page
+  Source: register.html
+#}
+
+{% extends "layouts.master" %}
+
+{% block content %}
+
+
+{# Available Salla variables for this page type: page.title, page.content #}
+<div class="auth-page">
+<div class="auth-card">
+<div class="auth-card__logo">نور<span>ا</span></div>
+<h1 class="auth-card__title">انضمي إلى نورا</h1>
+<p class="auth-card__subtitle">أنشئ حسابك واستمتع بتجربة تسوق فاخرة</p>
+<form onsubmit="event.preventDefault(); showToast('جاري إنشاء الحساب...'); setTimeout(() =&gt; window.location.href='profile.html', 1500)">
+<div class="form-row">
+<div class="form-group">
+<label>الاسم الأول</label>
+<input placeholder="نورة" required="" type="text"/>
+</div>
+<div class="form-group">
+<label>الاسم الأخير</label>
+<input placeholder="الحسن" required="" type="text"/>
+</div>
+</div>
+<div class="form-group">
+<label>البريد الإلكتروني</label>
+<input placeholder="example@email.com" required="" type="email"/>
+</div>
+<div class="form-group">
+<label>رقم الجوال</label>
+<input placeholder="05XXXXXXXX" required="" type="tel"/>
+</div>
+<div class="form-group">
+<label>كلمة المرور</label>
+<input minlength="8" placeholder="•••••••• (8 أحرف على الأقل)" required="" type="password"/>
+</div>
+<div class="form-group">
+<label>تأكيد كلمة المرور</label>
+<input placeholder="••••••••" required="" type="password"/>
+</div>
+<div class="auth-card__terms">
+                    بالتسجيل أنت توافق على <a href="#">شروط الخدمة</a> و <a href="#">سياسة الخصوصية</a>
+</div>
+<button class="btn btn-primary" type="submit">إنشاء حساب</button>
+</form>
+<div class="auth-card__footer">
+                لديك حساب بالفعل؟ <a href="login.html">تسجيل الدخول</a>
+</div>
+</div>
+</div>
+<div aria-live="polite" class="toast" id="toast" role="status">
+<i class="fas fa-check-circle"></i>
+<span id="toastMessage">تمت العملية بنجاح</span>
+</div>
+<script>
+        let toastTimeout;
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            if (toastTimeout) { clearTimeout(toastTimeout);
+                toast.classList.remove('show'); }
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            toastTimeout = setTimeout(() => { toast.classList.remove('show'); }, 3000);
+        }
+
+        // Password match validation
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const password = this.querySelector('input[type="password"]');
+            const confirm = this.querySelectorAll('input[type="password"]')[1];
+            if (password.value !== confirm.value) {
+                e.preventDefault();
+                showToast('كلمة المرور غير متطابقة');
+                confirm.style.borderColor = 'var(--color-error)';
+            }
+        });
+    </script>
+
+{% endblock %}
