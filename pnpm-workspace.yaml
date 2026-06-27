@@ -1,5 +1,2 @@
-ignoredBuiltDependencies:
-  - '@parcel/watcher'
-  - bufferutil
-  - es5-ext
-  - utf-8-validate
+allowBuilds:
+  '@parcel/watcher': set this to true or false
