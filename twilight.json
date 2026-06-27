@@ -1562,5 +1562,97 @@
   "description": {
     "ar": "مجموعة كبيرة من المزايا لدعم تجارتك وتقديم تجربة تسوق مثيرة لعملائك",
     "en": "A wide range of features to support your business and provide an exciting shopping experience for your customers"
-  }
+  },
+  "groups": [
+    {
+      "id": "test_group",
+      "title": {
+        "ar": "🧪 مجموعة اختبار",
+        "en": "🧪 Test Group"
+      },
+      "settings": [
+        "header_is_sticky"
+      ]
+    },
+    {
+      "id": "header",
+      "title": {
+        "ar": "أعلى الصفحة",
+        "en": "Header"
+      },
+      "settings": [
+        "header_is_sticky",
+        "topnav_is_dark",
+        "important_links",
+        "enable_more_menu"
+      ]
+    },
+    {
+      "id": "footer",
+      "title": {
+        "ar": "أسفل الصفحة",
+        "en": "Footer"
+      },
+      "settings": [
+        "footer_is_dark"
+      ]
+    },
+    {
+      "id": "home_page",
+      "title": {
+        "ar": "الصفحة الرئيسية",
+        "en": "Home Page"
+      },
+      "settings": [
+        "squar_photo_bg_image_size",
+        "vertical_fixed_products",
+        "is_more_button_enabled"
+      ]
+    },
+    {
+      "id": "product_page",
+      "title": {
+        "ar": "صفحة المنتج",
+        "en": "Product Page"
+      },
+      "settings": [
+        "product_show_breadcrumbs",
+        "product_index_show_breadcrumbs",
+        "enable_add_product_toast",
+        "notify_when_available_in_card",
+        "sticky_add_to_cart",
+        "show_tags",
+        "slider_background_size",
+        "imageZoom"
+      ]
+    },
+    {
+      "id": "general_settings",
+      "title": {
+        "ar": "⚙️ الإعدادات العامة",
+        "en": "⚙️ General Settings"
+      },
+      "settings": [
+        "quick_donation_enabled",
+        "store_visitors_enabled",
+        "social_proof_enabled",
+        "social_proof_product_source",
+        "social_proof_text",
+        "social_proof_first_delay",
+        "social_proof_interval",
+        "social_proof_duration",
+        "social_proof_position",
+        "social_proof_mobile_only",
+        "social_proof_stop_after_close",
+        "social_proof_sound_enabled",
+        "cart_notification_enabled",
+        "enhanced_addresses_enabled",
+        "back_to_top_enabled",
+        "announcement_sticky",
+        "bottom_nav_enabled",
+        "store_bg_image_enabled",
+        "contact_methods_enabled"
+      ]
+    }
+  ]
 }
