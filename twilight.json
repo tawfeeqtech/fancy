@@ -283,6 +283,18 @@
       "variant": "h6"
     },
     {
+      "type": "static",
+      "format": "line",
+      "id": "line_donation_sub"
+    },
+    {
+      "type": "static",
+      "format": "title",
+      "id": "label_التبرع_السريع",
+      "value": "<div style='background:#059669;padding:12px;border-radius:8px;text-align:center'><h6 style='color:#fff;font-weight:bold;font-size:14px;'>💰 التبرع السريع</h6></div>",
+      "variant": "h6"
+    },
+    {
       "id": "quick_donation_enabled",
       "type": "boolean",
       "format": "switch",
@@ -290,6 +302,18 @@
       "value": false,
       "selected": false,
       "description": "يضيف زر تبرع سريع للزوار"
+    },
+    {
+      "type": "static",
+      "format": "line",
+      "id": "line_visitors_sub"
+    },
+    {
+      "type": "static",
+      "format": "title",
+      "id": "label_عدد_الزوار",
+      "value": "<div style='background:#059669;padding:12px;border-radius:8px;text-align:center'><h6 style='color:#fff;font-weight:bold;font-size:14px;'>👥 عدد الزوار</h6></div>",
+      "variant": "h6"
     },
     {
       "id": "store_visitors_enabled",
@@ -301,13 +325,25 @@
       "description": "يعرض عدد الزوار الحاليين في المتجر"
     },
     {
+      "type": "static",
+      "format": "line",
+      "id": "line_socialproof_sub"
+    },
+    {
+      "type": "static",
+      "format": "title",
+      "id": "label_إشعار_الشراء_الأخير",
+      "value": "<div style='background:#059669;padding:12px;border-radius:8px;text-align:center'><h6 style='color:#fff;font-weight:bold;font-size:14px;'>📢 إشعار الشراء الأخير</h6></div>",
+      "variant": "h6"
+    },
+    {
       "id": "social_proof_enabled",
       "type": "boolean",
       "format": "switch",
       "label": "تفعيل إشعار الشراء الأخير",
       "value": false,
       "selected": false,
-      "description": "يعرض إشعاراً بأسفل الشاشة يوحي بأن عميلاً اشترى منتجاً من متجرك"
+      "description": "يعرض إشعاراً يوحي بأن عميلاً اشترى منتجاً من متجرك"
     },
     {
       "id": "social_proof_product_source",
@@ -320,24 +356,24 @@
         {
           "label": "أحدث المنتجات",
           "value": "latest",
-          "key": "9880cfca-1489-491f-9529-337ab0dc5a74"
+          "key": "574796af-0cf9-4183-a35b-7f4e598f6984"
         }
       ],
       "options": [
         {
           "label": "أحدث المنتجات",
           "value": "latest",
-          "key": "9880cfca-1489-491f-9529-337ab0dc5a74"
+          "key": "574796af-0cf9-4183-a35b-7f4e598f6984"
         },
         {
           "label": "المنتجات الأعلى مبيعاً",
           "value": "best_selling",
-          "key": "d70ffa8b-9148-4552-989f-c6c6aba64d9b"
+          "key": "84c58064-45c8-48dc-b26c-945b1f40b414"
         },
         {
           "label": "عشوائي",
           "value": "random",
-          "key": "cdc7384d-74bb-41dd-a856-4abba1392a7e"
+          "key": "0f79df91-9972-414b-bab5-f0d7af7efb30"
         }
       ]
     },
@@ -387,19 +423,19 @@
         {
           "label": "أسفل الشاشة",
           "value": "bottom",
-          "key": "8eeb4dfb-bb2b-4460-aed8-5d9cff2ebb3b"
+          "key": "abe10004-4e35-4f10-a5a2-023b409d3479"
         }
       ],
       "options": [
         {
           "label": "أسفل الشاشة",
           "value": "bottom",
-          "key": "8eeb4dfb-bb2b-4460-aed8-5d9cff2ebb3b"
+          "key": "abe10004-4e35-4f10-a5a2-023b409d3479"
         },
         {
           "label": "أعلى الشاشة",
           "value": "top",
-          "key": "eea8c127-1fd4-41db-8c51-21ae614926b5"
+          "key": "5274a4d2-ffd5-4d4b-84d6-3c8772f3266d"
         }
       ]
     },
@@ -427,7 +463,19 @@
       "label": "تشغيل تنبيه صوتي عند ظهور الإشعار",
       "value": false,
       "selected": false,
-      "description": "تنبيه صوتي خفيف جاهز في الثيم (لا حاجة لرفع ملف صوت)"
+      "description": "تنبيه صوتي خفيف جاهز في الثيم"
+    },
+    {
+      "type": "static",
+      "format": "line",
+      "id": "line_cart_sub"
+    },
+    {
+      "type": "static",
+      "format": "title",
+      "id": "label_إشعارات_السلة",
+      "value": "<div style='background:#059669;padding:12px;border-radius:8px;text-align:center'><h6 style='color:#fff;font-weight:bold;font-size:14px;'>🛒 إشعارات السلة</h6></div>",
+      "variant": "h6"
     },
     {
       "id": "cart_notification_enabled",
@@ -436,6 +484,18 @@
       "label": "تفعيل إشعار الإضافة للسلة",
       "value": true,
       "selected": true
+    },
+    {
+      "type": "static",
+      "format": "line",
+      "id": "line_experience_sub"
+    },
+    {
+      "type": "static",
+      "format": "title",
+      "id": "label_تجربة_المتجر",
+      "value": "<div style='background:#059669;padding:12px;border-radius:8px;text-align:center'><h6 style='color:#fff;font-weight:bold;font-size:14px;'>🏪 تجربة المتجر</h6></div>",
+      "variant": "h6"
     },
     {
       "id": "enhanced_addresses_enabled",
@@ -1348,7 +1408,7 @@
       ]
     },
     {
-      "key": "ba843ce0-3c7d-4571-b227-0cb49cbe0ff0",
+      "key": "9947daad-41f0-4388-8c26-6c02a2e23420",
       "title": {
         "en": "Featured Products",
         "ar": "المنتجات المميزة"
@@ -1357,39 +1417,6 @@
       "path": "home.converted-featured-products",
       "image": "",
       "fields": [
-        {
-          "id": "featured_products_cta1_text",
-          "type": "string",
-          "format": "text",
-          "label": "Featured Products Cta1 Text",
-          "icon": "sicon-format-text-alt",
-          "value": "عرض الكل",
-          "required": false,
-          "multilanguage": true,
-          "maxLength": 100
-        },
-        {
-          "id": "featured_products_title",
-          "type": "string",
-          "format": "text",
-          "label": "Featured Products Title",
-          "icon": "sicon-format-text-alt",
-          "value": "الوافد الجديد",
-          "required": true,
-          "multilanguage": true,
-          "maxLength": 100
-        },
-        {
-          "id": "featured_products_cta2_text",
-          "type": "string",
-          "format": "text",
-          "label": "Featured Products Cta2 Text",
-          "icon": "sicon-format-text-alt",
-          "value": "",
-          "required": false,
-          "multilanguage": true,
-          "maxLength": 100
-        },
         {
           "id": "featured_products_description",
           "type": "string",
@@ -1463,11 +1490,44 @@
               "value": "custom"
             }
           ]
+        },
+        {
+          "id": "featured_products_cta1_text",
+          "type": "string",
+          "format": "text",
+          "label": "Featured Products Cta1 Text",
+          "icon": "sicon-format-text-alt",
+          "value": "عرض الكل",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100
+        },
+        {
+          "id": "featured_products_cta2_text",
+          "type": "string",
+          "format": "text",
+          "label": "Featured Products Cta2 Text",
+          "icon": "sicon-format-text-alt",
+          "value": "",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100
+        },
+        {
+          "id": "featured_products_title",
+          "type": "string",
+          "format": "text",
+          "label": "Featured Products Title",
+          "icon": "sicon-format-text-alt",
+          "value": "الوافد الجديد",
+          "required": true,
+          "multilanguage": true,
+          "maxLength": 100
         }
       ]
     },
     {
-      "key": "290f8967-05f3-4b5d-b963-2efb96601a2e",
+      "key": "e2924bfa-e0b4-4ecc-bc2d-0047a1c792f4",
       "title": {
         "en": "Hero",
         "ar": "البانر الرئيسي"
@@ -1476,17 +1536,6 @@
       "path": "home.converted-hero",
       "image": "",
       "fields": [
-        {
-          "id": "hero_cta1_text",
-          "type": "string",
-          "format": "text",
-          "label": "Hero Cta1 Text",
-          "icon": "sicon-format-text-alt",
-          "value": "تسوقي الآن",
-          "required": false,
-          "multilanguage": true,
-          "maxLength": 100
-        },
         {
           "id": "hero_description",
           "type": "string",
@@ -1508,11 +1557,22 @@
           "required": true,
           "multilanguage": true,
           "maxLength": 100
+        },
+        {
+          "id": "hero_cta1_text",
+          "type": "string",
+          "format": "text",
+          "label": "Hero Cta1 Text",
+          "icon": "sicon-format-text-alt",
+          "value": "تسوقي الآن",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100
         }
       ]
     },
     {
-      "key": "2acb9fa5-f261-4166-a054-c40ef5ff1655",
+      "key": "695859f8-74cd-4c62-a8bd-c27f11cb247f",
       "title": {
         "en": "Featured Products",
         "ar": "المنتجات المميزة"
@@ -1521,6 +1581,28 @@
       "path": "home.converted-featured-products-2",
       "image": "",
       "fields": [
+        {
+          "id": "featured_products_cta1_text",
+          "type": "string",
+          "format": "text",
+          "label": "Featured Products Cta1 Text",
+          "icon": "sicon-format-text-alt",
+          "value": "عرض الكل",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100
+        },
+        {
+          "id": "featured_products_cta2_text",
+          "type": "string",
+          "format": "text",
+          "label": "Featured Products Cta2 Text",
+          "icon": "sicon-format-text-alt",
+          "value": "",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100
+        },
         {
           "id": "featured_products_title",
           "type": "string",
@@ -1533,17 +1615,6 @@
           "maxLength": 100
         },
         {
-          "id": "featured_products_cta2_text",
-          "type": "string",
-          "format": "text",
-          "label": "Featured Products Cta2 Text",
-          "icon": "sicon-format-text-alt",
-          "value": "",
-          "required": false,
-          "multilanguage": true,
-          "maxLength": 100
-        },
-        {
           "id": "featured_products_cta1_link",
           "type": "items",
           "format": "variable-list",
@@ -1605,7 +1676,19 @@
               "value": "custom"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "key": "6de3961e-46cc-4e1e-b70e-96866db95399",
+      "title": {
+        "en": "Featured Products",
+        "ar": "المنتجات المميزة"
+      },
+      "icon": "sicon-shopping-bag",
+      "path": "home.converted-featured-products-3",
+      "image": "",
+      "fields": [
         {
           "id": "featured_products_cta1_text",
           "type": "string",
@@ -1616,19 +1699,18 @@
           "required": false,
           "multilanguage": true,
           "maxLength": 100
-        }
-      ]
-    },
-    {
-      "key": "13c308d5-ec96-4bab-85a7-40a7bab1a61e",
-      "title": {
-        "en": "Featured Products",
-        "ar": "المنتجات المميزة"
-      },
-      "icon": "sicon-shopping-bag",
-      "path": "home.converted-featured-products-3",
-      "image": "",
-      "fields": [
+        },
+        {
+          "id": "featured_products_cta2_text",
+          "type": "string",
+          "format": "text",
+          "label": "Featured Products Cta2 Text",
+          "icon": "sicon-format-text-alt",
+          "value": "",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100
+        },
         {
           "id": "featured_products_title",
           "type": "string",
@@ -1641,17 +1723,6 @@
           "maxLength": 100
         },
         {
-          "id": "featured_products_cta2_text",
-          "type": "string",
-          "format": "text",
-          "label": "Featured Products Cta2 Text",
-          "icon": "sicon-format-text-alt",
-          "value": "",
-          "required": false,
-          "multilanguage": true,
-          "maxLength": 100
-        },
-        {
           "id": "featured_products_cta1_link",
           "type": "items",
           "format": "variable-list",
@@ -1713,22 +1784,11 @@
               "value": "custom"
             }
           ]
-        },
-        {
-          "id": "featured_products_cta1_text",
-          "type": "string",
-          "format": "text",
-          "label": "Featured Products Cta1 Text",
-          "icon": "sicon-format-text-alt",
-          "value": "عرض الكل",
-          "required": false,
-          "multilanguage": true,
-          "maxLength": 100
         }
       ]
     },
     {
-      "key": "70269192-723e-419d-8567-10dd8769edd6",
+      "key": "af8f089f-7f9c-4724-8623-26d4528e37b5",
       "title": {
         "en": "Newsletter",
         "ar": "النشرة البريدية"
@@ -1737,6 +1797,17 @@
       "path": "home.converted-newsletter",
       "image": "",
       "fields": [
+        {
+          "id": "newsletter_description",
+          "type": "string",
+          "format": "textarea",
+          "label": "Newsletter Description",
+          "icon": "sicon-typography",
+          "value": "كوني أول من يعرف عن إصداراتنا الجديدة والعروض الحصرية",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 400
+        },
         {
           "id": "newsletter_title",
           "type": "string",
@@ -1758,17 +1829,6 @@
           "required": false,
           "multilanguage": true,
           "maxLength": 100
-        },
-        {
-          "id": "newsletter_description",
-          "type": "string",
-          "format": "textarea",
-          "label": "Newsletter Description",
-          "icon": "sicon-typography",
-          "value": "كوني أول من يعرف عن إصداراتنا الجديدة والعروض الحصرية",
-          "required": false,
-          "multilanguage": true,
-          "maxLength": 400
         }
       ]
     }
@@ -1838,8 +1898,14 @@
         "en": "⚙️ General Settings"
       },
       "settings": [
+        "line_donation_sub",
+        "label_التبرع_السريع",
         "quick_donation_enabled",
+        "line_visitors_sub",
+        "label_عدد_الزوار",
         "store_visitors_enabled",
+        "line_socialproof_sub",
+        "label_إشعار_الشراء_الأخير",
         "social_proof_enabled",
         "social_proof_product_source",
         "social_proof_text",
@@ -1850,7 +1916,11 @@
         "social_proof_mobile_only",
         "social_proof_stop_after_close",
         "social_proof_sound_enabled",
+        "line_cart_sub",
+        "label_إشعارات_السلة",
         "cart_notification_enabled",
+        "line_experience_sub",
+        "label_تجربة_المتجر",
         "enhanced_addresses_enabled",
         "back_to_top_enabled",
         "announcement_sticky",
