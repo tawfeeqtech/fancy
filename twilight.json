@@ -1129,7 +1129,7 @@
       ]
     },
     {
-      "key": "16feab23-3ea6-4f53-8204-27c27c140e9f",
+      "key": "a79ba118-26d5-40c2-9d63-23c88977237b",
       "title": {
         "ar": "أناقة لا مثيل لها",
         "en": "Hero"
@@ -1138,7 +1138,7 @@
       "icon": "sicon-image-carousel",
       "fields": [
         {
-          "id": "static-title-48c520",
+          "id": "static-title-a22b1b",
           "type": "static",
           "format": "title",
           "value": "📝 المحتوى"
@@ -1168,7 +1168,137 @@
           "placeholder": "أدخل العنوان الفرعي"
         },
         {
-          "id": "static-title-e1f70f",
+          "id": "static-title-4dc79e",
+          "type": "static",
+          "format": "title",
+          "value": "🔤 الخطوط"
+        },
+        {
+          "id": "title_font_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم خط العنوان الرئيسي",
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
+            {
+              "label": "صغير (14px)",
+              "value": "14",
+              "key": "aaf166df-7079-495f-860e-1682faa15f74"
+            },
+            {
+              "label": "عادي (16px)",
+              "value": "16",
+              "key": "c59a275b-b831-44b6-bf2d-793931267e77"
+            },
+            {
+              "label": "متوسط (18px)",
+              "value": "18",
+              "key": "26076aa5-2519-4774-b21f-f7be159d26da"
+            },
+            {
+              "label": "كبير (20px)",
+              "value": "20",
+              "key": "08b3afae-9207-4e4f-86b5-40553680b27e"
+            },
+            {
+              "label": "كبير جداً (24px)",
+              "value": "24",
+              "key": "0f126acb-2fac-45fa-800f-41ae34654c9d"
+            },
+            {
+              "label": "ضخم (32px)",
+              "value": "32",
+              "key": "d253c602-ce17-46bb-9e5a-5167e4e86a48"
+            },
+            {
+              "label": "ضخم جداً (48px)",
+              "value": "48",
+              "key": "c2053f10-7e36-42cd-96ca-6c892a0c8f5e"
+            }
+          ],
+          "selected": [
+            {
+              "label": "ضخم جداً (48px)",
+              "value": "48",
+              "key": "c2053f10-7e36-42cd-96ca-6c892a0c8f5e"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "subtitle_font_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم خط العنوان الفرعي",
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
+            {
+              "label": "صغير (14px)",
+              "value": "14",
+              "key": "c78607d6-95de-46a4-88d8-c2adfd479468"
+            },
+            {
+              "label": "عادي (16px)",
+              "value": "16",
+              "key": "25124e5e-4600-438a-ab64-4214c6749dcd"
+            },
+            {
+              "label": "متوسط (18px)",
+              "value": "18",
+              "key": "83fcba25-fd9d-4701-97f2-1c4eba9f422c"
+            },
+            {
+              "label": "كبير (20px)",
+              "value": "20",
+              "key": "c6412560-6c27-49ca-914e-e0b2c5c114a5"
+            },
+            {
+              "label": "كبير جداً (24px)",
+              "value": "24",
+              "key": "3de058b6-91b7-4215-9329-78989e4a024c"
+            },
+            {
+              "label": "ضخم (32px)",
+              "value": "32",
+              "key": "bb0bac07-70b3-4f09-b543-a8b8b2781da9"
+            },
+            {
+              "label": "ضخم جداً (48px)",
+              "value": "48",
+              "key": "fbf47b3a-96b5-4a06-8a0b-ab8ad6da8f5f"
+            }
+          ],
+          "selected": [
+            {
+              "label": "كبير (20px)",
+              "value": "20",
+              "key": "c6412560-6c27-49ca-914e-e0b2c5c114a5"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "title_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون العنوان الرئيسي",
+          "icon": "sicon-pencil-ruler",
+          "value": "#ffffff",
+          "required": false
+        },
+        {
+          "id": "subtitle_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون العنوان الفرعي",
+          "icon": "sicon-pencil-ruler",
+          "value": "#e5e7eb",
+          "required": false
+        },
+        {
+          "id": "static-title-9fdcda",
           "type": "static",
           "format": "title",
           "value": "🖼️ الوسائط"
@@ -1197,53 +1327,66 @@
           "type": "items",
           "format": "dropdown-list",
           "label": "شفافية الطبقة",
-          "icon": "sicon-list",
-          "value": "40",
-          "required": false,
-          "maxLength": 1,
-          "multichoice": false,
-          "source": "static",
-          "sources": [
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
             {
               "label": "بدون",
-              "value": "0"
+              "value": "0",
+              "key": "5048cd72-1371-4e80-8e7e-a4408b387e08"
             },
             {
               "label": "10%",
-              "value": "10"
+              "value": "10",
+              "key": "08bd8e78-f13e-442d-b201-631deb6aa74f"
             },
             {
               "label": "20%",
-              "value": "20"
+              "value": "20",
+              "key": "145dc02b-8d55-4982-8240-8d9e142e92a5"
             },
             {
               "label": "30%",
-              "value": "30"
+              "value": "30",
+              "key": "3b3b1fbf-b5e3-465f-a312-aff014d48c9b"
             },
             {
               "label": "40%",
-              "value": "40"
+              "value": "40",
+              "key": "12d9863e-3463-4241-8841-4d21708e806f"
             },
             {
               "label": "50%",
-              "value": "50"
+              "value": "50",
+              "key": "c47aa4b7-33a8-420e-b252-9dea3d0b0cb6"
             },
             {
               "label": "60%",
-              "value": "60"
+              "value": "60",
+              "key": "8a7ec4e6-83e9-4489-8e74-4ddb4ed0adef"
             },
             {
               "label": "70%",
-              "value": "70"
+              "value": "70",
+              "key": "13720aea-ef62-4d63-a719-095a14ee5ca0"
             },
             {
               "label": "80%",
-              "value": "80"
+              "value": "80",
+              "key": "7240bc57-9fb9-470b-a0ae-c77a99df8fe1"
             }
-          ]
+          ],
+          "selected": [
+            {
+              "label": "40%",
+              "value": "40",
+              "key": "12d9863e-3463-4241-8841-4d21708e806f"
+            }
+          ],
+          "required": false
         },
         {
-          "id": "static-title-75fa8f",
+          "id": "static-title-532994",
           "type": "static",
           "format": "title",
           "value": "📐 التخطيط"
@@ -1253,56 +1396,71 @@
           "type": "items",
           "format": "dropdown-list",
           "label": "ارتفاع البانر",
-          "icon": "sicon-list",
-          "value": "large",
-          "required": false,
-          "maxLength": 1,
-          "multichoice": false,
-          "source": "static",
-          "sources": [
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
             {
               "label": "صغير (300px)",
-              "value": "small"
+              "value": "small",
+              "key": "ad16315f-a148-4f64-aeba-09ba07818ff7"
             },
             {
               "label": "متوسط (500px)",
-              "value": "medium"
+              "value": "medium",
+              "key": "7d24f7d1-a610-469a-b64c-20538074830a"
             },
             {
               "label": "كبير (700px)",
-              "value": "large"
+              "value": "large",
+              "key": "53a7cdc3-2ffd-4d74-86c7-44e5420a6086"
             },
             {
               "label": "ملء الشاشة",
-              "value": "fullscreen"
+              "value": "fullscreen",
+              "key": "e645ac46-7ed8-44ad-a9d3-d1923a33733a"
             }
-          ]
+          ],
+          "selected": [
+            {
+              "label": "كبير (700px)",
+              "value": "large",
+              "key": "53a7cdc3-2ffd-4d74-86c7-44e5420a6086"
+            }
+          ],
+          "required": false
         },
         {
           "id": "alignment",
           "type": "items",
           "format": "dropdown-list",
           "label": "محاذاة النص",
-          "icon": "sicon-list",
-          "value": "center",
-          "required": false,
-          "maxLength": 1,
-          "multichoice": false,
-          "source": "static",
-          "sources": [
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
             {
               "label": "وسط",
-              "value": "center"
+              "value": "center",
+              "key": "b14bf0f9-553f-4070-a6db-d42b5831cb7b"
             },
             {
               "label": "يمين",
-              "value": "right"
+              "value": "right",
+              "key": "c9db2a11-3035-47f6-8d5d-7667b5b88bf9"
             },
             {
               "label": "يسار",
-              "value": "left"
+              "value": "left",
+              "key": "46fd5151-8d61-4201-b389-12e8cb230295"
             }
-          ]
+          ],
+          "selected": [
+            {
+              "label": "وسط",
+              "value": "center",
+              "key": "b14bf0f9-553f-4070-a6db-d42b5831cb7b"
+            }
+          ],
+          "required": false
         },
         {
           "id": "text_color",
@@ -1314,7 +1472,7 @@
           "required": false
         },
         {
-          "id": "static-title-dc27fe",
+          "id": "static-title-263da6",
           "type": "static",
           "format": "title",
           "value": "🔘 زر الدعوة"
@@ -1405,7 +1563,91 @@
           ]
         },
         {
-          "id": "static-title-c09f3f",
+          "id": "button_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم الزر",
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
+            {
+              "label": "صغير",
+              "value": "small",
+              "key": "937cccc4-d63a-4ee2-95be-51655b399dba"
+            },
+            {
+              "label": "متوسط",
+              "value": "medium",
+              "key": "da875067-7b92-4664-8199-2dfaee7fbaf8"
+            },
+            {
+              "label": "كبير",
+              "value": "large",
+              "key": "75c2bc9d-f6dc-41a3-826f-806c34c09b3b"
+            }
+          ],
+          "selected": [
+            {
+              "label": "متوسط",
+              "value": "medium",
+              "key": "da875067-7b92-4664-8199-2dfaee7fbaf8"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "button_style",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "نمط الزر",
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
+            {
+              "label": "صلب (Solid)",
+              "value": "solid",
+              "key": "14c1fe43-0f32-4c06-8447-b4ce97fbb647"
+            },
+            {
+              "label": "محدد (Outline)",
+              "value": "outline",
+              "key": "0a5c9700-3a8b-41b5-b6bd-ee00fe136cee"
+            },
+            {
+              "label": "نص فقط",
+              "value": "text",
+              "key": "dae2ad06-b8f0-41e7-9d53-5fbb260876ab"
+            }
+          ],
+          "selected": [
+            {
+              "label": "صلب (Solid)",
+              "value": "solid",
+              "key": "14c1fe43-0f32-4c06-8447-b4ce97fbb647"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "button_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون الزر",
+          "icon": "sicon-pencil-ruler",
+          "value": "#ffffff",
+          "required": false
+        },
+        {
+          "id": "button_bg_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون خلفية الزر",
+          "icon": "sicon-pencil-ruler",
+          "value": "#059669",
+          "required": false
+        },
+        {
+          "id": "static-title-944098",
           "type": "static",
           "format": "title",
           "value": "⚙️ المسافات"
@@ -1433,7 +1675,7 @@
       ]
     },
     {
-      "key": "a9aeaffa-a8ae-44c3-ad30-09f0f5c5baec",
+      "key": "19245cd4-f9dc-4942-a59a-f3877b239c30",
       "title": {
         "ar": "المجموعات المميزة",
         "en": "Generic Content"
@@ -1442,7 +1684,7 @@
       "icon": "sicon-file",
       "fields": [
         {
-          "id": "static-title-86b843",
+          "id": "static-title-390dc2",
           "type": "static",
           "format": "title",
           "value": "📝 المحتوى"
@@ -1472,7 +1714,137 @@
           "placeholder": "أدخل المحتوى"
         },
         {
-          "id": "static-title-aa212f",
+          "id": "static-title-7cd606",
+          "type": "static",
+          "format": "title",
+          "value": "🔤 الخطوط"
+        },
+        {
+          "id": "title_font_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم خط العنوان",
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
+            {
+              "label": "صغير (14px)",
+              "value": "14",
+              "key": "2a456204-0f6c-448e-9afb-aff901b33aae"
+            },
+            {
+              "label": "عادي (16px)",
+              "value": "16",
+              "key": "c60583bb-4663-4bc9-9981-74d098950c6d"
+            },
+            {
+              "label": "متوسط (18px)",
+              "value": "18",
+              "key": "67a5835a-4c58-4c38-8eb1-d73a31c57aba"
+            },
+            {
+              "label": "كبير (20px)",
+              "value": "20",
+              "key": "cdfda190-4682-4e36-aaab-1122b08c38e6"
+            },
+            {
+              "label": "كبير جداً (24px)",
+              "value": "24",
+              "key": "c14526de-7c30-425d-9bc9-9084991d6650"
+            },
+            {
+              "label": "ضخم (32px)",
+              "value": "32",
+              "key": "7017eada-069c-4df1-8c68-4471e2e8fc4b"
+            },
+            {
+              "label": "ضخم جداً (48px)",
+              "value": "48",
+              "key": "a9bbb031-656f-4345-9596-2baafb3b63fa"
+            }
+          ],
+          "selected": [
+            {
+              "label": "ضخم (32px)",
+              "value": "32",
+              "key": "7017eada-069c-4df1-8c68-4471e2e8fc4b"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "description_font_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم خط المحتوى",
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
+            {
+              "label": "صغير (14px)",
+              "value": "14",
+              "key": "9367a984-7430-4fd1-8aa7-b0b3f3d61da0"
+            },
+            {
+              "label": "عادي (16px)",
+              "value": "16",
+              "key": "ae3b15fb-39ce-4318-ace4-7834c7eca8b7"
+            },
+            {
+              "label": "متوسط (18px)",
+              "value": "18",
+              "key": "757d1b0d-fcd3-4bc0-a9fc-43b8e4bdd9c6"
+            },
+            {
+              "label": "كبير (20px)",
+              "value": "20",
+              "key": "99784265-ae0d-4c05-8fcb-cfa87a84a920"
+            },
+            {
+              "label": "كبير جداً (24px)",
+              "value": "24",
+              "key": "b4c9d6f8-8aec-4633-8be2-fc59fe1cc14d"
+            },
+            {
+              "label": "ضخم (32px)",
+              "value": "32",
+              "key": "4eb8bd46-8a5b-45ca-a6db-901ada125a1d"
+            },
+            {
+              "label": "ضخم جداً (48px)",
+              "value": "48",
+              "key": "a1cc14e8-c04e-4c93-ac4c-b0f60bd0900b"
+            }
+          ],
+          "selected": [
+            {
+              "label": "عادي (16px)",
+              "value": "16",
+              "key": "ae3b15fb-39ce-4318-ace4-7834c7eca8b7"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "title_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون العنوان",
+          "icon": "sicon-pencil-ruler",
+          "value": "",
+          "required": false
+        },
+        {
+          "id": "description_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون المحتوى",
+          "icon": "sicon-pencil-ruler",
+          "value": "",
+          "required": false
+        },
+        {
+          "id": "static-title-18ea40",
           "type": "static",
           "format": "title",
           "value": "🖼️ الوسائط"
@@ -1507,7 +1879,7 @@
           "multilanguage": false
         },
         {
-          "id": "static-title-b2ddef",
+          "id": "static-title-7acd1a",
           "type": "static",
           "format": "title",
           "value": "📐 التخطيط"
@@ -1517,29 +1889,178 @@
           "type": "items",
           "format": "dropdown-list",
           "label": "محاذاة النص",
-          "icon": "sicon-list",
-          "value": "center",
-          "required": false,
-          "maxLength": 1,
-          "multichoice": false,
-          "source": "static",
-          "sources": [
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
             {
               "label": "وسط",
-              "value": "center"
+              "value": "center",
+              "key": "c853c771-d003-44c0-9535-c50c5fd344b1"
             },
             {
               "label": "يمين",
-              "value": "right"
+              "value": "right",
+              "key": "12e8622d-1d5e-4a65-907a-1116e4a99a26"
             },
             {
               "label": "يسار",
-              "value": "left"
+              "value": "left",
+              "key": "764c33f3-eeac-4db6-b429-17447f14eb3f"
+            }
+          ],
+          "selected": [
+            {
+              "label": "وسط",
+              "value": "center",
+              "key": "c853c771-d003-44c0-9535-c50c5fd344b1"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "static-title-620730",
+          "type": "static",
+          "format": "title",
+          "value": "🔘 زر (اختياري)"
+        },
+        {
+          "id": "show_button",
+          "type": "boolean",
+          "format": "switch",
+          "label": "إظهار زر",
+          "icon": "sicon-toggle-off",
+          "value": false,
+          "required": false,
+          "selected": false
+        },
+        {
+          "id": "button_text",
+          "type": "string",
+          "format": "text",
+          "label": "نص الزر",
+          "icon": "sicon-format-text-alt",
+          "value": "اعرف المزيد",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100,
+          "placeholder": "أدخل نص الزر"
+        },
+        {
+          "id": "button_link",
+          "type": "items",
+          "format": "variable-list",
+          "label": "رابط الزر",
+          "icon": "sicon-link",
+          "value": "",
+          "required": false,
+          "searchable": true,
+          "source": "custom",
+          "sources": [
+            {
+              "label": "منتج",
+              "key": "products",
+              "value": "products"
+            },
+            {
+              "label": "تصنيف",
+              "key": "categories",
+              "value": "categories"
+            },
+            {
+              "label": "ماركة تجارية",
+              "key": "brands",
+              "value": "brands"
+            },
+            {
+              "label": "صفحة تعريفية",
+              "key": "pages",
+              "value": "pages"
+            },
+            {
+              "label": "مقالة",
+              "key": "blog_articles",
+              "value": "blog_articles"
+            },
+            {
+              "label": "تصنيف مدونة",
+              "key": "blog_categories",
+              "value": "blog_categories"
+            },
+            {
+              "label": "التخفيضات",
+              "key": "offers_link",
+              "value": "offers_link"
+            },
+            {
+              "label": "الماركات التجارية",
+              "key": "brands_link",
+              "value": "brands_link"
+            },
+            {
+              "label": "المدونة",
+              "key": "blog_link",
+              "value": "blog_link"
+            },
+            {
+              "label": "رابط خارجي",
+              "key": "custom",
+              "value": "custom"
             }
           ]
         },
         {
-          "id": "static-title-b3d5e9",
+          "id": "button_style",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "نمط الزر",
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
+            {
+              "label": "صلب (Solid)",
+              "value": "solid",
+              "key": "34fa6671-dbcd-40af-acea-f8f1c35101ec"
+            },
+            {
+              "label": "محدد (Outline)",
+              "value": "outline",
+              "key": "bf4d24be-0d20-47c4-ac3c-7b34f5dc0781"
+            },
+            {
+              "label": "نص فقط",
+              "value": "text",
+              "key": "29c4235e-5aff-4da6-a809-5171ec8d0923"
+            }
+          ],
+          "selected": [
+            {
+              "label": "صلب (Solid)",
+              "value": "solid",
+              "key": "34fa6671-dbcd-40af-acea-f8f1c35101ec"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "button_bg_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون خلفية الزر",
+          "icon": "sicon-pencil-ruler",
+          "value": "#059669",
+          "required": false
+        },
+        {
+          "id": "button_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون نص الزر",
+          "icon": "sicon-pencil-ruler",
+          "value": "#ffffff",
+          "required": false
+        },
+        {
+          "id": "static-title-741490",
           "type": "static",
           "format": "title",
           "value": "⚙️ المسافات"
@@ -1567,7 +2088,7 @@
       ]
     },
     {
-      "key": "791420a1-6303-46b6-8c13-20264fdfc4f4",
+      "key": "7d724c41-b182-4e60-9cf3-09144e7d6ffb",
       "title": {
         "ar": "أطلقي إطلالتك الصيفية",
         "en": "Generic Content"
@@ -1576,7 +2097,7 @@
       "icon": "sicon-file",
       "fields": [
         {
-          "id": "static-title-65ec7c",
+          "id": "static-title-d3dff8",
           "type": "static",
           "format": "title",
           "value": "📝 المحتوى"
@@ -1606,7 +2127,137 @@
           "placeholder": "أدخل المحتوى"
         },
         {
-          "id": "static-title-0f19f5",
+          "id": "static-title-54a0c8",
+          "type": "static",
+          "format": "title",
+          "value": "🔤 الخطوط"
+        },
+        {
+          "id": "title_font_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم خط العنوان",
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
+            {
+              "label": "صغير (14px)",
+              "value": "14",
+              "key": "cfb256b6-62fb-4191-9088-7b1dc73f1da3"
+            },
+            {
+              "label": "عادي (16px)",
+              "value": "16",
+              "key": "e0572786-e567-4387-8ba9-b15a24621a1b"
+            },
+            {
+              "label": "متوسط (18px)",
+              "value": "18",
+              "key": "5d62eece-7994-421a-a302-caf8ad91632f"
+            },
+            {
+              "label": "كبير (20px)",
+              "value": "20",
+              "key": "5059eaff-edb8-49dd-a9c6-e2b626c7a4b5"
+            },
+            {
+              "label": "كبير جداً (24px)",
+              "value": "24",
+              "key": "7cf5d53d-d6eb-402f-a310-564cb3951ba3"
+            },
+            {
+              "label": "ضخم (32px)",
+              "value": "32",
+              "key": "c88f86c9-2fc4-43db-a291-2e8ed3cbabb7"
+            },
+            {
+              "label": "ضخم جداً (48px)",
+              "value": "48",
+              "key": "56cafe4c-947b-450f-b033-1de340d84b79"
+            }
+          ],
+          "selected": [
+            {
+              "label": "ضخم (32px)",
+              "value": "32",
+              "key": "c88f86c9-2fc4-43db-a291-2e8ed3cbabb7"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "description_font_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم خط المحتوى",
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
+            {
+              "label": "صغير (14px)",
+              "value": "14",
+              "key": "889ca701-5398-42ac-8c47-225772cb0a6f"
+            },
+            {
+              "label": "عادي (16px)",
+              "value": "16",
+              "key": "e4d4fa93-e391-4c4e-aa8a-535e0cc2ed32"
+            },
+            {
+              "label": "متوسط (18px)",
+              "value": "18",
+              "key": "9437820b-a92b-467d-be0c-e1fad5d203b9"
+            },
+            {
+              "label": "كبير (20px)",
+              "value": "20",
+              "key": "5eaeb8c3-6d1e-4de8-aa74-5b15f800d88c"
+            },
+            {
+              "label": "كبير جداً (24px)",
+              "value": "24",
+              "key": "a78250f0-2a7d-4c4a-898b-b6ac622abbb4"
+            },
+            {
+              "label": "ضخم (32px)",
+              "value": "32",
+              "key": "e0d1b03d-0ad4-4035-b666-f4e3b04e372a"
+            },
+            {
+              "label": "ضخم جداً (48px)",
+              "value": "48",
+              "key": "cc2e37b3-12f5-4c88-918f-505c5740d51f"
+            }
+          ],
+          "selected": [
+            {
+              "label": "عادي (16px)",
+              "value": "16",
+              "key": "e4d4fa93-e391-4c4e-aa8a-535e0cc2ed32"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "title_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون العنوان",
+          "icon": "sicon-pencil-ruler",
+          "value": "",
+          "required": false
+        },
+        {
+          "id": "description_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون المحتوى",
+          "icon": "sicon-pencil-ruler",
+          "value": "",
+          "required": false
+        },
+        {
+          "id": "static-title-cb6f5c",
           "type": "static",
           "format": "title",
           "value": "🖼️ الوسائط"
@@ -1641,7 +2292,7 @@
           "multilanguage": false
         },
         {
-          "id": "static-title-ef153f",
+          "id": "static-title-134fa8",
           "type": "static",
           "format": "title",
           "value": "📐 التخطيط"
@@ -1651,29 +2302,178 @@
           "type": "items",
           "format": "dropdown-list",
           "label": "محاذاة النص",
-          "icon": "sicon-list",
-          "value": "center",
-          "required": false,
-          "maxLength": 1,
-          "multichoice": false,
-          "source": "static",
-          "sources": [
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
             {
               "label": "وسط",
-              "value": "center"
+              "value": "center",
+              "key": "60cfa0b9-fc62-4fd3-97e3-6e82c0b2e5d0"
             },
             {
               "label": "يمين",
-              "value": "right"
+              "value": "right",
+              "key": "fdfdbefe-55f5-4725-8bf1-88a4c6b76ae9"
             },
             {
               "label": "يسار",
-              "value": "left"
+              "value": "left",
+              "key": "0a54fe66-fc08-49e5-a388-0213ee94d471"
+            }
+          ],
+          "selected": [
+            {
+              "label": "وسط",
+              "value": "center",
+              "key": "60cfa0b9-fc62-4fd3-97e3-6e82c0b2e5d0"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "static-title-2a17ef",
+          "type": "static",
+          "format": "title",
+          "value": "🔘 زر (اختياري)"
+        },
+        {
+          "id": "show_button",
+          "type": "boolean",
+          "format": "switch",
+          "label": "إظهار زر",
+          "icon": "sicon-toggle-off",
+          "value": false,
+          "required": false,
+          "selected": false
+        },
+        {
+          "id": "button_text",
+          "type": "string",
+          "format": "text",
+          "label": "نص الزر",
+          "icon": "sicon-format-text-alt",
+          "value": "اعرف المزيد",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100,
+          "placeholder": "أدخل نص الزر"
+        },
+        {
+          "id": "button_link",
+          "type": "items",
+          "format": "variable-list",
+          "label": "رابط الزر",
+          "icon": "sicon-link",
+          "value": "",
+          "required": false,
+          "searchable": true,
+          "source": "custom",
+          "sources": [
+            {
+              "label": "منتج",
+              "key": "products",
+              "value": "products"
+            },
+            {
+              "label": "تصنيف",
+              "key": "categories",
+              "value": "categories"
+            },
+            {
+              "label": "ماركة تجارية",
+              "key": "brands",
+              "value": "brands"
+            },
+            {
+              "label": "صفحة تعريفية",
+              "key": "pages",
+              "value": "pages"
+            },
+            {
+              "label": "مقالة",
+              "key": "blog_articles",
+              "value": "blog_articles"
+            },
+            {
+              "label": "تصنيف مدونة",
+              "key": "blog_categories",
+              "value": "blog_categories"
+            },
+            {
+              "label": "التخفيضات",
+              "key": "offers_link",
+              "value": "offers_link"
+            },
+            {
+              "label": "الماركات التجارية",
+              "key": "brands_link",
+              "value": "brands_link"
+            },
+            {
+              "label": "المدونة",
+              "key": "blog_link",
+              "value": "blog_link"
+            },
+            {
+              "label": "رابط خارجي",
+              "key": "custom",
+              "value": "custom"
             }
           ]
         },
         {
-          "id": "static-title-504248",
+          "id": "button_style",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "نمط الزر",
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
+            {
+              "label": "صلب (Solid)",
+              "value": "solid",
+              "key": "73815754-5862-497f-8546-ba893a520f12"
+            },
+            {
+              "label": "محدد (Outline)",
+              "value": "outline",
+              "key": "4edd1e2b-efa9-4fd9-8f73-2e7cd74bbe4f"
+            },
+            {
+              "label": "نص فقط",
+              "value": "text",
+              "key": "c3ca1d71-783b-4952-9317-1dfba2d606f8"
+            }
+          ],
+          "selected": [
+            {
+              "label": "صلب (Solid)",
+              "value": "solid",
+              "key": "73815754-5862-497f-8546-ba893a520f12"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "button_bg_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون خلفية الزر",
+          "icon": "sicon-pencil-ruler",
+          "value": "#059669",
+          "required": false
+        },
+        {
+          "id": "button_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون نص الزر",
+          "icon": "sicon-pencil-ruler",
+          "value": "#ffffff",
+          "required": false
+        },
+        {
+          "id": "static-title-2ea6fc",
           "type": "static",
           "format": "title",
           "value": "⚙️ المسافات"
@@ -1701,7 +2501,7 @@
       ]
     },
     {
-      "key": "27521237-237b-4dbb-826d-7cc49a1a3958",
+      "key": "1b87bb2d-7c46-4098-9fe0-7371523735a4",
       "title": {
         "ar": "الأفضل مبيعاً",
         "en": "Generic Content"
@@ -1710,7 +2510,7 @@
       "icon": "sicon-file",
       "fields": [
         {
-          "id": "static-title-ff8c64",
+          "id": "static-title-d40932",
           "type": "static",
           "format": "title",
           "value": "📝 المحتوى"
@@ -1740,7 +2540,137 @@
           "placeholder": "أدخل المحتوى"
         },
         {
-          "id": "static-title-98e98a",
+          "id": "static-title-329923",
+          "type": "static",
+          "format": "title",
+          "value": "🔤 الخطوط"
+        },
+        {
+          "id": "title_font_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم خط العنوان",
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
+            {
+              "label": "صغير (14px)",
+              "value": "14",
+              "key": "445a7464-a6b3-4d61-ac24-e19f0e6b3a27"
+            },
+            {
+              "label": "عادي (16px)",
+              "value": "16",
+              "key": "ae4a1d9c-c515-463a-b18b-f421706aea5c"
+            },
+            {
+              "label": "متوسط (18px)",
+              "value": "18",
+              "key": "ada06cca-9cef-431b-a39f-ada79f1b3f58"
+            },
+            {
+              "label": "كبير (20px)",
+              "value": "20",
+              "key": "1ffd97e0-95b8-4374-ac3d-729355a4b039"
+            },
+            {
+              "label": "كبير جداً (24px)",
+              "value": "24",
+              "key": "103ffea2-1211-4550-95dc-0a1369623432"
+            },
+            {
+              "label": "ضخم (32px)",
+              "value": "32",
+              "key": "65acc8c5-717c-495e-8874-a543f49b83f8"
+            },
+            {
+              "label": "ضخم جداً (48px)",
+              "value": "48",
+              "key": "8451fd95-07d9-4130-927b-25d60ab81bb6"
+            }
+          ],
+          "selected": [
+            {
+              "label": "ضخم (32px)",
+              "value": "32",
+              "key": "65acc8c5-717c-495e-8874-a543f49b83f8"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "description_font_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم خط المحتوى",
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
+            {
+              "label": "صغير (14px)",
+              "value": "14",
+              "key": "d6a63226-9c80-4c17-84cb-2236cd25814a"
+            },
+            {
+              "label": "عادي (16px)",
+              "value": "16",
+              "key": "93c8d8e6-e553-4570-ba42-9b7c1b334bcb"
+            },
+            {
+              "label": "متوسط (18px)",
+              "value": "18",
+              "key": "fd6ad5e1-9230-4194-b96d-bbb2e2c86fbe"
+            },
+            {
+              "label": "كبير (20px)",
+              "value": "20",
+              "key": "208b43e1-4ce8-4d89-b92e-f75485523a29"
+            },
+            {
+              "label": "كبير جداً (24px)",
+              "value": "24",
+              "key": "69afcbe3-e4dc-4b36-a5e4-3eaedc6ae421"
+            },
+            {
+              "label": "ضخم (32px)",
+              "value": "32",
+              "key": "a164759d-ddf6-4941-8e1b-5c96648b5b2a"
+            },
+            {
+              "label": "ضخم جداً (48px)",
+              "value": "48",
+              "key": "248351c9-40e9-4fc7-8207-76d4b31590db"
+            }
+          ],
+          "selected": [
+            {
+              "label": "عادي (16px)",
+              "value": "16",
+              "key": "93c8d8e6-e553-4570-ba42-9b7c1b334bcb"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "title_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون العنوان",
+          "icon": "sicon-pencil-ruler",
+          "value": "",
+          "required": false
+        },
+        {
+          "id": "description_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون المحتوى",
+          "icon": "sicon-pencil-ruler",
+          "value": "",
+          "required": false
+        },
+        {
+          "id": "static-title-9b66df",
           "type": "static",
           "format": "title",
           "value": "🖼️ الوسائط"
@@ -1775,7 +2705,7 @@
           "multilanguage": false
         },
         {
-          "id": "static-title-c8e8e4",
+          "id": "static-title-74fcdc",
           "type": "static",
           "format": "title",
           "value": "📐 التخطيط"
@@ -1785,29 +2715,178 @@
           "type": "items",
           "format": "dropdown-list",
           "label": "محاذاة النص",
-          "icon": "sicon-list",
-          "value": "center",
-          "required": false,
-          "maxLength": 1,
-          "multichoice": false,
-          "source": "static",
-          "sources": [
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
             {
               "label": "وسط",
-              "value": "center"
+              "value": "center",
+              "key": "505557d2-032b-4e1e-b575-c696b2c5e2b0"
             },
             {
               "label": "يمين",
-              "value": "right"
+              "value": "right",
+              "key": "5d0f702b-80e3-44ca-85cd-3fbad15a5888"
             },
             {
               "label": "يسار",
-              "value": "left"
+              "value": "left",
+              "key": "f21beeaa-9b8c-4e72-9250-b131b91ac237"
+            }
+          ],
+          "selected": [
+            {
+              "label": "وسط",
+              "value": "center",
+              "key": "505557d2-032b-4e1e-b575-c696b2c5e2b0"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "static-title-56b0b5",
+          "type": "static",
+          "format": "title",
+          "value": "🔘 زر (اختياري)"
+        },
+        {
+          "id": "show_button",
+          "type": "boolean",
+          "format": "switch",
+          "label": "إظهار زر",
+          "icon": "sicon-toggle-off",
+          "value": false,
+          "required": false,
+          "selected": false
+        },
+        {
+          "id": "button_text",
+          "type": "string",
+          "format": "text",
+          "label": "نص الزر",
+          "icon": "sicon-format-text-alt",
+          "value": "اعرف المزيد",
+          "required": false,
+          "multilanguage": true,
+          "maxLength": 100,
+          "placeholder": "أدخل نص الزر"
+        },
+        {
+          "id": "button_link",
+          "type": "items",
+          "format": "variable-list",
+          "label": "رابط الزر",
+          "icon": "sicon-link",
+          "value": "",
+          "required": false,
+          "searchable": true,
+          "source": "custom",
+          "sources": [
+            {
+              "label": "منتج",
+              "key": "products",
+              "value": "products"
+            },
+            {
+              "label": "تصنيف",
+              "key": "categories",
+              "value": "categories"
+            },
+            {
+              "label": "ماركة تجارية",
+              "key": "brands",
+              "value": "brands"
+            },
+            {
+              "label": "صفحة تعريفية",
+              "key": "pages",
+              "value": "pages"
+            },
+            {
+              "label": "مقالة",
+              "key": "blog_articles",
+              "value": "blog_articles"
+            },
+            {
+              "label": "تصنيف مدونة",
+              "key": "blog_categories",
+              "value": "blog_categories"
+            },
+            {
+              "label": "التخفيضات",
+              "key": "offers_link",
+              "value": "offers_link"
+            },
+            {
+              "label": "الماركات التجارية",
+              "key": "brands_link",
+              "value": "brands_link"
+            },
+            {
+              "label": "المدونة",
+              "key": "blog_link",
+              "value": "blog_link"
+            },
+            {
+              "label": "رابط خارجي",
+              "key": "custom",
+              "value": "custom"
             }
           ]
         },
         {
-          "id": "static-title-84f607",
+          "id": "button_style",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "نمط الزر",
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
+            {
+              "label": "صلب (Solid)",
+              "value": "solid",
+              "key": "d342a246-8db2-485b-8835-601b84cf6050"
+            },
+            {
+              "label": "محدد (Outline)",
+              "value": "outline",
+              "key": "a58e54ec-85bc-4905-9207-3390c70ea1a3"
+            },
+            {
+              "label": "نص فقط",
+              "value": "text",
+              "key": "39f8d609-199c-40ca-993e-496441033538"
+            }
+          ],
+          "selected": [
+            {
+              "label": "صلب (Solid)",
+              "value": "solid",
+              "key": "d342a246-8db2-485b-8835-601b84cf6050"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "button_bg_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون خلفية الزر",
+          "icon": "sicon-pencil-ruler",
+          "value": "#059669",
+          "required": false
+        },
+        {
+          "id": "button_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون نص الزر",
+          "icon": "sicon-pencil-ruler",
+          "value": "#ffffff",
+          "required": false
+        },
+        {
+          "id": "static-title-e5fc2f",
           "type": "static",
           "format": "title",
           "value": "⚙️ المسافات"
@@ -1835,7 +2914,7 @@
       ]
     },
     {
-      "key": "04bd675a-8ae7-4ca8-9c56-6d9336bc87f2",
+      "key": "c2e5155e-9865-49be-8133-04883593ebc5",
       "title": {
         "ar": "انضمي إلى قائمتنا",
         "en": "Cta"
@@ -1844,7 +2923,7 @@
       "icon": "sicon-megaphone",
       "fields": [
         {
-          "id": "static-title-81b7fd",
+          "id": "static-title-ed389a",
           "type": "static",
           "format": "title",
           "value": "📝 المحتوى"
@@ -1874,7 +2953,137 @@
           "placeholder": "أدخل النص التوضيحي"
         },
         {
-          "id": "static-title-6edb16",
+          "id": "static-title-e885f4",
+          "type": "static",
+          "format": "title",
+          "value": "🔤 الخطوط"
+        },
+        {
+          "id": "title_font_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم خط العنوان",
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
+            {
+              "label": "صغير (14px)",
+              "value": "14",
+              "key": "732b13cc-419e-4d75-991b-7f28be6e1c16"
+            },
+            {
+              "label": "عادي (16px)",
+              "value": "16",
+              "key": "79c05c2b-6d21-4729-81f9-6aa46d1c3204"
+            },
+            {
+              "label": "متوسط (18px)",
+              "value": "18",
+              "key": "2f4cfa04-0aad-473c-96bb-d81b308caf2e"
+            },
+            {
+              "label": "كبير (20px)",
+              "value": "20",
+              "key": "a51f4ba7-c221-4bd7-84b2-b6f97a021bc0"
+            },
+            {
+              "label": "كبير جداً (24px)",
+              "value": "24",
+              "key": "6f141a5c-6f05-4fa3-a9c1-c14edc155f39"
+            },
+            {
+              "label": "ضخم (32px)",
+              "value": "32",
+              "key": "bdff0d97-9ff6-42fa-a62e-06071d3866c8"
+            },
+            {
+              "label": "ضخم جداً (48px)",
+              "value": "48",
+              "key": "c74dc082-9378-4f71-a1f4-74f70269ed83"
+            }
+          ],
+          "selected": [
+            {
+              "label": "ضخم (32px)",
+              "value": "32",
+              "key": "bdff0d97-9ff6-42fa-a62e-06071d3866c8"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "subtitle_font_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم خط النص",
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
+            {
+              "label": "صغير (14px)",
+              "value": "14",
+              "key": "32fa15bb-78fa-41c4-83f1-5565518f90fd"
+            },
+            {
+              "label": "عادي (16px)",
+              "value": "16",
+              "key": "38341b33-d032-41ec-984c-99ebfefeff5f"
+            },
+            {
+              "label": "متوسط (18px)",
+              "value": "18",
+              "key": "074f4295-5efa-4397-9c58-addb6ee22adc"
+            },
+            {
+              "label": "كبير (20px)",
+              "value": "20",
+              "key": "34fbcf04-5c53-4b21-b271-198f60d378d7"
+            },
+            {
+              "label": "كبير جداً (24px)",
+              "value": "24",
+              "key": "1f0c2cfa-5095-45f4-967c-a8f6967dac03"
+            },
+            {
+              "label": "ضخم (32px)",
+              "value": "32",
+              "key": "d373ad16-703c-42fb-8708-a4cd66650263"
+            },
+            {
+              "label": "ضخم جداً (48px)",
+              "value": "48",
+              "key": "8ceafd5a-0c8e-4cc0-acf3-9b83eea37c3b"
+            }
+          ],
+          "selected": [
+            {
+              "label": "متوسط (18px)",
+              "value": "18",
+              "key": "074f4295-5efa-4397-9c58-addb6ee22adc"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "title_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون العنوان",
+          "icon": "sicon-pencil-ruler",
+          "value": "#ffffff",
+          "required": false
+        },
+        {
+          "id": "subtitle_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون النص",
+          "icon": "sicon-pencil-ruler",
+          "value": "#e5e7eb",
+          "required": false
+        },
+        {
+          "id": "static-title-5227b6",
           "type": "static",
           "format": "title",
           "value": "🔘 الأزرار"
@@ -1955,6 +3164,90 @@
           ]
         },
         {
+          "id": "button_style",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "نمط الزر الرئيسي",
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
+            {
+              "label": "صلب (Solid)",
+              "value": "solid",
+              "key": "6e1be19f-99cf-4c85-9dde-9eae892d1b06"
+            },
+            {
+              "label": "محدد (Outline)",
+              "value": "outline",
+              "key": "81fe8a27-17cb-4a29-b480-2e745c3db551"
+            },
+            {
+              "label": "نص فقط",
+              "value": "text",
+              "key": "d4759803-d9e6-4dde-8f20-3f0c7f37399f"
+            }
+          ],
+          "selected": [
+            {
+              "label": "صلب (Solid)",
+              "value": "solid",
+              "key": "6e1be19f-99cf-4c85-9dde-9eae892d1b06"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "button_size",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "حجم الزر",
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
+            {
+              "label": "صغير",
+              "value": "small",
+              "key": "7a2b299c-e3f3-43b4-aa2f-def690fa87dc"
+            },
+            {
+              "label": "متوسط",
+              "value": "medium",
+              "key": "dfd85d1a-c80f-4ccf-9ffa-52709d5518be"
+            },
+            {
+              "label": "كبير",
+              "value": "large",
+              "key": "d026b9bb-9724-49f9-84e1-02921af63258"
+            }
+          ],
+          "selected": [
+            {
+              "label": "متوسط",
+              "value": "medium",
+              "key": "dfd85d1a-c80f-4ccf-9ffa-52709d5518be"
+            }
+          ],
+          "required": false
+        },
+        {
+          "id": "button_bg_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون خلفية الزر",
+          "icon": "sicon-pencil-ruler",
+          "value": "#ffffff",
+          "required": false
+        },
+        {
+          "id": "button_color",
+          "type": "string",
+          "format": "color",
+          "label": "لون نص الزر",
+          "icon": "sicon-pencil-ruler",
+          "value": "#059669",
+          "required": false
+        },
+        {
           "id": "button_secondary_text",
           "type": "string",
           "format": "text",
@@ -2030,7 +3323,7 @@
           ]
         },
         {
-          "id": "static-title-319067",
+          "id": "static-title-a5fd94",
           "type": "static",
           "format": "title",
           "value": "🎨 التنسيق"
@@ -2068,29 +3361,36 @@
           "type": "items",
           "format": "dropdown-list",
           "label": "محاذاة النص",
-          "icon": "sicon-list",
-          "value": "center",
-          "required": false,
-          "maxLength": 1,
-          "multichoice": false,
-          "source": "static",
-          "sources": [
+          "icon": "sicon-keyboard_arrow_down",
+          "source": "Manual",
+          "options": [
             {
               "label": "وسط",
-              "value": "center"
+              "value": "center",
+              "key": "f3806d7a-2608-4a32-a0db-e96175cd91e7"
             },
             {
               "label": "يمين",
-              "value": "right"
+              "value": "right",
+              "key": "2e11aa6f-2482-43d1-86a3-41c4bdc51358"
             },
             {
               "label": "يسار",
-              "value": "left"
+              "value": "left",
+              "key": "f940a1af-e2d0-4c8d-a7e7-36f74aea6cc5"
             }
-          ]
+          ],
+          "selected": [
+            {
+              "label": "وسط",
+              "value": "center",
+              "key": "f3806d7a-2608-4a32-a0db-e96175cd91e7"
+            }
+          ],
+          "required": false
         },
         {
-          "id": "static-title-05d31b",
+          "id": "static-title-a68c12",
           "type": "static",
           "format": "title",
           "value": "⚙️ المسافات"
