@@ -22,7 +22,7 @@
   }
 
   &-product {
-    @apply bg-gray-100 mb-4 md:mb-14 py-4 md:py-14;
+    @apply bg-gray-100 py-4 md:py-14;
 
     .s-comments-container {
       @apply container;
@@ -70,8 +70,12 @@
 
     &-starting-price{
       @apply w-auto;
-  } 
-  }
+    } 
+
+    &-content-title{
+      word-break: break-word;
+    }
+}
 
 .pie-wrapper {
   @apply w-[72px] h-[72px] absolute top-2.5 rtl:left-5 ltr:right-5 text-primary flex items-center justify-center;
@@ -219,6 +223,8 @@
 
 // product options file upload component
 .product-option-uploader{
+  display: block; // custom elements are inline by default; block is required for grid-template-rows fr-unit sizing in Safari
+  
   .s-file-upload-wrapper{
     min-height: 120px;
     .filepond--list-scroller{
@@ -249,6 +255,27 @@
   }
 }
 
+// Notify-me button — WCAG AA contrast fix (product card + product page)
+salla-add-product-button[product-status="out-and-notify"],
+.s-product-availability-wrap {
+  .s-button-solid.s-button-primary,
+  .s-button-primary {
+    @apply bg-gray-200 text-gray-800 border-gray-300 hover:bg-gray-300 hover:text-gray-900;
+
+    .s-button-text {
+      @apply text-gray-800;
+    }
+  }
+
+  .s-product-availability-subscribed {
+    @apply text-[0.7rem] px-[0.6rem];
+
+    svg {
+      @apply w-4 h-4;
+    }
+  }
+}
+
 .s-product{
     &-card{
       &-full-image salla-add-product-button {
@@ -262,7 +289,7 @@
         @apply flex-none sm:flex-1;
       }
     }
-    
+
     &-options-colors-wrapper{
       @apply flex flex-wrap gap-4;
       
@@ -314,6 +341,10 @@
 		transition-delay: 0.3s;
 	  }
 	} 
+}
+
+.s-product-card-image img{
+  @apply opacity-100;
 }
 
 
