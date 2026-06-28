@@ -269,7 +269,7 @@
   ],
   "components": [
     {
-      "key": "3e987822-63c7-43ec-a66a-381b98164ed8",
+      "key": "1c11be3a-6cb7-4d09-877f-938cec378446",
       "name": {
         "ar": "أناقة لا مثيل لها",
         "en": "Hero"
@@ -281,10 +281,7 @@
           "id": "title",
           "type": "string",
           "format": "text",
-          "label": {
-            "ar": "العنوان",
-            "en": "Title"
-          },
+          "label": "العنوان",
           "icon": "sicon-format-text-alt",
           "value": "أناقةلا مثيل لها",
           "required": true,
@@ -295,10 +292,7 @@
           "id": "description",
           "type": "string",
           "format": "textarea",
-          "label": {
-            "ar": "الوصف",
-            "en": "Description"
-          },
+          "label": "الوصف",
           "icon": "sicon-typography",
           "value": "اكتشفي مجموعتنا الجديدة من العبايات الفاخرة المصممة لتبرز أنوثتك",
           "multilanguage": true,
@@ -307,7 +301,7 @@
       ]
     },
     {
-      "key": "7ea4c16a-daec-476c-a30d-0d049d13b330",
+      "key": "9a93aa01-c473-4083-8d53-042d0baafceb",
       "name": {
         "ar": "المجموعات المميزة",
         "en": "Generic Content"
@@ -319,10 +313,7 @@
           "id": "title",
           "type": "string",
           "format": "text",
-          "label": {
-            "ar": "العنوان",
-            "en": "Title"
-          },
+          "label": "العنوان",
           "icon": "sicon-format-text-alt",
           "value": "المجموعات المميزة",
           "required": true,
@@ -332,7 +323,7 @@
       ]
     },
     {
-      "key": "ab9adc82-e971-49cb-b290-b90a44a539b0",
+      "key": "d62c51f6-297a-41a0-9a7d-c9d850b4f176",
       "name": {
         "ar": "أطلقي إطلالتك الصيفية",
         "en": "Generic Content"
@@ -344,10 +335,7 @@
           "id": "title",
           "type": "string",
           "format": "text",
-          "label": {
-            "ar": "العنوان",
-            "en": "Title"
-          },
+          "label": "العنوان",
           "icon": "sicon-format-text-alt",
           "value": "أطلقي إطلالتك الصيفية",
           "required": true,
@@ -358,10 +346,7 @@
           "id": "description",
           "type": "string",
           "format": "textarea",
-          "label": {
-            "ar": "الوصف",
-            "en": "Description"
-          },
+          "label": "الوصف",
           "icon": "sicon-typography",
           "value": "تشكيلة جديدة من العبايات الخفيفة والمريحة لإطلالة مثالية في الأيام الدافئة",
           "multilanguage": true,
@@ -370,7 +355,7 @@
       ]
     },
     {
-      "key": "dbae9b32-6ffb-4d87-b918-fdee5817c136",
+      "key": "9fb03894-8c34-46e0-93cc-a7cc932239c6",
       "name": {
         "ar": "الأفضل مبيعاً",
         "en": "Generic Content"
@@ -382,10 +367,7 @@
           "id": "title",
           "type": "string",
           "format": "text",
-          "label": {
-            "ar": "العنوان",
-            "en": "Title"
-          },
+          "label": "العنوان",
           "icon": "sicon-format-text-alt",
           "value": "الأفضل مبيعاً",
           "required": true,
@@ -395,7 +377,7 @@
       ]
     },
     {
-      "key": "f497b735-f2ba-44e1-a924-b32b01d0a682",
+      "key": "375fb5b4-2623-4300-83f2-dc7097c91771",
       "name": {
         "ar": "انضمي إلى قائمتنا",
         "en": "Cta"
@@ -407,10 +389,7 @@
           "id": "title",
           "type": "string",
           "format": "text",
-          "label": {
-            "ar": "العنوان",
-            "en": "Title"
-          },
+          "label": "العنوان",
           "icon": "sicon-format-text-alt",
           "value": "انضمي إلى قائمتنا",
           "required": true,
@@ -421,10 +400,7 @@
           "id": "description",
           "type": "string",
           "format": "textarea",
-          "label": {
-            "ar": "الوصف",
-            "en": "Description"
-          },
+          "label": "الوصف",
           "icon": "sicon-typography",
           "value": "كوني أول من يعرف عن إصداراتنا الجديدة والعروض الحصرية",
           "multilanguage": true,
