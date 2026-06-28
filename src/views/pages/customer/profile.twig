@@ -1,97 +1,11 @@
-{#
-  Salla Theme — ملفي الشخصي - نورا
-  Page type: customer-profile
-  Source: profile.html
-#}
-
+{# Customer Profile Page #}
 {% extends "layouts.customer" %}
 
-{% block customer_content %}
-
-<!-- Top Navigation -->
-
-<!-- Account Layout -->
-<div class="container">
-<div class="account-layout">
-<!-- Sidebar -->
-<aside class="account-sidebar">
-<div class="account-sidebar__user">
-<div class="account-sidebar__avatar">ن</div>
-<div class="account-sidebar__name">نورة الحسن</div>
-<div class="account-sidebar__email">nora@email.com</div>
+{% block content %}
+<div class="profile-page" dir="auto">
+    <div class="container">
+        <h1 class="page-title">{{ trans('pages.profile') }}</h1>
+        <salla-customer-profile></salla-customer-profile>
+    </div>
 </div>
-
-</aside>
-<!-- Content -->
-<main class="account-content">
-<div class="account-content__header">
-<h1 class="account-content__title">الملف الشخصي</h1>
-<button class="btn btn-secondary" onclick="showToast('جاري تحميل صفحة التعديل...')" style="padding:var(--space-2) var(--space-4)">
-<i class="fas fa-edit"></i> تعديل الملف
-                    </button>
-</div>
-<!-- Stats -->
-<div class="account-stats">
-<div class="account-stat">
-<div class="account-stat__number">12</div>
-<div class="account-stat__label">إجمالي الطلبات</div>
-</div>
-<div class="account-stat">
-<div class="account-stat__number">8</div>
-<div class="account-stat__label">المفضلة</div>
-</div>
-<div class="account-stat">
-<div class="account-stat__number">2</div>
-<div class="account-stat__label">قيد التوصيل</div>
-</div>
-</div>
-<!-- Recent Orders -->
-<h2 style="font-size:1.1rem;font-weight:600;margin-bottom:var(--space-3)">آخر الطلبات</h2>
-<div style="background:var(--color-primary-subtle);border-radius:var(--radius-md);overflow:hidden">
-<div class="recent-orders__item">
-<span class="recent-orders__id">#ORD-2026-001</span>
-<span class="recent-orders__date">20 يونيو 2026</span>
-<span class="recent-orders__status recent-orders__status--delivered">تم التوصيل</span>
-<span class="recent-orders__total">1,550 ر.س</span>
-</div>
-<div class="recent-orders__item">
-<span class="recent-orders__id">#ORD-2026-002</span>
-<span class="recent-orders__date">15 يونيو 2026</span>
-<span class="recent-orders__status recent-orders__status--processing">جاري التجهيز</span>
-<span class="recent-orders__total">850 ر.س</span>
-</div>
-<div class="recent-orders__item">
-<span class="recent-orders__id">#ORD-2026-003</span>
-<span class="recent-orders__date">10 يونيو 2026</span>
-<span class="recent-orders__status recent-orders__status--delivered">تم التوصيل</span>
-<span class="recent-orders__total">1,200 ر.س</span>
-</div>
-</div>
-<button class="btn btn-secondary" onclick="showToast('جاري تحميل جميع الطلبات...')" style="width:100%;margin-top:var(--space-3)">
-                    عرض جميع الطلبات
-                </button>
-</main>
-</div>
-</div>
-<!-- Bottom Navigation -->
-
-<!-- Toast -->
-<div aria-live="polite" class="toast" id="toast" role="status">
-<i class="fas fa-check-circle"></i>
-<span id="toastMessage">تمت العملية بنجاح</span>
-</div>
-<script>
-        let toastTimeout;
-
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            const toastMessage = document.getElementById('toastMessage');
-            if (toastTimeout) { clearTimeout(toastTimeout);
-                toast.classList.remove('show'); }
-            toastMessage.textContent = message;
-            toast.classList.add('show');
-            toastTimeout = setTimeout(() => { toast.classList.remove('show'); }, 3000);
-        }
-    </script>
-
 {% endblock %}
