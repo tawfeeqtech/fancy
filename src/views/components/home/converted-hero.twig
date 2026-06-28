@@ -1,11 +1,11 @@
 {# hero — Custom Salla Component #}
-<section dir="auto" class="salla-component salla-component--home-converted-hero">
+<section dir="auto" class="salla-component salla-component--home-converted-hero" style="background-color: {{ component.background_color }}; {% if component.background_image %}background-image: url({{ component.background_image }}); background-size: cover; background-position: center;{% endif %} text-align: {{ component.alignment }}; color: {{ component.text_color }}; {% if component.spacing_top %}padding-top: 80px;{% endif %} {% if component.spacing_bottom %}padding-bottom: 80px;{% endif %} --overlay-opacity: {{ component.overlay_opacity  | default('40') }}%; {% if component.height == 'small' %}min-height: 300px{% elif component.height == 'medium' %}min-height: 500px{% elif component.height == 'large' %}min-height: 700px{% elif component.height == 'fullscreen' %}min-height: 100vh{% else %}min-height: 500px{% endif %}">
 <section aria-label="العرض الرئيسي" class="hero">
 <div class="container" style="position:relative;z-index:2">
 <div class="hero__content">
 <span class="hero__badge">مجموعة الربيع</span>
-<h1 class="hero__title">{{ component.title }}</h1>
-<p class="hero__subtitle">{{ component.description }}</p>
+<h1 class="hero__title" style="font-size: {{ component.title_font_size }}px; color: {{ component.title_color }}">{% if component.title %}{{ component.title }}{% endif %}</h1>
+<p class="hero__subtitle">{% if component.subtitle %}{{ component.subtitle }}{% endif %}</p>
 <button class="btn btn-primary" onclick="showToast('جاري التوجيه للمجموعة...')">
                         تسوقي الآن
                         <i class="fas fa-arrow-left"></i>

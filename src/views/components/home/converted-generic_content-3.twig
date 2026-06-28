@@ -1,9 +1,9 @@
 {# generic-content — Custom Salla Component #}
-<section dir="auto" class="salla-component salla-component--home-converted-generic_content-3">
+<section dir="auto" class="salla-component salla-component--home-converted-generic_content-3" style="background-color: {{ component.background_color }}; {% if component.background_image %}background-image: url({{ component.background_image }}); background-size: cover; background-position: center;{% endif %} text-align: {{ component.alignment }}; {% if component.spacing_top %}padding-top: 80px;{% endif %} {% if component.spacing_bottom %}padding-bottom: 80px;{% endif %}">
 <section aria-labelledby="bestsellers-title" class="section">
 <div class="container">
 <div class="section-header">
-<h2 class="section-header__title" id="bestsellers-title">{{ component.title }}</h2>
+<h2 class="section-header__title" id="bestsellers-title" style="font-size: {{ component.title_font_size }}px; color: {{ component.title_color }}">{% if component.title %}{{ component.title }}{% endif %}</h2>
 <a class="section-header__link" href="#">عرض الكل</a>
 </div>
 <div class="grid-2">

@@ -1,13 +1,13 @@
 {# generic-content — Custom Salla Component #}
-<section dir="auto" class="salla-component salla-component--home-converted-generic_content-2">
+<section dir="auto" class="salla-component salla-component--home-converted-generic_content-2" style="background-color: {{ component.background_color }}; {% if component.background_image %}background-image: url({{ component.background_image }}); background-size: cover; background-position: center;{% endif %} text-align: {{ component.alignment }}; {% if component.spacing_top %}padding-top: 80px;{% endif %} {% if component.spacing_bottom %}padding-bottom: 80px;{% endif %}">
 <section class="section section--sm">
 <div class="container">
 <div style="background:var(--color-primary-subtle);border-radius:var(--radius-lg);padding:var(--space-6) var(--space-4);text-align:center">
 <span style="display:inline-block;background:var(--color-accent);color:white;padding:var(--space-1) var(--space-4);border-radius:var(--radius-full);font-size:0.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:var(--space-3)">
                         مجموعة الصيف
                     </span>
-<h2 style="font-family:var(--font-primary);font-size:1.8rem;font-weight:600;margin-bottom:var(--space-2)">{{ component.title }}</h2>
-<p style="color:var(--color-text-secondary);margin-bottom:var(--space-4);max-width:400px;margin-left:auto;margin-right:auto">{{ component.description }}</p>
+<h2 style="font-size: {{ component.title_font_size }}px; color: {{ component.title_color }};font-family:var(--font-primary);font-size:1.8rem;font-weight:600;margin-bottom:var(--space-2)">{% if component.title %}{{ component.title }}{% endif %}</h2>
+<p style="font-size: {{ component.description_font_size }}px; color: {{ component.description_color }};color:var(--color-text-secondary);margin-bottom:var(--space-4);max-width:400px;margin-left:auto;margin-right:auto">{% if component.description %}{{ component.description }}{% endif %}</p>
 <button class="btn btn-primary" onclick="showToast('جاري التوجيه للمجموعة...')">
                         اكتشفي المجموعة
                     </button>
