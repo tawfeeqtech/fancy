@@ -1129,7 +1129,7 @@
       ]
     },
     {
-      "key": "433b292d-1d05-4957-bc1b-513332fcb673",
+      "key": "05fce8bc-b423-4058-a500-a00066eb8213",
       "title": {
         "ar": "أناقة لا مثيل لها",
         "en": "Hero"
@@ -1138,7 +1138,7 @@
       "icon": "sicon-image-carousel",
       "fields": [
         {
-          "id": "static-title-82e69f",
+          "id": "static-title-7cfca4",
           "type": "static",
           "format": "title",
           "value": "📝 المحتوى"
@@ -1168,7 +1168,7 @@
           "placeholder": "أدخل العنوان الفرعي"
         },
         {
-          "id": "static-title-f94457",
+          "id": "static-title-8857fd",
           "type": "static",
           "format": "title",
           "value": "🔤 الخطوط"
@@ -1184,44 +1184,44 @@
             {
               "label": "صغير (14px)",
               "value": "14",
-              "key": "cd39cdb8-d307-4547-b907-697ceaa13166"
+              "key": "931abc52-cdd4-4bd5-9307-a7192cadfe74"
             },
             {
               "label": "عادي (16px)",
               "value": "16",
-              "key": "b509933e-e1ad-4dcf-bef6-8018e934e61d"
+              "key": "5b76f1be-354d-471b-b1c7-b1ab14f7465a"
             },
             {
               "label": "متوسط (18px)",
               "value": "18",
-              "key": "f6c60749-2e64-441b-81e7-25d38ed0aeb2"
+              "key": "e8d4d3af-b227-4de5-9499-807910ddc0ff"
             },
             {
               "label": "كبير (20px)",
               "value": "20",
-              "key": "2eaf9626-647e-41a0-a7c6-c3c10c85617a"
+              "key": "6072d08a-74d0-45a9-b598-e254b0535032"
             },
             {
               "label": "كبير جداً (24px)",
               "value": "24",
-              "key": "4113e11e-cab7-4f37-a8d9-c5aa8d5cae91"
+              "key": "3938f15c-fa20-44bf-9572-56973f0667f1"
             },
             {
               "label": "ضخم (32px)",
               "value": "32",
-              "key": "73708a69-0ccc-491b-aab5-2d8e46e49bd9"
+              "key": "cf2a2bef-3745-42ee-86d4-0cf3d6ff792f"
             },
             {
               "label": "ضخم جداً (48px)",
               "value": "48",
-              "key": "34fe8a7b-1c71-447c-a823-a6edb0cb8b1a"
+              "key": "e6638588-9f69-485d-9d84-b887856664ce"
             }
           ],
           "selected": [
             {
               "label": "ضخم جداً (48px)",
               "value": "48",
-              "key": "34fe8a7b-1c71-447c-a823-a6edb0cb8b1a"
+              "key": "e6638588-9f69-485d-9d84-b887856664ce"
             }
           ],
           "required": false
@@ -1237,44 +1237,44 @@
             {
               "label": "صغير (14px)",
               "value": "14",
-              "key": "bec4ea22-97a7-450d-9f81-59da3b39bbac"
+              "key": "d9312a73-c470-49af-98dc-5cf5482ba0c7"
             },
             {
               "label": "عادي (16px)",
               "value": "16",
-              "key": "339eb1fb-4315-48a3-a914-cc9202695a9c"
+              "key": "632c3b7f-63c0-4552-9382-16eb68e19f0e"
             },
             {
               "label": "متوسط (18px)",
               "value": "18",
-              "key": "18df303d-cfdd-489a-95f8-5341678956f3"
+              "key": "d6c72ed6-b7bc-473c-a04c-5c693f34a3e9"
             },
             {
               "label": "كبير (20px)",
               "value": "20",
-              "key": "58aa9669-3d85-40ac-98b6-1e6fd62fb403"
+              "key": "0db51de6-e78e-41c4-8813-e408cfa45b78"
             },
             {
               "label": "كبير جداً (24px)",
               "value": "24",
-              "key": "687f8adb-3f5d-40b6-b2ae-b46f417b346d"
+              "key": "170b9fdb-b549-4bf5-82cd-5d5cef14a5a8"
             },
             {
               "label": "ضخم (32px)",
               "value": "32",
-              "key": "a7fa90f0-8e82-417a-8a9b-0080344e4aa4"
+              "key": "b4ed221d-6283-4616-8502-a8f1198e0553"
             },
             {
               "label": "ضخم جداً (48px)",
               "value": "48",
-              "key": "a72a02d9-4927-4a2c-ae83-f09d42cadf1b"
+              "key": "f30453e4-b4ef-4d7c-8fe5-cf5a276a9846"
             }
           ],
           "selected": [
             {
               "label": "كبير (20px)",
               "value": "20",
-              "key": "58aa9669-3d85-40ac-98b6-1e6fd62fb403"
+              "key": "0db51de6-e78e-41c4-8813-e408cfa45b78"
             }
           ],
           "required": false
@@ -1298,7 +1298,7 @@
           "required": false
         },
         {
-          "id": "static-title-9a8bca",
+          "id": "static-title-8cb99a",
           "type": "static",
           "format": "title",
           "value": "🖼️ الوسائط"
@@ -1333,60 +1333,60 @@
             {
               "label": "بدون",
               "value": "0",
-              "key": "93c47e23-5032-4da8-b06f-92ffca6b1bb7"
+              "key": "3cf0f966-e594-4842-834a-45643b6bcec5"
             },
             {
               "label": "10%",
               "value": "10",
-              "key": "3fc1f783-64f3-432f-a250-bc7990bfa5a7"
+              "key": "7a70e63c-c585-424a-96b9-3b5d66ef0e7d"
             },
             {
               "label": "20%",
               "value": "20",
-              "key": "ccec8e42-71f8-441b-9964-42946b01504e"
+              "key": "9d3e1b31-87b8-4bd3-b2d5-448775aac79c"
             },
             {
               "label": "30%",
               "value": "30",
-              "key": "ea0bde4f-72ce-4d71-8fc1-05c807dad4e4"
+              "key": "256ef676-7a50-4ebc-94fc-55593a759c04"
             },
             {
               "label": "40%",
               "value": "40",
-              "key": "dd9b29bb-9e69-4e47-9348-5993ff622cf6"
+              "key": "4dfd833e-15ba-485b-b61f-39dee96ff25f"
             },
             {
               "label": "50%",
               "value": "50",
-              "key": "82110364-dd3d-4a2e-94b8-45385e781b9d"
+              "key": "4f130dcc-440f-4944-92af-aa63697aed2c"
             },
             {
               "label": "60%",
               "value": "60",
-              "key": "be14af02-46a8-4e99-8ffd-be0041a1d257"
+              "key": "75ca6e06-7321-46d3-a290-57e602159bf6"
             },
             {
               "label": "70%",
               "value": "70",
-              "key": "9e592170-f970-4985-af4a-4d0809076927"
+              "key": "c6c933b1-150d-4240-91ed-efcbba034eec"
             },
             {
               "label": "80%",
               "value": "80",
-              "key": "b4cf8ebd-805b-4f0e-89c1-ead47e7a8e41"
+              "key": "8ba86586-4a9b-434c-b5b3-c822cd526741"
             }
           ],
           "selected": [
             {
               "label": "40%",
               "value": "40",
-              "key": "dd9b29bb-9e69-4e47-9348-5993ff622cf6"
+              "key": "4dfd833e-15ba-485b-b61f-39dee96ff25f"
             }
           ],
           "required": false
         },
         {
-          "id": "static-title-287c77",
+          "id": "static-title-5144e5",
           "type": "static",
           "format": "title",
           "value": "📐 التخطيط"
@@ -1402,29 +1402,29 @@
             {
               "label": "صغير (300px)",
               "value": "small",
-              "key": "e9bbaa56-b859-4649-b6f4-48701aaeea7e"
+              "key": "56139570-122e-4dc2-945f-54c7df84bab6"
             },
             {
               "label": "متوسط (500px)",
               "value": "medium",
-              "key": "c330ffd2-4602-4823-b017-ae165dabaa12"
+              "key": "eb61a44c-872d-4007-bba8-a279ac2a8e94"
             },
             {
               "label": "كبير (700px)",
               "value": "large",
-              "key": "bd3cb17b-e496-4621-a854-1195a077f033"
+              "key": "bee7e2eb-2faa-4a41-87c3-22563032a474"
             },
             {
               "label": "ملء الشاشة",
               "value": "fullscreen",
-              "key": "428fc611-9364-4181-a4c2-0b12583d5c3b"
+              "key": "5fe6f782-9364-4002-80dd-c90b70747fea"
             }
           ],
           "selected": [
             {
               "label": "كبير (700px)",
               "value": "large",
-              "key": "bd3cb17b-e496-4621-a854-1195a077f033"
+              "key": "bee7e2eb-2faa-4a41-87c3-22563032a474"
             }
           ],
           "required": false
@@ -1440,24 +1440,24 @@
             {
               "label": "وسط",
               "value": "center",
-              "key": "bde54308-866f-479c-942f-74e83cc8bfa9"
+              "key": "3eb5918e-d9e5-4e75-a5f2-0ecf16078aaf"
             },
             {
               "label": "يمين",
               "value": "right",
-              "key": "9e909d3a-570c-4124-98bf-0bded6ec538f"
+              "key": "d3362a4b-7ccf-4f27-b9d2-00a584240b9c"
             },
             {
               "label": "يسار",
               "value": "left",
-              "key": "ad282e13-131d-4978-8876-fcd985634814"
+              "key": "c926742a-d718-4a69-9323-aebd1bb4d9fa"
             }
           ],
           "selected": [
             {
               "label": "وسط",
               "value": "center",
-              "key": "bde54308-866f-479c-942f-74e83cc8bfa9"
+              "key": "3eb5918e-d9e5-4e75-a5f2-0ecf16078aaf"
             }
           ],
           "required": false
@@ -1472,7 +1472,7 @@
           "required": false
         },
         {
-          "id": "static-title-84571c",
+          "id": "static-title-f142ff",
           "type": "static",
           "format": "title",
           "value": "🔘 زر الدعوة"
@@ -1573,24 +1573,24 @@
             {
               "label": "صغير",
               "value": "small",
-              "key": "46001aa3-c31a-4cf9-bb97-32949f0934bc"
+              "key": "cad05421-8f67-4c57-9ea5-7376676d8d22"
             },
             {
               "label": "متوسط",
               "value": "medium",
-              "key": "179d50e4-f93f-4b9d-ad08-04a4c5fa4dbe"
+              "key": "246e9858-425f-407a-af84-0cb603fb8558"
             },
             {
               "label": "كبير",
               "value": "large",
-              "key": "d907f110-d9fb-44b1-b001-9a5b3d6bf625"
+              "key": "5cea1b79-e7d4-4b32-bc2f-dfb74ceafc04"
             }
           ],
           "selected": [
             {
               "label": "متوسط",
               "value": "medium",
-              "key": "179d50e4-f93f-4b9d-ad08-04a4c5fa4dbe"
+              "key": "246e9858-425f-407a-af84-0cb603fb8558"
             }
           ],
           "required": false
@@ -1606,24 +1606,24 @@
             {
               "label": "صلب (Solid)",
               "value": "solid",
-              "key": "d75da881-6e0d-4dfb-acf3-3b87764608ac"
+              "key": "9778f833-e9ee-4cfb-9129-ba25512fac09"
             },
             {
               "label": "محدد (Outline)",
               "value": "outline",
-              "key": "89698b85-41fe-4f14-bcba-df1883e8af89"
+              "key": "cc2859a2-0050-44b0-a34b-630593f851ae"
             },
             {
               "label": "نص فقط",
               "value": "text",
-              "key": "1c38a1f3-2d15-43b8-8749-d05cbb7ca705"
+              "key": "ac717ae6-940d-4b36-9931-f73494564e47"
             }
           ],
           "selected": [
             {
               "label": "صلب (Solid)",
               "value": "solid",
-              "key": "d75da881-6e0d-4dfb-acf3-3b87764608ac"
+              "key": "9778f833-e9ee-4cfb-9129-ba25512fac09"
             }
           ],
           "required": false
@@ -1647,7 +1647,7 @@
           "required": false
         },
         {
-          "id": "static-title-102abf",
+          "id": "static-title-6a5cc1",
           "type": "static",
           "format": "title",
           "value": "⚙️ المسافات"
@@ -1675,7 +1675,7 @@
       ]
     },
     {
-      "key": "e46a01da-8831-4c24-b824-2378377272d6",
+      "key": "fb116471-fa99-4121-a314-3e6d00ce5f5d",
       "title": {
         "ar": "المجموعات المميزة",
         "en": "Generic Content"
@@ -1684,7 +1684,7 @@
       "icon": "sicon-file",
       "fields": [
         {
-          "id": "static-title-7a03b4",
+          "id": "static-title-401352",
           "type": "static",
           "format": "title",
           "value": "📝 المحتوى"
@@ -1714,7 +1714,7 @@
           "placeholder": "أدخل المحتوى"
         },
         {
-          "id": "static-title-f80014",
+          "id": "static-title-e0048f",
           "type": "static",
           "format": "title",
           "value": "🔤 الخطوط"
@@ -1730,44 +1730,44 @@
             {
               "label": "صغير (14px)",
               "value": "14",
-              "key": "12cbe65a-7906-44d0-a815-f8963a552289"
+              "key": "d384289a-aadc-49ea-bb11-1b0032eada36"
             },
             {
               "label": "عادي (16px)",
               "value": "16",
-              "key": "23a021bd-e001-4019-b5a5-2efbd44e1e19"
+              "key": "c4ae264f-8b4f-48b0-b497-904645bb2360"
             },
             {
               "label": "متوسط (18px)",
               "value": "18",
-              "key": "63eb05c2-6e62-4064-b7d4-8a718d0feee1"
+              "key": "556e7bb7-c662-4685-9852-c1e3f3a412f5"
             },
             {
               "label": "كبير (20px)",
               "value": "20",
-              "key": "bd052071-da77-42b1-8fd3-db4caf62f58b"
+              "key": "3f48a98f-6360-4b55-af6e-762336bc2d55"
             },
             {
               "label": "كبير جداً (24px)",
               "value": "24",
-              "key": "3c531415-885e-4958-a017-4ca93ca55c7e"
+              "key": "ae0cba3e-85ff-412a-be31-48730f90286b"
             },
             {
               "label": "ضخم (32px)",
               "value": "32",
-              "key": "3bc2e8d0-a5b9-4a0f-b254-4d527a9843ff"
+              "key": "d48e4203-b495-4da2-a104-a81366289cca"
             },
             {
               "label": "ضخم جداً (48px)",
               "value": "48",
-              "key": "1ed35bf0-34cf-4005-8306-7e6f780e01fc"
+              "key": "6196bc76-3bf3-48ee-9c82-e55e0b3d70b9"
             }
           ],
           "selected": [
             {
               "label": "ضخم (32px)",
               "value": "32",
-              "key": "3bc2e8d0-a5b9-4a0f-b254-4d527a9843ff"
+              "key": "d48e4203-b495-4da2-a104-a81366289cca"
             }
           ],
           "required": false
@@ -1783,44 +1783,44 @@
             {
               "label": "صغير (14px)",
               "value": "14",
-              "key": "1d874c88-355f-4f32-a51c-6d5cd1b04f83"
+              "key": "8d4b9bf8-8b84-4896-af31-9a1737310775"
             },
             {
               "label": "عادي (16px)",
               "value": "16",
-              "key": "ec568594-bee9-485c-8850-e9eb3b906cb8"
+              "key": "bbfe0e43-f433-42f5-82fa-89142d4104a8"
             },
             {
               "label": "متوسط (18px)",
               "value": "18",
-              "key": "0045d0c7-7b7d-4fe3-88e0-e15e2d345945"
+              "key": "cb786d41-625f-4120-9de7-22cfa3267813"
             },
             {
               "label": "كبير (20px)",
               "value": "20",
-              "key": "bde21a4a-1a7e-4704-87f9-379c07991c28"
+              "key": "3e0d58ed-3423-47e6-a0d2-90c9afad1e0e"
             },
             {
               "label": "كبير جداً (24px)",
               "value": "24",
-              "key": "7ed1a898-c799-46ff-ba0f-53f7368c919f"
+              "key": "c9f7bf8f-442a-4a9b-8f65-52de62f35e12"
             },
             {
               "label": "ضخم (32px)",
               "value": "32",
-              "key": "f963ef5b-7f46-460e-abbf-a195979b6eef"
+              "key": "136a07e1-e908-4ae8-ad51-688da57565bf"
             },
             {
               "label": "ضخم جداً (48px)",
               "value": "48",
-              "key": "f758c5ba-3fcb-423d-8f0c-1ab9d9d3e388"
+              "key": "eed21eeb-b0d0-4b6d-8bac-e3408ba5786a"
             }
           ],
           "selected": [
             {
               "label": "عادي (16px)",
               "value": "16",
-              "key": "ec568594-bee9-485c-8850-e9eb3b906cb8"
+              "key": "bbfe0e43-f433-42f5-82fa-89142d4104a8"
             }
           ],
           "required": false
@@ -1844,7 +1844,7 @@
           "required": false
         },
         {
-          "id": "static-title-2a2b77",
+          "id": "static-title-4d344b",
           "type": "static",
           "format": "title",
           "value": "🖼️ الوسائط"
@@ -1879,7 +1879,7 @@
           "multilanguage": false
         },
         {
-          "id": "static-title-4d2582",
+          "id": "static-title-7b8bf4",
           "type": "static",
           "format": "title",
           "value": "📐 التخطيط"
@@ -1895,30 +1895,30 @@
             {
               "label": "وسط",
               "value": "center",
-              "key": "5f56b04d-3e68-470e-a9cb-085638906595"
+              "key": "f15c950e-bd26-47c7-bdef-f7585c9bf6fd"
             },
             {
               "label": "يمين",
               "value": "right",
-              "key": "0e1a8a43-5089-459e-ac9e-b3e2e8f0fc5a"
+              "key": "020a1d62-2ccf-4eef-9499-44eec694da52"
             },
             {
               "label": "يسار",
               "value": "left",
-              "key": "598cbd75-7335-41a4-b520-449611baeef6"
+              "key": "39e05e04-cc5e-4b40-8b3f-559e57210ef8"
             }
           ],
           "selected": [
             {
               "label": "وسط",
               "value": "center",
-              "key": "5f56b04d-3e68-470e-a9cb-085638906595"
+              "key": "f15c950e-bd26-47c7-bdef-f7585c9bf6fd"
             }
           ],
           "required": false
         },
         {
-          "id": "static-title-f539d7",
+          "id": "static-title-2bf8c4",
           "type": "static",
           "format": "title",
           "value": "🔘 زر (اختياري)"
@@ -2019,24 +2019,24 @@
             {
               "label": "صلب (Solid)",
               "value": "solid",
-              "key": "4ea8d181-92c6-4b80-8f79-619502af9c16"
+              "key": "da931408-ea14-4faa-801f-a862c0b26d16"
             },
             {
               "label": "محدد (Outline)",
               "value": "outline",
-              "key": "a8c24a15-20ce-4eba-a381-c8b58867ee42"
+              "key": "686c6d77-0a30-4dc9-9b36-dfe27d22c82f"
             },
             {
               "label": "نص فقط",
               "value": "text",
-              "key": "4a36d7f8-db46-43c7-8039-3a83f2b90dbe"
+              "key": "8d6b60ae-ec85-4e55-b96e-790867c89db8"
             }
           ],
           "selected": [
             {
               "label": "صلب (Solid)",
               "value": "solid",
-              "key": "4ea8d181-92c6-4b80-8f79-619502af9c16"
+              "key": "da931408-ea14-4faa-801f-a862c0b26d16"
             }
           ],
           "required": false
@@ -2060,7 +2060,7 @@
           "required": false
         },
         {
-          "id": "static-title-7101cc",
+          "id": "static-title-73f40f",
           "type": "static",
           "format": "title",
           "value": "⚙️ المسافات"
@@ -2088,7 +2088,7 @@
       ]
     },
     {
-      "key": "581cade0-cf36-4ae8-bbcf-57d9575df718",
+      "key": "117a62fe-79c8-4412-9fe3-d4165bf602fd",
       "title": {
         "ar": "أطلقي إطلالتك الصيفية",
         "en": "Generic Content"
@@ -2097,7 +2097,7 @@
       "icon": "sicon-file",
       "fields": [
         {
-          "id": "static-title-e21030",
+          "id": "static-title-dd81c7",
           "type": "static",
           "format": "title",
           "value": "📝 المحتوى"
@@ -2127,7 +2127,7 @@
           "placeholder": "أدخل المحتوى"
         },
         {
-          "id": "static-title-2b50c3",
+          "id": "static-title-d1e62e",
           "type": "static",
           "format": "title",
           "value": "🔤 الخطوط"
@@ -2143,44 +2143,44 @@
             {
               "label": "صغير (14px)",
               "value": "14",
-              "key": "84a481eb-a286-44ab-9abb-c5f6ef689698"
+              "key": "a82a5429-336d-48a3-8477-4c9066e7a0c3"
             },
             {
               "label": "عادي (16px)",
               "value": "16",
-              "key": "318d490a-f059-413b-9437-9a9a7f6daca4"
+              "key": "61ec1c56-a053-46c0-92db-fe3c5213cbac"
             },
             {
               "label": "متوسط (18px)",
               "value": "18",
-              "key": "b01a3f0a-06a3-4b13-8e12-a628e9304946"
+              "key": "c2ffff3d-c6bf-4c4d-9879-1270343e344c"
             },
             {
               "label": "كبير (20px)",
               "value": "20",
-              "key": "4bcda0ac-c104-443b-8f0a-2d47806f27c8"
+              "key": "c55d8b23-9ac3-4ebf-986c-175991b4a881"
             },
             {
               "label": "كبير جداً (24px)",
               "value": "24",
-              "key": "e47d8c26-5940-4011-ba64-40cbc7040e90"
+              "key": "d5570bc6-287c-4b55-a0f3-b4ca2004d598"
             },
             {
               "label": "ضخم (32px)",
               "value": "32",
-              "key": "d4671d55-1658-4bab-8525-a58ad6fa9bfd"
+              "key": "58e311dc-da57-43df-8cf3-a8a3481f0310"
             },
             {
               "label": "ضخم جداً (48px)",
               "value": "48",
-              "key": "78c18d0a-4b50-42df-8658-33caaf71bffa"
+              "key": "ad5c0702-ad44-4348-ac58-22f455a61435"
             }
           ],
           "selected": [
             {
               "label": "ضخم (32px)",
               "value": "32",
-              "key": "d4671d55-1658-4bab-8525-a58ad6fa9bfd"
+              "key": "58e311dc-da57-43df-8cf3-a8a3481f0310"
             }
           ],
           "required": false
@@ -2196,44 +2196,44 @@
             {
               "label": "صغير (14px)",
               "value": "14",
-              "key": "acbe4802-7495-429e-a40b-e8d47c34a2fa"
+              "key": "2bf3d52d-85ea-45ac-b463-2a99b3d03113"
             },
             {
               "label": "عادي (16px)",
               "value": "16",
-              "key": "aa614612-3abb-4fdc-9abc-981d4c18b227"
+              "key": "dd88b2ec-4ed4-44a1-80c0-8768bc5d00d6"
             },
             {
               "label": "متوسط (18px)",
               "value": "18",
-              "key": "bfb8d0eb-092c-4bc7-9a49-7019c72632f2"
+              "key": "f98bc4eb-e9c2-407f-95aa-72d8eb7d4a6e"
             },
             {
               "label": "كبير (20px)",
               "value": "20",
-              "key": "6cf4a87d-a9bd-4e5f-94bf-8a80fe931d1e"
+              "key": "f0b2b240-2230-4c96-b4ac-29f76beee9a1"
             },
             {
               "label": "كبير جداً (24px)",
               "value": "24",
-              "key": "b628d052-da8e-4d3f-af46-df6ee4fd1e25"
+              "key": "c700ba83-1d62-49e0-bec1-2305a1803b5b"
             },
             {
               "label": "ضخم (32px)",
               "value": "32",
-              "key": "088ba949-0238-495f-a84c-2a1a270897f3"
+              "key": "8864ed7b-90f3-447f-9bcc-988e5288ea2f"
             },
             {
               "label": "ضخم جداً (48px)",
               "value": "48",
-              "key": "648c3638-e69c-4cd0-9ecd-68a4f8276875"
+              "key": "fc8a00fd-d67a-4e70-bb44-83ba8fbddbfb"
             }
           ],
           "selected": [
             {
               "label": "عادي (16px)",
               "value": "16",
-              "key": "aa614612-3abb-4fdc-9abc-981d4c18b227"
+              "key": "dd88b2ec-4ed4-44a1-80c0-8768bc5d00d6"
             }
           ],
           "required": false
@@ -2257,7 +2257,7 @@
           "required": false
         },
         {
-          "id": "static-title-9762aa",
+          "id": "static-title-017e6e",
           "type": "static",
           "format": "title",
           "value": "🖼️ الوسائط"
@@ -2292,7 +2292,7 @@
           "multilanguage": false
         },
         {
-          "id": "static-title-eb6de3",
+          "id": "static-title-f1aeda",
           "type": "static",
           "format": "title",
           "value": "📐 التخطيط"
@@ -2308,30 +2308,30 @@
             {
               "label": "وسط",
               "value": "center",
-              "key": "726c5a5a-c578-45d9-950d-b930284a57c3"
+              "key": "5ec7162b-09f8-45aa-8d34-330ab78096b6"
             },
             {
               "label": "يمين",
               "value": "right",
-              "key": "f316105a-ecaa-4292-ba3a-b00447b5306e"
+              "key": "a2bb179f-7aeb-4fc2-aa0d-47baa586639b"
             },
             {
               "label": "يسار",
               "value": "left",
-              "key": "5f322df8-896e-429f-af65-40c22662f33f"
+              "key": "8f8e5a4a-45bb-48d5-a264-00f3997f4058"
             }
           ],
           "selected": [
             {
               "label": "وسط",
               "value": "center",
-              "key": "726c5a5a-c578-45d9-950d-b930284a57c3"
+              "key": "5ec7162b-09f8-45aa-8d34-330ab78096b6"
             }
           ],
           "required": false
         },
         {
-          "id": "static-title-ca4f44",
+          "id": "static-title-3f4da1",
           "type": "static",
           "format": "title",
           "value": "🔘 زر (اختياري)"
@@ -2432,24 +2432,24 @@
             {
               "label": "صلب (Solid)",
               "value": "solid",
-              "key": "95e5d80e-3244-4cb7-af41-c0f8a6915ba2"
+              "key": "b4deffbe-2550-4a09-8544-7528e5f94e2f"
             },
             {
               "label": "محدد (Outline)",
               "value": "outline",
-              "key": "80cae0df-2cf7-476d-a4bc-70924d601858"
+              "key": "9e7a466c-acae-4ed2-8b27-056127afb4d4"
             },
             {
               "label": "نص فقط",
               "value": "text",
-              "key": "c7930737-5767-4e18-a8c2-bea949bcc13a"
+              "key": "e722f058-86b6-4569-b9e5-6c128fe2f960"
             }
           ],
           "selected": [
             {
               "label": "صلب (Solid)",
               "value": "solid",
-              "key": "95e5d80e-3244-4cb7-af41-c0f8a6915ba2"
+              "key": "b4deffbe-2550-4a09-8544-7528e5f94e2f"
             }
           ],
           "required": false
@@ -2473,7 +2473,7 @@
           "required": false
         },
         {
-          "id": "static-title-ea8871",
+          "id": "static-title-9f1c9a",
           "type": "static",
           "format": "title",
           "value": "⚙️ المسافات"
@@ -2501,7 +2501,7 @@
       ]
     },
     {
-      "key": "80b29d64-8a2d-41c5-bdf8-3c413887b3c9",
+      "key": "5c3321e9-4e00-4ae3-9800-f11304344423",
       "title": {
         "ar": "الأفضل مبيعاً",
         "en": "Generic Content"
@@ -2510,7 +2510,7 @@
       "icon": "sicon-file",
       "fields": [
         {
-          "id": "static-title-3dc528",
+          "id": "static-title-df8438",
           "type": "static",
           "format": "title",
           "value": "📝 المحتوى"
@@ -2540,7 +2540,7 @@
           "placeholder": "أدخل المحتوى"
         },
         {
-          "id": "static-title-193ed5",
+          "id": "static-title-84d70f",
           "type": "static",
           "format": "title",
           "value": "🔤 الخطوط"
@@ -2556,44 +2556,44 @@
             {
               "label": "صغير (14px)",
               "value": "14",
-              "key": "6894d7a7-44c5-4773-8c5d-30930141642f"
+              "key": "e0075dc6-caca-485a-8f9b-b20834ee2fd7"
             },
             {
               "label": "عادي (16px)",
               "value": "16",
-              "key": "68761415-254f-4369-8b73-fef3c49f6189"
+              "key": "92ddb68e-ad18-4bd4-8c03-05bf0e9eeb19"
             },
             {
               "label": "متوسط (18px)",
               "value": "18",
-              "key": "9a783e07-c5fa-4892-b09b-5b823e9a02d0"
+              "key": "ebaef10f-5cb5-40f1-bba4-b449c777da8e"
             },
             {
               "label": "كبير (20px)",
               "value": "20",
-              "key": "ca499e67-cd4c-42a9-8f88-081f186b3187"
+              "key": "3b06432d-ef89-4249-993a-291a48f41bce"
             },
             {
               "label": "كبير جداً (24px)",
               "value": "24",
-              "key": "493089bb-1f80-4680-adc0-9eb871e482a9"
+              "key": "9caeffa7-0bfa-477d-b450-f8582913e43a"
             },
             {
               "label": "ضخم (32px)",
               "value": "32",
-              "key": "0e7e45f8-20c1-4e99-a328-7b58bf1e066e"
+              "key": "686f95e6-fa24-49d6-ba0b-a80d6bfca985"
             },
             {
               "label": "ضخم جداً (48px)",
               "value": "48",
-              "key": "0d4f9c28-1e59-4c66-bb57-11d0bc8fbd8b"
+              "key": "4b7c0291-5ebb-4f72-b5e1-3d2888fc365d"
             }
           ],
           "selected": [
             {
               "label": "ضخم (32px)",
               "value": "32",
-              "key": "0e7e45f8-20c1-4e99-a328-7b58bf1e066e"
+              "key": "686f95e6-fa24-49d6-ba0b-a80d6bfca985"
             }
           ],
           "required": false
@@ -2609,44 +2609,44 @@
             {
               "label": "صغير (14px)",
               "value": "14",
-              "key": "b6892a30-8153-4df3-8040-095f275cc05a"
+              "key": "6ed545b2-f095-48c3-a91d-9c01f9be1b9f"
             },
             {
               "label": "عادي (16px)",
               "value": "16",
-              "key": "95a64722-507c-43e3-b7de-4b148fcd7b86"
+              "key": "1530121c-3e3b-47d4-9c38-8cd24c88e203"
             },
             {
               "label": "متوسط (18px)",
               "value": "18",
-              "key": "bfd2a96b-d698-487d-a2d5-2e4eff5c3578"
+              "key": "a9d576f9-a068-43e7-b2ef-c69479e2718e"
             },
             {
               "label": "كبير (20px)",
               "value": "20",
-              "key": "1c2d1fd3-af8c-45a6-ba5e-4c9ffbba69c7"
+              "key": "250339e0-6ec6-4c51-babd-b17fa3e1251d"
             },
             {
               "label": "كبير جداً (24px)",
               "value": "24",
-              "key": "3cbf7ba0-3cda-4cf4-ad17-4e5f40812482"
+              "key": "00686ede-dec8-4b3d-bc90-fa65a67b455f"
             },
             {
               "label": "ضخم (32px)",
               "value": "32",
-              "key": "f9fa498a-e054-4f4a-a4a4-0d7d691b5ccc"
+              "key": "7623a909-197c-4aaf-9813-877063627b2a"
             },
             {
               "label": "ضخم جداً (48px)",
               "value": "48",
-              "key": "3e686ff8-e779-4fdb-a7f5-a94f19b30891"
+              "key": "e938ee83-70ce-4be1-86c9-77d121628ad4"
             }
           ],
           "selected": [
             {
               "label": "عادي (16px)",
               "value": "16",
-              "key": "95a64722-507c-43e3-b7de-4b148fcd7b86"
+              "key": "1530121c-3e3b-47d4-9c38-8cd24c88e203"
             }
           ],
           "required": false
@@ -2670,7 +2670,7 @@
           "required": false
         },
         {
-          "id": "static-title-386be4",
+          "id": "static-title-624b1e",
           "type": "static",
           "format": "title",
           "value": "🖼️ الوسائط"
@@ -2705,7 +2705,7 @@
           "multilanguage": false
         },
         {
-          "id": "static-title-3ffa63",
+          "id": "static-title-fa0946",
           "type": "static",
           "format": "title",
           "value": "📐 التخطيط"
@@ -2721,30 +2721,30 @@
             {
               "label": "وسط",
               "value": "center",
-              "key": "d0293f6c-b0db-468e-9ff4-f1238caa7f87"
+              "key": "462052da-b428-4ee0-b905-c84b8b990606"
             },
             {
               "label": "يمين",
               "value": "right",
-              "key": "6fb8de8d-4354-4307-984a-c5330110584c"
+              "key": "bd5d31ad-18ae-433c-a2bc-38f5512c7070"
             },
             {
               "label": "يسار",
               "value": "left",
-              "key": "0fc2a764-81c4-4f66-9fc5-e23c7e7dfcd0"
+              "key": "e122ebe9-c30d-4e0a-8be5-71c111f364e1"
             }
           ],
           "selected": [
             {
               "label": "وسط",
               "value": "center",
-              "key": "d0293f6c-b0db-468e-9ff4-f1238caa7f87"
+              "key": "462052da-b428-4ee0-b905-c84b8b990606"
             }
           ],
           "required": false
         },
         {
-          "id": "static-title-827acf",
+          "id": "static-title-448980",
           "type": "static",
           "format": "title",
           "value": "🔘 زر (اختياري)"
@@ -2845,24 +2845,24 @@
             {
               "label": "صلب (Solid)",
               "value": "solid",
-              "key": "9abab1ae-08d6-4664-836b-134644cdfe04"
+              "key": "7c72d70b-1e72-486e-b0bc-da6ae7ba3912"
             },
             {
               "label": "محدد (Outline)",
               "value": "outline",
-              "key": "d4afbe67-5273-4f9d-ab28-eccdda2b185e"
+              "key": "887b5b8b-649f-4bd7-84db-96a941a1f75a"
             },
             {
               "label": "نص فقط",
               "value": "text",
-              "key": "ea3a1db5-dc97-42b6-9a9c-11d6eaf73c44"
+              "key": "7f40dc37-83be-456f-95e0-773432e43e89"
             }
           ],
           "selected": [
             {
               "label": "صلب (Solid)",
               "value": "solid",
-              "key": "9abab1ae-08d6-4664-836b-134644cdfe04"
+              "key": "7c72d70b-1e72-486e-b0bc-da6ae7ba3912"
             }
           ],
           "required": false
@@ -2886,7 +2886,7 @@
           "required": false
         },
         {
-          "id": "static-title-5c019d",
+          "id": "static-title-fcfaac",
           "type": "static",
           "format": "title",
           "value": "⚙️ المسافات"
@@ -2914,7 +2914,7 @@
       ]
     },
     {
-      "key": "9b74e01e-c9a5-4034-8894-08fd4daf7f0e",
+      "key": "37dfeeee-ddb2-424e-af43-87603956ccbe",
       "title": {
         "ar": "انضمي إلى قائمتنا",
         "en": "Cta"
@@ -2923,7 +2923,7 @@
       "icon": "sicon-megaphone",
       "fields": [
         {
-          "id": "static-title-d64245",
+          "id": "static-title-0ef3bc",
           "type": "static",
           "format": "title",
           "value": "📝 المحتوى"
@@ -2953,7 +2953,7 @@
           "placeholder": "أدخل النص التوضيحي"
         },
         {
-          "id": "static-title-7e6e32",
+          "id": "static-title-d2c389",
           "type": "static",
           "format": "title",
           "value": "🔤 الخطوط"
@@ -2969,44 +2969,44 @@
             {
               "label": "صغير (14px)",
               "value": "14",
-              "key": "93d5f6e2-bd27-4894-b5c0-73c4486736a9"
+              "key": "f5070076-1e3b-4063-b9a1-16556cfba1b0"
             },
             {
               "label": "عادي (16px)",
               "value": "16",
-              "key": "73fa14cb-85ab-4937-8566-992db60027f5"
+              "key": "5d469e65-0a4d-4d95-b271-5b88f2709bfd"
             },
             {
               "label": "متوسط (18px)",
               "value": "18",
-              "key": "d2b09f43-a9b2-4537-a1f7-35a17403666e"
+              "key": "3ca1bc84-8194-40c4-8b58-cdc80911944f"
             },
             {
               "label": "كبير (20px)",
               "value": "20",
-              "key": "e5ecc5f1-d6f5-4e71-b5c8-8a1db2b43be8"
+              "key": "136220c7-a403-4be2-b2f9-afbbf5d9750a"
             },
             {
               "label": "كبير جداً (24px)",
               "value": "24",
-              "key": "26e26f8b-6b9d-470f-a023-c2945d862d7d"
+              "key": "ccb7cdfa-a557-492d-ba1c-712a76a7b536"
             },
             {
               "label": "ضخم (32px)",
               "value": "32",
-              "key": "9a0ba39c-8c8a-4225-adef-0bbf4d4fc039"
+              "key": "d5bc91bd-449c-4a34-944c-123da58c7fd0"
             },
             {
               "label": "ضخم جداً (48px)",
               "value": "48",
-              "key": "49c92edc-5855-4d56-900f-95e75c93ff84"
+              "key": "ae8e76c2-f206-4c94-a251-d3eddfc4cb6b"
             }
           ],
           "selected": [
             {
               "label": "ضخم (32px)",
               "value": "32",
-              "key": "9a0ba39c-8c8a-4225-adef-0bbf4d4fc039"
+              "key": "d5bc91bd-449c-4a34-944c-123da58c7fd0"
             }
           ],
           "required": false
@@ -3022,44 +3022,44 @@
             {
               "label": "صغير (14px)",
               "value": "14",
-              "key": "d56b96e2-1c2d-42c1-b6dd-49edbed18c7d"
+              "key": "968c8d7c-e22f-4faa-b8c4-4fbe43ee1bca"
             },
             {
               "label": "عادي (16px)",
               "value": "16",
-              "key": "6ad22159-498e-4e5d-9f99-92714de45ee3"
+              "key": "75d6e0d6-95ec-4045-8c69-4649f9563b05"
             },
             {
               "label": "متوسط (18px)",
               "value": "18",
-              "key": "eadd013e-c6cc-450f-bcc0-0e4810d7bfa0"
+              "key": "cc52dddd-a2fe-48d9-9906-2edc354bd9fb"
             },
             {
               "label": "كبير (20px)",
               "value": "20",
-              "key": "b76452cd-920b-4a02-b4dd-9cb1f14b4d7a"
+              "key": "f318eb29-beac-4a59-b2c6-1d969deaeac1"
             },
             {
               "label": "كبير جداً (24px)",
               "value": "24",
-              "key": "de9ac31a-826d-4068-a976-5b1233d7f59c"
+              "key": "94f29747-c67d-476e-9d63-0ded92501410"
             },
             {
               "label": "ضخم (32px)",
               "value": "32",
-              "key": "aa3bf067-2a61-42e8-8b5d-f534232c0a7e"
+              "key": "05863b19-77c0-43a5-94a8-2563a5176a63"
             },
             {
               "label": "ضخم جداً (48px)",
               "value": "48",
-              "key": "43dcfc65-051a-407d-96ad-13234346f00a"
+              "key": "7e3b2374-1e58-49b9-9cf7-66c9bd0588bd"
             }
           ],
           "selected": [
             {
               "label": "متوسط (18px)",
               "value": "18",
-              "key": "eadd013e-c6cc-450f-bcc0-0e4810d7bfa0"
+              "key": "cc52dddd-a2fe-48d9-9906-2edc354bd9fb"
             }
           ],
           "required": false
@@ -3083,7 +3083,7 @@
           "required": false
         },
         {
-          "id": "static-title-0d5fd1",
+          "id": "static-title-d4919f",
           "type": "static",
           "format": "title",
           "value": "🔘 الأزرار"
@@ -3174,24 +3174,24 @@
             {
               "label": "صلب (Solid)",
               "value": "solid",
-              "key": "04d31965-4d27-48d8-9b09-c09ca6d23aac"
+              "key": "fd2812a7-058f-4644-9a83-2667c6a95d94"
             },
             {
               "label": "محدد (Outline)",
               "value": "outline",
-              "key": "b2eea41e-5713-4b9c-ad00-66db4aaa48ae"
+              "key": "e82262c1-6b11-4886-8374-8dd8564f214d"
             },
             {
               "label": "نص فقط",
               "value": "text",
-              "key": "2c2c7836-2c8e-4372-9fab-18cf2ba06af4"
+              "key": "dcbec0b6-9b7d-4c3c-b260-8469a3f72def"
             }
           ],
           "selected": [
             {
               "label": "صلب (Solid)",
               "value": "solid",
-              "key": "04d31965-4d27-48d8-9b09-c09ca6d23aac"
+              "key": "fd2812a7-058f-4644-9a83-2667c6a95d94"
             }
           ],
           "required": false
@@ -3207,24 +3207,24 @@
             {
               "label": "صغير",
               "value": "small",
-              "key": "30aa9b9f-51d7-4a7b-b8a0-674e285bc0eb"
+              "key": "281f09a6-c385-45a7-95da-482d2cb2b9c7"
             },
             {
               "label": "متوسط",
               "value": "medium",
-              "key": "0702bffa-1aef-4184-83e3-2cc6f8b0ce9f"
+              "key": "290cad79-c8ea-445e-8b20-0dd06b4eaab0"
             },
             {
               "label": "كبير",
               "value": "large",
-              "key": "10142398-603d-4c44-a141-fb36506f9c16"
+              "key": "0aa94f39-4bfb-4334-aaa2-5f33284a6655"
             }
           ],
           "selected": [
             {
               "label": "متوسط",
               "value": "medium",
-              "key": "0702bffa-1aef-4184-83e3-2cc6f8b0ce9f"
+              "key": "290cad79-c8ea-445e-8b20-0dd06b4eaab0"
             }
           ],
           "required": false
@@ -3323,7 +3323,7 @@
           ]
         },
         {
-          "id": "static-title-d3912c",
+          "id": "static-title-9c2c83",
           "type": "static",
           "format": "title",
           "value": "🎨 التنسيق"
@@ -3367,30 +3367,30 @@
             {
               "label": "وسط",
               "value": "center",
-              "key": "1b7aa8cf-79d7-4fdc-b247-c3a7f2814635"
+              "key": "772da80a-8cac-425d-a128-e2770329bf29"
             },
             {
               "label": "يمين",
               "value": "right",
-              "key": "e3cb1671-89f4-44fc-9024-c972a5c85d52"
+              "key": "6776a057-ecee-404b-9db8-112c2ea97319"
             },
             {
               "label": "يسار",
               "value": "left",
-              "key": "98cf0a42-bae9-44a1-a61c-ebc5cd1ce5f6"
+              "key": "2214b8d0-93c6-4fa3-93e2-593230700b14"
             }
           ],
           "selected": [
             {
               "label": "وسط",
               "value": "center",
-              "key": "1b7aa8cf-79d7-4fdc-b247-c3a7f2814635"
+              "key": "772da80a-8cac-425d-a128-e2770329bf29"
             }
           ],
           "required": false
         },
         {
-          "id": "static-title-4e3a72",
+          "id": "static-title-8774ff",
           "type": "static",
           "format": "title",
           "value": "⚙️ المسافات"

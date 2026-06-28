@@ -1,5 +1,14 @@
 {# generic-content — Custom Salla Component #}
-<section dir="auto" class="salla-component salla-component--home-converted-generic_content-3" style="background-color: {{ component.background_color }}; {% if component.background_image %}background-image: url({{ component.background_image }}); background-size: cover; background-position: center;{% endif %} text-align: {{ component.alignment }}; {% if component.spacing_top %}padding-top: 80px;{% endif %} {% if component.spacing_bottom %}padding-bottom: 80px;{% endif %}">
+{% if component.background_image %}
+<style scoped>
+  .salla-component--home-converted-generic_content-3 {
+    background-image: url({{ component.background_image }});
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+{% endif %}
+<section dir="auto" class="salla-component salla-component--home-converted-generic_content-3" style="background-color: {{ component.background_color }}; text-align: {{ component.alignment }};" {% if component.background_image %} data-bg-image="{{ component.background_image }}"{% endif %} {% if component.spacing_top %} data-spacing-top="true"{% endif %} {% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
 <section aria-labelledby="bestsellers-title" class="section">
 <div class="container">
 <div class="section-header">
