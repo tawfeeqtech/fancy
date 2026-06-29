@@ -1,0 +1,28 @@
+{# hero — Custom Salla Component #}
+{% if component.background_image %}
+<style scoped>
+  .salla-component--home-converted-hero {
+    background-image: url({{ component.background_image }});
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+{% endif %}
+<section dir="auto" class="salla-component salla-component--home-converted-hero" style="background-color: {{ component.background_color }}; text-align: {{ component.alignment }}; color: {{ component.text_color }}; --overlay-opacity: {{ component.overlay_opacity  | default('40') }}%;" {% if component.background_image %} data-bg-image="{{ component.background_image }}"{% endif %} {% if component.spacing_top %} data-spacing-top="true"{% endif %} {% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}  data-height="{{ component.height }}">
+<section aria-label="العرض الرئيسي" class="hero">
+<div class="container" style="position:relative;z-index:2">
+<div class="hero__content">
+<span class="hero__badge">مجموعة الربيع</span>
+<h1 class="hero__title" style="font-size: {{ component.title_font_size }}px; color: {{ component.title_color }}">{% if component.title %}{{ component.title }}{% endif %}</h1>
+<p class="hero__subtitle">{% if component.subtitle %}{{ component.subtitle }}{% endif %}</p>
+<button class="btn btn-primary" onclick="showToast('جاري التوجيه للمجموعة...')">
+                        تسوقي الآن
+                        <i class="fas fa-arrow-left"></i>
+</button>
+</div>
+</div>
+<div aria-hidden="true" class="hero__image">
+<i class="fas fa-tshirt" style="font-size:200px;color:var(--color-primary);opacity:0.3"></i>
+</div>
+</section>
+</section>
