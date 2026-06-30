@@ -1,21 +1,19 @@
-{% raw %}<section dir="auto" aria-labelledby="categories-title" class="section section--sm" {% if component.spacing_top %} data-spacing-top="true"{% endif %} {% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
+<section dir="auto" aria-labelledby="categories-title" class="section section--sm"{% if component.spacing_top %} data-spacing-top="true"{% endif %}{% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
   <div class="container">
-    {% if component.title %}
     <div class="section-header">
-      <h2 class="section-header__title" id="categories-title"{% if component.title_font_size or component.title_color %} style="{% if component.title_font_size %}font-size: {{ component.title_font_size }}px; {% endif %}color: {{ component.title_color ?: 'var(--converted-heading)' }};"{% endif %}>{{ component.title }}</h2>
+      {% if component.title %}
+      <h2 class="section-header__title" id="categories-title" style="{% if component.title_font_size %}font-size: {{ component.title_font_size }}px;{% endif %}{% if component.title_color %}color: {{ component.title_color }};{% endif %}">{{ component.title }}</h2>
+      {% endif %}
     </div>
-    {% endif %}
-    {% if component.categories %}
-    <div style="display:grid;grid-template-columns:repeat({{ component.categories|length }},1fr);gap:var(--space-2);text-align:center">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-2);text-align:center">
       {% for item in component.categories %}
-      <a href="{{ item.link }}" style="cursor:pointer">
+      <a href="{{ item.category_link }}" style="cursor:pointer; text-decoration: none; color: inherit;">
         <div onmouseover="this.style.background='var(--color-border)'" style="width:64px;height:64px;border-radius:var(--radius-full);background:var(--color-primary-subtle);margin:0 auto var(--space-1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--color-secondary);transition:var(--transition-smooth)">
-          <i class="{{ item.icon }}"></i>
+          <i class="{{ item.category_icon }}"></i>
         </div>
-        <span style="font-size:0.75rem;font-weight:500">{{ item.label }}</span>
+        <span style="font-size:0.75rem;font-weight:500">{{ item.category_title }}</span>
       </a>
       {% endfor %}
     </div>
-    {% endif %}
   </div>
-</section>{% endraw %}
+</section>

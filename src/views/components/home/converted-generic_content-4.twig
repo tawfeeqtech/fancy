@@ -1,24 +1,26 @@
-<section class="section section--sm" dir="auto" {% if component.spacing_top %} data-spacing-top="true"{% endif %} {% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
+{% raw %}<section dir="auto" class="section section--sm">
 <div class="container">
 <div style="background:var(--color-primary-subtle);border-radius:var(--radius-lg);padding:var(--space-6) var(--space-4);text-align:center">
+{% if component.badge_text %}
 <span style="display:inline-block;background:var(--color-accent);color:white;padding:var(--space-1) var(--space-4);border-radius:var(--radius-full);font-size:0.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:var(--space-3)">
-                        مجموعة الصيف
-                    </span>
+{{ component.badge_text }}
+</span>
+{% endif %}
 {% if component.title %}
-<h2 style="font-family:var(--font-primary);font-size:{% if component.title_font_size %}{{ component.title_font_size }}{% else %}1.8rem{% endif %}px;font-weight:600;margin-bottom:var(--space-2);color:{{ component.title_color ?: 'var(--converted-heading)' }}">
-                        {{ component.title }}
-                    </h2>
+<h2 style="font-family:var(--font-primary);font-size:1.8rem;font-weight:600;margin-bottom:var(--space-2);color:{{ component.title_color ?: 'var(--converted-heading)' }}">
+{{ component.title }}
+</h2>
 {% endif %}
 {% if component.description %}
-<p style="color:{{ component.description_color ?: 'var(--color-text-secondary)' }};margin-bottom:var(--space-4);max-width:400px;margin-left:auto;margin-right:auto;{% if component.description_font_size %}font-size:{{ component.description_font_size }}px;{% endif %}">
-                        {{ component.description }}
-                    </p>
+<p style="color:{{ component.description_color ?: 'var(--converted-text)' }};margin-bottom:var(--space-4);max-width:400px;margin-left:auto;margin-right:auto">
+{{ component.description }}
+</p>
 {% endif %}
 {% if component.show_button and component.button_text %}
-<a href="{{ component.button_link }}" class="btn btn-primary" style="background-color:{{ component.button_bg_color ?: 'var(--converted-btn-bg)' }};color:{{ component.button_color ?: 'var(--converted-btn-text)' }};">
-                        {{ component.button_text }}
-                    </a>
+<button class="btn btn-primary" onclick="showToast('جاري التوجيه للمجموعة...')" style="background-color:{{ component.button_bg_color ?: 'var(--converted-btn-bg)' }};color:{{ component.button_color ?: 'var(--converted-btn-text)' }}">
+{{ component.button_text }}
+</button>
 {% endif %}
 </div>
 </div>
-</section>
+</section>{% endraw %}

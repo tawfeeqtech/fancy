@@ -1,47 +1,50 @@
-<section aria-labelledby="new-arrivals-title" class="section"{% if component.spacing_top %} data-spacing-top="true"{% endif %}{% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
-  <div class="container">
-    <div class="section-header">
-      {% if component.title %}
-      <h2 class="section-header__title" id="new-arrivals-title" style="color: {{ component.title_color ?: 'var(--converted-heading)' }};">{{ component.title }}</h2>
-      {% endif %}
-      {% if component.show_button and component.button_text and component.button_link %}
-      <a class="section-header__link" href="{{ component.button_link }}">{{ component.button_text }}</a>
-      {% endif %}
-    </div>
-    <div class="grid-2">
-      {% for item in component.products %}
-      <div class="product-card animate-in animate-in--delay-{{ loop.index }}{% if item.hide_mobile %} hide-mobile{% endif %}">
-        <div class="product-card__image-wrapper">
-          <div style="width:100%;height:100%;background:{% if item.product_image %}url({{ item.product_image }}) center/cover{% else %}var(--color-primary-subtle){% endif %};display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
-            {% if not item.product_image %}<i class="fas fa-tshirt"></i>{% endif %}
-          </div>
-          {% if item.badge_text %}
-          <div class="product-card__badges">
-            <span class="product-card__badge{% if item.badge_style == 'sale' %} product-card__badge--sale{% else %} product-card__badge--new{% endif %}">{{ item.badge_text }}</span>
-          </div>
-          {% endif %}
-          <button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">
-            <i class="far fa-heart"></i>
-          </button>
-          <button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
-            <i class="fas fa-plus"></i> {{ component.add_to_cart_text }}
-          </button>
-        </div>
-        <div class="product-card__info">
-          {% if item.product_title %}
-          <div class="product-card__title">{{ item.product_title }}</div>
-          {% endif %}
-          <div class="product-card__price">
-            {% if item.current_price %}
-            <span class="product-card__price-current">{{ item.current_price }}</span>
-            {% endif %}
-            {% if item.original_price %}
-            <span class="product-card__price-original">{{ item.original_price }}</span>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
+<section aria-labelledby="new-arrivals-title" class="section" dir="auto" {% if component.spacing_top %} data-spacing-top="true"{% endif %} {% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
+<div class="container">
+<div class="section-header">
+{% if component.title %}
+<h2 class="section-header__title" id="new-arrivals-title">{{ component.title }}</h2>
+{% endif %}
+{% if component.button_text and component.button_link %}
+<a class="section-header__link" href="{{ component.button_link }}">{{ component.button_text }}</a>
+{% endif %}
+</div>
+<div class="grid-2">
+{% for item in component.products %}
+<!-- Product Card -->
+<div class="product-card animate-in animate-in--delay-{{ loop.index }}">
+<div class="product-card__image-wrapper">
+{% if item.product_image %}
+<img src="{{ item.product_image }}" alt="{{ item.product_title }}" style="width:100%;height:100%;object-fit:cover;">
+{% else %}
+<div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+<i class="fas fa-tshirt"></i>
+</div>
+{% endif %}
+{% if item.badge_text %}
+<div class="product-card__badges">
+<span class="product-card__badge {% if item.badge_type == 'sale' %}product-card__badge--sale{% else %}product-card__badge--new{% endif %}">
+{{ item.badge_text }}
+</span>
+</div>
+{% endif %}
+<button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">
+<i class="far fa-heart"></i>
+</button>
+<button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
+<i class="fas fa-plus"></i> {{ item.quick_add_text }}
+</button>
+</div>
+<div class="product-card__info">
+<div class="product-card__title">{{ item.product_title }}</div>
+<div class="product-card__price">
+<span class="product-card__price-current">{{ item.product_price_current }}</span>
+{% if item.product_price_original %}
+<span class="product-card__price-original">{{ item.product_price_original }}</span>
+{% endif %}
+</div>
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
 </section>
