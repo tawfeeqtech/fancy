@@ -1,24 +1,23 @@
-{# cta — Custom Salla Component #}
-{% if component.background_image %}
-<style scoped>
-  .salla-component--home-converted-cta {
-    background-image: url({{ component.background_image }});
-    background-size: cover;
-    background-position: center;
-  }
-</style>
-{% endif %}
-<section dir="auto" class="salla-component salla-component--home-converted-cta" style="background-color: {{ component.background_color }}; text-align: {{ component.alignment }}; color: {{ component.text_color }};" {% if component.background_image %} data-bg-image="{{ component.background_image }}"{% endif %} {% if component.spacing_top %} data-spacing-top="true"{% endif %} {% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
-<section aria-labelledby="newsletter-title" class="section">
-<div class="container">
-<div class="newsletter">
-<h2 class="newsletter__title" id="newsletter-title" style="font-size: {{ component.title_font_size }}px; color: {{ component.title_color }}">{% if component.title %}{{ component.title }}{% endif %}</h2>
-<p class="newsletter__subtitle">{% if component.subtitle %}{{ component.subtitle }}{% endif %}</p>
-<form class="newsletter__form" onsubmit="event.preventDefault();showToast('شكراً لانضمامك!')">
-<input aria-label="البريد الإلكتروني" placeholder="بريدك الإلكتروني" required="" type="email"/>
-<button class="btn btn-primary" type="submit">اشتراك</button>
-</form>
-</div>
-</div>
-</section>
+<section dir="auto" class="section section--cta" style="background-color: {{ component.background_color }};" data-spacing-top="{{ component.spacing_top }}" data-spacing-bottom="{{ component.spacing_bottom }}">
+  <style scoped>
+    {% if component.background_image %}
+      .section--cta { background-image: url('{{ component.background_image }}'); }
+    {% endif %}
+  </style>
+  <div class="container">
+    <div class="newsletter">
+      {% if component.title %}
+        <h2 class="newsletter__title" id="newsletter-title" style="font-size: {{ component.title_font_size }}px; color: {{ component.title_color }};">{{ component.title }}</h2>
+      {% endif %}
+      {% if component.subtitle %}
+        <p class="newsletter__subtitle" style="font-size: {{ component.subtitle_font_size }}px; color: {{ component.subtitle_color }};">{{ component.subtitle }}</p>
+      {% endif %}
+      <form class="newsletter__form" onsubmit="event.preventDefault();showToast('شكراً لانضمامك!')">
+        <input aria-label="البريد الإلكتروني" placeholder="بريدك الإلكتروني" required="" type="email"/>
+        {% if component.show_button and component.button_text %}
+          <button class="btn btn-primary" type="submit" style="background-color: {{ component.button_bg_color }}; color: {{ component.button_color }};" data-button-style="{{ component.button_style }}" data-button-size="{{ component.button_size }}">{{ component.button_text }}</button>
+        {% endif %}
+      </form>
+    </div>
+  </div>
 </section>

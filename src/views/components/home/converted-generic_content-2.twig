@@ -1,26 +1,24 @@
-{# generic-content — Custom Salla Component #}
-{% if component.background_image %}
-<style scoped>
-  .salla-component--home-converted-generic_content-2 {
-    background-image: url({{ component.background_image }});
-    background-size: cover;
-    background-position: center;
-  }
-</style>
-{% endif %}
-<section dir="auto" class="salla-component salla-component--home-converted-generic_content-2" style="background-color: {{ component.background_color }}; text-align: {{ component.alignment }};" {% if component.background_image %} data-bg-image="{{ component.background_image }}"{% endif %} {% if component.spacing_top %} data-spacing-top="true"{% endif %} {% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
-<section class="section section--sm">
+<section dir="auto" class="section section--sm" data-spacing-top="{{ component.spacing_top }}" data-spacing-bottom="{{ component.spacing_bottom }}" style="--title-font-size: {{ component.title_font_size }}px; --title-color: {{ component.title_color }}; --description-font-size: {{ component.description_font_size }}px; --description-color: {{ component.description_color }}; --button-bg-color: {{ component.button_bg_color }}; --button-color: {{ component.button_color }};">
 <div class="container">
-<div style="background:var(--color-primary-subtle);border-radius:var(--radius-lg);padding:var(--space-6) var(--space-4);text-align:center">
+<div style="background:var(--color-primary-subtle);border-radius:var(--radius-lg);padding:var(--space-6) var(--space-4);text-align:{{ component.alignment|default('center') }}">
 <span style="display:inline-block;background:var(--color-accent);color:white;padding:var(--space-1) var(--space-4);border-radius:var(--radius-full);font-size:0.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:var(--space-3)">
                         مجموعة الصيف
                     </span>
-<h2 style="font-size: {{ component.title_font_size }}px; color: {{ component.title_color }};font-family:var(--font-primary);font-size:1.8rem;font-weight:600;margin-bottom:var(--space-2)">{% if component.title %}{{ component.title }}{% endif %}</h2>
-<p style="font-size: {{ component.description_font_size }}px; color: {{ component.description_color }};color:var(--color-text-secondary);margin-bottom:var(--space-4);max-width:400px;margin-left:auto;margin-right:auto">{% if component.description %}{{ component.description }}{% endif %}</p>
-<button class="btn btn-primary" onclick="showToast('جاري التوجيه للمجموعة...')">
-                        اكتشفي المجموعة
+{% if component.title %}
+<h2 style="font-family:var(--font-primary);font-size: var(--title-font-size, 1.8rem);font-weight:600;margin-bottom:var(--space-2); color: var(--title-color);">
+                        {{ component.title }}
+                    </h2>
+{% endif %}
+{% if component.description %}
+<p style="color: var(--description-color, var(--color-text-secondary)); margin-bottom:var(--space-4);max-width:400px;margin-left:auto;margin-right:auto; font-size: var(--description-font-size, inherit);">
+                        {{ component.description }}
+                    </p>
+{% endif %}
+{% if component.show_button and component.button_text %}
+<button class="btn btn-primary" onclick="window.location='{{ component.button_link }}';" style="background-color: var(--button-bg-color); color: var(--button-color);">
+                        {{ component.button_text }}
                     </button>
+{% endif %}
 </div>
 </div>
-</section>
 </section>

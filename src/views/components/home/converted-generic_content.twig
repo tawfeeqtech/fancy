@@ -1,37 +1,49 @@
-{# generic-content — Custom Salla Component #}
-{% if component.background_image %}
+{% if component.spacing_top or component.spacing_bottom or component.background_color or component.background_image %}
 <style scoped>
-  .salla-component--home-converted-generic_content {
-    background-image: url({{ component.background_image }});
-    background-size: cover;
-    background-position: center;
+  .salla-section {
+    {% if component.background_image %}
+    background-image: url('{{ component.background_image }}');
+    {% endif %}
+    {% if component.background_color %}
+    background-color: {{ component.background_color }};
+    {% endif %}
   }
+  {% if component.spacing_top %}
+  .salla-section[data-spacing-top="on"] {
+    padding-top: var(--section-spacing, 80px);
+  }
+  {% endif %}
+  {% if component.spacing_bottom %}
+  .salla-section[data-spacing-bottom="on"] {
+    padding-bottom: var(--section-spacing, 80px);
+  }
+  {% endif %}
 </style>
 {% endif %}
-<section dir="auto" class="salla-component salla-component--home-converted-generic_content" style="background-color: {{ component.background_color }}; text-align: {{ component.alignment }};" {% if component.background_image %} data-bg-image="{{ component.background_image }}"{% endif %} {% if component.spacing_top %} data-spacing-top="true"{% endif %} {% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
-<section aria-labelledby="collections-title" class="section section--sm">
-<div class="container">
-<div class="section-header">
-<h2 class="section-header__title" id="collections-title" style="font-size: {{ component.title_font_size }}px; color: {{ component.title_color }}">{% if component.title %}{{ component.title }}{% endif %}</h2>
-</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)">
-<div class="category-card animate-in animate-in--delay-1">
-<div style="background:var(--color-primary-subtle);height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
-<i class="fas fa-moon"></i>
-</div>
-<div class="category-card__overlay">
-<span class="category-card__title">المسائية</span>
-</div>
-</div>
-<div class="category-card animate-in animate-in--delay-2">
-<div style="background:var(--color-primary-subtle);height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
-<i class="fas fa-sun"></i>
-</div>
-<div class="category-card__overlay">
-<span class="category-card__title">النهارية</span>
-</div>
-</div>
-</div>
-</div>
-</section>
+<section dir="auto" aria-labelledby="collections-title" class="section section--sm salla-section"{% if component.spacing_top %} data-spacing-top="on"{% endif %}{% if component.spacing_bottom %} data-spacing-bottom="on"{% endif %}>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-header__title" id="collections-title"{% if component.title_font_size or component.title_color %} style="{% if component.title_color %}color: {{ component.title_color }};{% endif %}{% if component.title_font_size %}font-size: {{ component.title_font_size }}px;{% endif %}"{% endif %}>
+        {{ component.title }}
+      </h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)">
+      <div class="category-card animate-in animate-in--delay-1">
+        <div style="background:var(--color-primary-subtle);height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+          <i class="fas fa-moon"></i>
+        </div>
+        <div class="category-card__overlay">
+          <span class="category-card__title">المسائية</span>
+        </div>
+      </div>
+      <div class="category-card animate-in animate-in--delay-2">
+        <div style="background:var(--color-primary-subtle);height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+          <i class="fas fa-sun"></i>
+        </div>
+        <div class="category-card__overlay">
+          <span class="category-card__title">النهارية</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
