@@ -1,24 +1,40 @@
-<section dir="auto" class="section section--sm" data-spacing-top="{{ component.spacing_top }}" data-spacing-bottom="{{ component.spacing_bottom }}" style="--title-font-size: {{ component.title_font_size }}px; --title-color: {{ component.title_color }}; --description-font-size: {{ component.description_font_size }}px; --description-color: {{ component.description_color }}; --button-bg-color: {{ component.button_bg_color }}; --button-color: {{ component.button_color }};">
+<section dir="auto" class="section section--sm" aria-labelledby="categories-title" data-spacing-top="{{ component.spacing_top }}" data-spacing-bottom="{{ component.spacing_bottom }}">
+{% if component.background_color %}
+<style scoped>
+.section.section--sm[dir] { background-color: {{ component.background_color }}; }
+</style>
+{% endif %}
 <div class="container">
-<div style="background:var(--color-primary-subtle);border-radius:var(--radius-lg);padding:var(--space-6) var(--space-4);text-align:{{ component.alignment|default('center') }}">
-<span style="display:inline-block;background:var(--color-accent);color:white;padding:var(--space-1) var(--space-4);border-radius:var(--radius-full);font-size:0.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:var(--space-3)">
-                        مجموعة الصيف
-                    </span>
 {% if component.title %}
-<h2 style="font-family:var(--font-primary);font-size: var(--title-font-size, 1.8rem);font-weight:600;margin-bottom:var(--space-2); color: var(--title-color);">
-                        {{ component.title }}
-                    </h2>
+<div class="section-header">
+<h2 class="section-header__title" id="categories-title" style="font-size: {{ component.title_font_size }}px; color: {{ component.title_color }};">{{ component.title }}</h2>
+</div>
 {% endif %}
-{% if component.description %}
-<p style="color: var(--description-color, var(--color-text-secondary)); margin-bottom:var(--space-4);max-width:400px;margin-left:auto;margin-right:auto; font-size: var(--description-font-size, inherit);">
-                        {{ component.description }}
-                    </p>
-{% endif %}
-{% if component.show_button and component.button_text %}
-<button class="btn btn-primary" onclick="window.location='{{ component.button_link }}';" style="background-color: var(--button-bg-color); color: var(--button-color);">
-                        {{ component.button_text }}
-                    </button>
-{% endif %}
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-2);text-align:center">
+<div onclick="showToast('جاري التوجيه للعبايات...')" style="cursor:pointer">
+<div onmouseover="this.style.background='var(--color-border)'" style="width:64px;height:64px;border-radius:var(--radius-full);background:var(--color-primary-subtle);margin:0 auto var(--space-1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--color-secondary);transition:var(--transition-smooth)">
+<i class="fas fa-tshirt"></i>
+</div>
+<span style="font-size:0.75rem;font-weight:500">عبايات</span>
+</div>
+<div onclick="showToast('جاري التوجيه للحجابات...')" style="cursor:pointer">
+<div onmouseover="this.style.background='var(--color-border)'" style="width:64px;height:64px;border-radius:var(--radius-full);background:var(--color-primary-subtle);margin:0 auto var(--space-1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--color-secondary);transition:var(--transition-smooth)">
+<i class="fas fa-scarf"></i>
+</div>
+<span style="font-size:0.75rem;font-weight:500">حجابات</span>
+</div>
+<div onclick="showToast('جاري التوجيه للجلابيات...')" style="cursor:pointer">
+<div onmouseover="this.style.background='var(--color-border)'" style="width:64px;height:64px;border-radius:var(--radius-full);background:var(--color-primary-subtle);margin:0 auto var(--space-1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--color-secondary);transition:var(--transition-smooth)">
+<i class="fas fa-dress"></i>
+</div>
+<span style="font-size:0.75rem;font-weight:500">جلابيات</span>
+</div>
+<div onclick="showToast('جاري التوجيه للإكسسوارات...')" style="cursor:pointer">
+<div onmouseover="this.style.background='var(--color-border)'" style="width:64px;height:64px;border-radius:var(--radius-full);background:var(--color-primary-subtle);margin:0 auto var(--space-1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--color-secondary);transition:var(--transition-smooth)">
+<i class="fas fa-gem"></i>
+</div>
+<span style="font-size:0.75rem;font-weight:500">إكسسوارات</span>
+</div>
 </div>
 </div>
 </section>

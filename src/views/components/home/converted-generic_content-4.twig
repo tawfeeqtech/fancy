@@ -1,0 +1,24 @@
+<section dir="auto" class="section section--sm section--generic-content" data-spacing-top="{{ component.spacing_top }}" data-spacing-bottom="{{ component.spacing_bottom }}">
+<div class="container">
+<div style="background: {{ component.background_color }}; border-radius: var(--radius-lg); padding: var(--space-6) var(--space-4); text-align: {{ component.alignment }};">
+<span style="display: inline-block; background: var(--color-accent); color: white; padding: var(--space-1) var(--space-4); border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: var(--space-3);">مجموعة الصيف</span>
+{% if component.title %}
+<h2 style="font-family: var(--font-primary); font-size: {{ component.title_font_size }}px; font-weight: 600; margin-bottom: var(--space-2); color: {{ component.title_color }};">{{ component.title }}</h2>
+{% else %}
+<h2 style="font-family: var(--font-primary); font-size: 1.8rem; font-weight: 600; margin-bottom: var(--space-2);">أطلقي إطلالتك الصيفية</h2>
+{% endif %}
+{% if component.description %}
+<p style="color: {{ component.description_color }}; font-size: {{ component.description_font_size }}px; margin-bottom: var(--space-4); max-width: 400px; margin-left: auto; margin-right: auto;">{{ component.description }}</p>
+{% else %}
+<p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); max-width: 400px; margin-left: auto; margin-right: auto;">تشكيلة جديدة من العبايات الخفيفة والمريحة لإطلالة مثالية في الأيام الدافئة</p>
+{% endif %}
+{% if component.show_button and component.button_text %}
+<button class="btn btn-primary" onclick="showToast('جاري التوجيه للمجموعة...')" style="background-color: {{ component.button_bg_color }}; color: {{ component.button_color }};">{{ component.button_text }}</button>
+{% else %}
+<button class="btn btn-primary" onclick="showToast('جاري التوجيه للمجموعة...')">اكتشفي المجموعة</button>
+{% endif %}
+</div>
+</div>
+{% if component.background_image %}
+<style scoped>
+.section--generic-content {

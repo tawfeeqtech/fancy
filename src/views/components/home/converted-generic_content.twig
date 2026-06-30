@@ -1,49 +1,34 @@
-{% if component.spacing_top or component.spacing_bottom or component.background_color or component.background_image %}
-<style scoped>
-  .salla-section {
-    {% if component.background_image %}
-    background-image: url('{{ component.background_image }}');
-    {% endif %}
-    {% if component.background_color %}
-    background-color: {{ component.background_color }};
-    {% endif %}
-  }
-  {% if component.spacing_top %}
-  .salla-section[data-spacing-top="on"] {
-    padding-top: var(--section-spacing, 80px);
-  }
-  {% endif %}
-  {% if component.spacing_bottom %}
-  .salla-section[data-spacing-bottom="on"] {
-    padding-bottom: var(--section-spacing, 80px);
-  }
-  {% endif %}
-</style>
+<section dir="auto" aria-labelledby="collections-title" class="section section--sm" data-spacing-top="{{ component.spacing_top }}" data-spacing-bottom="{{ component.spacing_bottom }}">
+<div class="container">
+<div class="section-header">
+{% if component.title %}
+{% set title_style = '' %}
+{% if component.title_font_size %}
+{% set title_style = title_style ~ 'font-size: ' ~ component.title_font_size ~ 'px;' %}
 {% endif %}
-<section dir="auto" aria-labelledby="collections-title" class="section section--sm salla-section"{% if component.spacing_top %} data-spacing-top="on"{% endif %}{% if component.spacing_bottom %} data-spacing-bottom="on"{% endif %}>
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-header__title" id="collections-title"{% if component.title_font_size or component.title_color %} style="{% if component.title_color %}color: {{ component.title_color }};{% endif %}{% if component.title_font_size %}font-size: {{ component.title_font_size }}px;{% endif %}"{% endif %}>
-        {{ component.title }}
-      </h2>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)">
-      <div class="category-card animate-in animate-in--delay-1">
-        <div style="background:var(--color-primary-subtle);height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
-          <i class="fas fa-moon"></i>
-        </div>
-        <div class="category-card__overlay">
-          <span class="category-card__title">المسائية</span>
-        </div>
-      </div>
-      <div class="category-card animate-in animate-in--delay-2">
-        <div style="background:var(--color-primary-subtle);height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
-          <i class="fas fa-sun"></i>
-        </div>
-        <div class="category-card__overlay">
-          <span class="category-card__title">النهارية</span>
-        </div>
-      </div>
-    </div>
-  </div>
+{% if component.title_color %}
+{% set title_style = title_style ~ 'color: ' ~ component.title_color ~ ';' %}
+{% endif %}
+<h2 class="section-header__title" id="collections-title"{% if title_style %} style="{{ title_style }}"{% endif %}>{{ component.title }}</h2>
+{% endif %}
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)">
+<div class="category-card animate-in animate-in--delay-1">
+<div style="background:var(--color-primary-subtle);height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+<i class="fas fa-moon"></i>
+</div>
+<div class="category-card__overlay">
+<span class="category-card__title">المسائية</span>
+</div>
+</div>
+<div class="category-card animate-in animate-in--delay-2">
+<div style="background:var(--color-primary-subtle);height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+<i class="fas fa-sun"></i>
+</div>
+<div class="category-card__overlay">
+<span class="category-card__title">النهارية</span>
+</div>
+</div>
+</div>
+</div>
 </section>
