@@ -1,105 +1,47 @@
-<section dir="auto" class="section"{% if component.spacing_top %} data-spacing-top{% endif %}{% if component.spacing_bottom %} data-spacing-bottom{% endif %} style="background-color: {{ component.background_color }}; text-align: {{ component.alignment }};">
+<section aria-labelledby="new-arrivals-title" class="section"{% if component.spacing_top %} data-spacing-top="true"{% endif %}{% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
   <div class="container">
     <div class="section-header">
       {% if component.title %}
-        <h2 class="section-header__title" id="new-arrivals-title" style="font-size: {{ component.title_font_size }}px; color: {{ component.title_color }};">{{ component.title }}</h2>
+      <h2 class="section-header__title" id="new-arrivals-title" style="color: {{ component.title_color ?: 'var(--converted-heading)' }};">{{ component.title }}</h2>
       {% endif %}
-      {% if component.show_button and component.button_text %}
-        <a class="section-header__link" href="{{ component.button_link }}">{{ component.button_text }}</a>
+      {% if component.show_button and component.button_text and component.button_link %}
+      <a class="section-header__link" href="{{ component.button_link }}">{{ component.button_text }}</a>
       {% endif %}
     </div>
     <div class="grid-2">
-      <!-- Product Card 1 -->
-      <div class="product-card animate-in animate-in--delay-1">
+      {% for item in component.products %}
+      <div class="product-card animate-in animate-in--delay-{{ loop.index }}{% if item.hide_mobile %} hide-mobile{% endif %}">
         <div class="product-card__image-wrapper">
-          <div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
-            <i class="fas fa-tshirt"></i>
+          <div style="width:100%;height:100%;background:{% if item.product_image %}url({{ item.product_image }}) center/cover{% else %}var(--color-primary-subtle){% endif %};display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+            {% if not item.product_image %}<i class="fas fa-tshirt"></i>{% endif %}
           </div>
+          {% if item.badge_text %}
           <div class="product-card__badges">
-            <span class="product-card__badge product-card__badge--new">جديد</span>
+            <span class="product-card__badge{% if item.badge_style == 'sale' %} product-card__badge--sale{% else %} product-card__badge--new{% endif %}">{{ item.badge_text }}</span>
           </div>
+          {% endif %}
           <button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">
             <i class="far fa-heart"></i>
           </button>
           <button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
-            <i class="fas fa-plus"></i> أضف للسلة
+            <i class="fas fa-plus"></i> {{ component.add_to_cart_text }}
           </button>
         </div>
         <div class="product-card__info">
-          <div class="product-card__title">عباية كشمير فاخرة بتطريز يدوي</div>
+          {% if item.product_title %}
+          <div class="product-card__title">{{ item.product_title }}</div>
+          {% endif %}
           <div class="product-card__price">
-            <span class="product-card__price-current">1,200 ر.س</span>
-            <span class="product-card__price-original">1,500 ر.س</span>
+            {% if item.current_price %}
+            <span class="product-card__price-current">{{ item.current_price }}</span>
+            {% endif %}
+            {% if item.original_price %}
+            <span class="product-card__price-original">{{ item.original_price }}</span>
+            {% endif %}
           </div>
         </div>
       </div>
-      <!-- Product Card 2 -->
-      <div class="product-card animate-in animate-in--delay-2">
-        <div class="product-card__image-wrapper">
-          <div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
-            <i class="fas fa-tshirt"></i>
-          </div>
-          <div class="product-card__badges">
-            <span class="product-card__badge product-card__badge--sale">خصم 20%</span>
-          </div>
-          <button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">
-            <i class="far fa-heart"></i>
-          </button>
-          <button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
-            <i class="fas fa-plus"></i> أضف للسلة
-          </button>
-        </div>
-        <div class="product-card__info">
-          <div class="product-card__title">عباية حريرية مع لمسات ذهبية</div>
-          <div class="product-card__price">
-            <span class="product-card__price-current">950 ر.س</span>
-            <span class="product-card__price-original">1,200 ر.س</span>
-          </div>
-        </div>
-      </div>
-      <!-- Product Card 3 (hide on mobile, show on tablet+) -->
-      <div class="product-card animate-in animate-in--delay-3 hide-mobile">
-        <div class="product-card__image-wrapper">
-          <div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
-            <i class="fas fa-tshirt"></i>
-          </div>
-          <button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">
-            <i class="far fa-heart"></i>
-          </button>
-          <button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
-            <i class="fas fa-plus"></i> أضف للسلة
-          </button>
-        </div>
-        <div class="product-card__info">
-          <div class="product-card__title">عباية دانتيل فاخرة</div>
-          <div class="product-card__price">
-            <span class="product-card__price-current">850 ر.س</span>
-          </div>
-        </div>
-      </div>
-      <!-- Product Card 4 (hide on mobile, show on tablet+) -->
-      <div class="product-card animate-in animate-in--delay-4 hide-mobile">
-        <div class="product-card__image-wrapper">
-          <div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
-            <i class="fas fa-tshirt"></i>
-          </div>
-          <div class="product-card__badges">
-            <span class="product-card__badge product-card__badge--new">جديد</span>
-          </div>
-          <button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">
-            <i class="far fa-heart"></i>
-          </button>
-          <button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
-            <i class="fas fa-plus"></i> أضف للسلة
-          </button>
-        </div>
-        <div class="product-card__info">
-          <div class="product-card__title">عباية مخملية أنيقة</div>
-          <div class="product-card__price">
-            <span class="product-card__price-current">1,100 ر.س</span>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
