@@ -1,32 +1,24 @@
-<section aria-label="العرض الرئيسي" class="hero"
-         style="background-color: {{ component.background_color ?: 'var(--converted-bg)' }}"
-         {% if component.spacing_top %}data-spacing-top="true"{% endif %}
-         {% if component.spacing_bottom %}data-spacing-bottom="true"{% endif %}>
-  <div class="container" style="position:relative;z-index:2">
-    <div class="hero__content">
-      {% if component.badge_text %}
-      <span class="hero__badge">{{ component.badge_text }}</span>
-      {% endif %}
-      {% if component.title %}
-      <h1 class="hero__title" style="color: {{ component.title_color ?: 'var(--converted-heading)' }};{% if component.title_font_size %}font-size: {{ component.title_font_size }}px;{% endif %}">
-        {{ component.title|raw }}
-      </h1>
-      {% endif %}
-      {% if component.subtitle %}
-      <p class="hero__subtitle" style="color: {{ component.subtitle_color ?: 'var(--converted-text)' }};{% if component.subtitle_font_size %}font-size: {{ component.subtitle_font_size }}px;{% endif %}">
-        {{ component.subtitle }}
-      </p>
-      {% endif %}
-      {% if component.show_button and component.button_text %}
-      <a href="{{ component.button_link }}" class="btn btn-primary"
-         style="background-color: {{ component.button_bg_color ?: 'var(--converted-btn-bg)' }}; color: {{ component.button_color ?: 'var(--converted-btn-text)' }};">
-        {{ component.button_text }}
-        <i class="fas fa-arrow-left"></i>
-      </a>
-      {% endif %}
-    </div>
-  </div>
-  <div aria-hidden="true" class="hero__image">
-    <i class="fas fa-tshirt" style="font-size:200px;color:var(--color-primary);opacity:0.3"></i>
-  </div>
+<section dir="auto" aria-label="{{ component.title | striptags }}" class="hero" {% if component.spacing_top %} data-spacing-top="true"{% endif %}{% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
+<div class="container" style="position:relative;z-index:2">
+<div class="hero__content">
+{% if component.badge_text %}
+<span class="hero__badge">{{ component.badge_text }}</span>
+{% endif %}
+{% if component.title %}
+<h1 class="hero__title">{{ component.title | raw }}</h1>
+{% endif %}
+{% if component.subtitle %}
+<p class="hero__subtitle">{{ component.subtitle }}</p>
+{% endif %}
+{% if component.show_button and component.button_text %}
+<a href="{{ component.button_link }}" class="btn btn-primary" style="background-color: {{ component.button_bg_color ?: 'var(--converted-btn-bg)' }}; color: {{ component.button_color ?: 'var(--converted-btn-text)' }};">
+{{ component.button_text }}
+<i class="fas fa-arrow-left"></i>
+</a>
+{% endif %}
+</div>
+</div>
+<div aria-hidden="true" class="hero__image">
+<i class="fas fa-tshirt" style="font-size:200px;color:{{ component.primary_color ?: 'var(--converted-primary)' }};opacity:0.3"></i>
+</div>
 </section>

@@ -1,18 +1,18 @@
-<section dir="auto" aria-labelledby="newsletter-title" class="section" style="background-color: {% raw %}{{ component.background_color ?: 'var(--converted-bg)' }}{% endraw %}"{% raw %}{% if component.spacing_top %} data-spacing-top="true"{% endif %}{% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}{% endraw %}>
-<div class="container">
-<div class="newsletter">
-{% raw %}{% if component.title %}{% endraw %}
-<h2 class="newsletter__title" id="newsletter-title"{% raw %}{% if component.title_color or component.title_font_size %} style="{% if component.title_color %}color: {{ component.title_color }};{% endif %}{% if component.title_font_size %}font-size: {{ component.title_font_size }};{% endif %}"{% endif %}{% endraw %}>{% raw %}{{ component.title }}{% endraw %}</h2>
-{% raw %}{% endif %}{% endraw %}
-{% raw %}{% if component.subtitle %}{% endraw %}
-<p class="newsletter__subtitle"{% raw %}{% if component.subtitle_color or component.subtitle_font_size %} style="{% if component.subtitle_color %}color: {{ component.subtitle_color }};{% endif %}{% if component.subtitle_font_size %}font-size: {{ component.subtitle_font_size }};{% endif %}"{% endif %}{% endraw %}>{% raw %}{{ component.subtitle }}{% endraw %}</p>
-{% raw %}{% endif %}{% endraw %}
-<form class="newsletter__form" onsubmit="event.preventDefault();showToast('{% raw %}{{ component.success_message }}{% endraw %}')">
-<input aria-label="البريد الإلكتروني" placeholder="{% raw %}{{ component.input_placeholder }}{% endraw %}" required="" type="email"{% raw %}{% if component.text_color %} style="color: {{ component.text_color }};"{% endif %}{% endraw %} />
-{% raw %}{% if component.button_text %}{% endraw %}
-<button class="btn btn-primary" type="submit"{% raw %}{% if component.button_bg_color or component.button_color %} style="{% if component.button_bg_color %}background-color: {{ component.button_bg_color }};{% endif %}{% if component.button_color %}color: {{ component.button_color }};{% endif %}"{% endif %}{% endraw %}>{% raw %}{{ component.button_text }}{% endraw %}</button>
-{% raw %}{% endif %}{% endraw %}
-</form>
-</div>
-</div>
+<section aria-labelledby="newsletter-title" class="section" dir="auto" {% if component.spacing_top %} data-spacing-top="true"{% endif %} {% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %} style="background-color: {{ component.background_color ?: 'var(--converted-bg)' }};">
+  <div class="container">
+    <div class="newsletter">
+      {% if component.title %}
+      <h2 class="newsletter__title" id="newsletter-title" style="color: {{ component.title_color ?: 'var(--converted-heading)' }}; font-size: {{ component.title_font_size }}px;">{{ component.title }}</h2>
+      {% endif %}
+      {% if component.subtitle %}
+      <p class="newsletter__subtitle" style="color: {{ component.subtitle_color ?: 'var(--converted-text)' }};">{{ component.subtitle }}</p>
+      {% endif %}
+      <form class="newsletter__form" onsubmit="event.preventDefault();showToast('شكراً لانضمامك!')">
+        <input aria-label="البريد الإلكتروني" placeholder="بريدك الإلكتروني" required="" type="email"/>
+        {% if component.button_text %}
+        <button class="btn btn-primary" type="submit" style="background-color: {{ component.button_bg_color ?: 'var(--converted-btn-bg)' }}; color: {{ component.button_color ?: 'var(--converted-btn-text)' }};">{{ component.button_text }}</button>
+        {% endif %}
+      </form>
+    </div>
+  </div>
 </section>

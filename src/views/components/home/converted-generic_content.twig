@@ -1,1 +1,21 @@
-<section dir="auto" aria-labelledby="collections-title" class="section section--sm" {% if component.spacing_top %} data-spacing-top="true"{% endif %} {% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>\n<div class="container">\n{% if component.title %}\n<div class="section-header"{% if component.alignment %} style="text-align: {{ component.alignment }};"{% endif %}>\n<h2 class="section-header__title" id="collections-title" style="{% if component.title_color %}color: {{ component.title_color ?: 'var(--converted-heading)' }};{% endif %} {% if component.title_font_size %}font-size: {{ component.title_font_size }}px;{% endif %}">\n{{ component.title }}\n</h2>\n</div>\n{% endif %}\n{% if component.collections %}\n<div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)">\n{% for item in component.collections %}\n<div class="category-card animate-in animate-in--delay-{{ loop.index }}">\n<div style="background:var(--color-primary-subtle);height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">\n<i class="{{ item.icon }}"></i>\n</div>\n<div class="category-card__overlay">\n<span class="category-card__title">{{ item.title }}</span>\n</div>\n</div>\n{% endfor %}\n</div>\n{% endif %}\n</div>\n</section>
+<section dir="auto" aria-labelledby="collections-title" class="section section--sm" {% if component.spacing_top %} data-spacing-top="true"{% endif %} {% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
+  <div class="container">
+    {% if component.title %}
+    <div class="section-header">
+      <h2 class="section-header__title" id="collections-title">{{ component.title }}</h2>
+    </div>
+    {% endif %}
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)">
+      {% for item in component.items %}
+      <div class="category-card animate-in animate-in--delay-{{ loop.index }}">
+        <div style="background:var(--color-primary-subtle);height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+          <i class="fas {{ item.icon }}"></i>
+        </div>
+        <div class="category-card__overlay">
+          <span class="category-card__title">{{ item.title }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

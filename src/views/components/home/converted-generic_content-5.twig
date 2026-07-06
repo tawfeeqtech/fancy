@@ -1,29 +1,21 @@
-<section dir="auto" class="section" aria-labelledby="bestsellers-title"
-         {% if component.spacing_top %} data-spacing-top="true"{% endif %}
-         {% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
+<section dir="auto" aria-labelledby="bestsellers-title" class="section" {% if component.spacing_top %} data-spacing-top="true"{% endif %} {% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
 <div class="container">
 <div class="section-header">
-<h2 class="section-header__title" id="bestsellers-title">{{ component.section_title }}</h2>
-{% if component.section_link_text and component.section_link_url %}
-<a class="section-header__link" href="{{ component.section_link_url }}">{{ component.section_link_text }}</a>
-{% endif %}
+<h2 class="section-header__title" id="bestsellers-title">{{ component.title }}</h2>
+<a class="section-header__link" href="{{ component.button_link }}">{{ component.button_text }}</a>
 </div>
 <div class="grid-2">
 {% for item in component.products %}
-<div class="product-card animate-in {{ loop.index == 2 ? 'animate-in--delay-1' : '' }}">
+<div class="product-card animate-in{% if loop.index == 2 %} animate-in--delay-1{% endif %}">
 <div class="product-card__image-wrapper">
-{% if item.image %}
-<img src="{{ item.image }}" alt="{{ item.title }}" class="product-card__image" style="width:100%;height:100%;object-fit:cover;">
-{% else %}
 <div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
 <i class="fas fa-tshirt"></i>
 </div>
-{% endif %}
 <button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">
 <i class="far fa-heart"></i>
 </button>
 <button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
-<i class="fas fa-plus"></i> {{ component.add_to_cart_text ?: 'أضف للسلة' }}
+<i class="fas fa-plus"></i> {{ component.add_to_cart_text }}
                             </button>
 </div>
 <div class="product-card__info">
