@@ -1,0 +1,34 @@
+{% if component.background_color %}
+<style scoped>
+  .newsletter-section {
+    background-color: {{ component.background_color }};
+  }
+</style>
+{% endif %}
+<section dir="auto" class="section newsletter-section" aria-labelledby="newsletter-title"
+         {% if component.spacing_top %} data-spacing-top="true"{% endif %}
+         {% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
+  <div class="container">
+    <div class="newsletter" style="text-align: {{ component.alignment ?: 'center' }}">
+      {% if component.title %}
+      <h2 class="newsletter__title" id="newsletter-title"
+          style="font-size: {{ component.title_font_size }}px; color: {{ component.title_color ?: 'var(--converted-heading)' }};">
+        {{ component.title }}
+      </h2>
+      {% endif %}
+      {% if component.subtitle %}
+      <p class="newsletter__subtitle"
+         style="font-size: {{ component.subtitle_font_size }}px; color: {{ component.subtitle_color ?: 'var(--converted-text)' }};">
+        {{ component.subtitle }}
+      </p>
+      {% endif %}
+      <form class="newsletter__form" onsubmit="event.preventDefault();showToast('{{ component.success_message ?: 'شكراً لانضمامك!' }}')">
+        <input aria-label="البريد الإلكتروني" placeholder="{{ component.placeholder_text ?: 'بريدك الإلكتروني' }}" required="" type="email"/>
+        <button class="btn btn-primary" type="submit"
+                style="background-color: {{ component.button_bg_color ?: 'var(--converted-btn-bg)' }}; color: {{ component.button_color ?: 'var(--converted-btn-text)' }};">
+          {{ component.button_text ?: 'اشتراك' }}
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
