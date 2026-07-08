@@ -24,7 +24,8 @@
           <div class="flex gap-3">
             {% for link in footer.social_links %}
               <a href="{{ link.url }}" title="{{ link.name }}"
-                 class="hover:opacity-80 transition-opacity" target="_blank" rel="noopener">
+                 class="transition-all hover:-translate-y-0.5"
+                 style="color: {{ theme.settings.get('footer_link_color', theme.settings.get('footer_text_color', '#ffffff')) }};">
                 <i class="{{ link.icon }} text-xl"></i>
               </a>
             {% endfor %}
@@ -39,7 +40,10 @@
           <ul class="space-y-2">
             {% for page in footer.pages %}
               <li>
-                <a href="{{ page.link }}" class="text-sm hover:underline opacity-80">
+                <a href="{{ page.link }}" class="text-sm transition-colors opacity-80"
+                   style="color: {{ theme.settings.get('footer_link_color', theme.settings.get('footer_text_color', '#ffffff')) }};"
+                   onmouseover="this.style.color='{{ theme.settings.get('footer_link_hover_color', theme.settings.get('footer_link_color', theme.settings.get('footer_text_color', '#ffffff'))) }}'"
+                   onmouseout="this.style.color='{{ theme.settings.get('footer_link_color', theme.settings.get('footer_text_color', '#ffffff')) }}'">
                   {{ page.name }}
                 </a>
               </li>
@@ -55,7 +59,8 @@
           <ul class="space-y-2">
             {% for contact in footer.contacts %}
               <li>
-                <a href="{{ contact.url }}" class="text-sm hover:underline opacity-80 flex items-center gap-2">
+                <a href="{{ contact.url }}" class="text-sm transition-colors opacity-80 flex items-center gap-2"
+                   style="color: {{ theme.settings.get('footer_link_color', theme.settings.get('footer_text_color', '#ffffff')) }};">
                   <i class="{{ contact.icon }}"></i>
                   <span>{{ contact.value }}</span>
                 </a>
@@ -87,7 +92,8 @@
       {% if theme.settings.get('show_powered_by', true) %}
         <span class="mt-2 md:mt-0">
           {{ trans('blocks.footer.powered_by') }}
-          <a href="https://salla.sa" target="_blank" rel="noopener" class="underline">Salla</a>
+          <a href="https://salla.sa" target="_blank" rel="noopener" class="underline"
+             style="color: {{ theme.settings.get('footer_link_color', theme.settings.get('footer_text_color', '#ffffff')) }};">Salla</a>
         </span>
       {% endif %}
     </div>

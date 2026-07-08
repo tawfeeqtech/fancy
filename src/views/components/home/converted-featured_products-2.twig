@@ -1,59 +1,53 @@
-{# featured-products — Custom Salla Component #}
-{% if component.background_image %}
-<style scoped>
-  .salla-component--home-converted-featured_products-2 {
-    background-image: url({{ component.background_image }});
-    background-size: cover;
-    background-position: center;
-  }
-</style>
-{% endif %}
-<section aria-labelledby="bestsellers-title" class="section salla-component salla-component--home-converted-featured_products-2" data-bg-image="{{ component.background_image }}" data-spacing-bottom="true" data-spacing-top="true" dir="auto" style="background-color: {{ component.background_color }};">
-<div class="container">
-<div class="section-header">
-<h2 class="section-header__title" id="bestsellers-title" style="font-size: {{ component.title_font_size }}px; color: {{ component.title_color }}">{% if component.title %}{{ component.title }}{% endif %}</h2>
-<a class="section-header__link" href="{{ component.link }}">عرض الكل</a>
-</div>
-<div class="grid-2">
-<div class="product-card animate-in">
-<div class="product-card__image-wrapper">
-<div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
-<i class="fas fa-tshirt"></i>
-</div>
-<button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">
-<i class="far fa-heart"></i>
-</button>
-<button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
-<i class="fas fa-plus"></i> أضف للسلة
-                            </button>
-</div>
-<div class="product-card__info">
-<div class="product-card__title">عباية بيضاء أنيقة</div>
-<div class="product-card__price">
-<span class="product-card__price-current">1,050 ر.س</span>
-</div>
-</div>
-</div>
-<div class="product-card animate-in animate-in--delay-1">
-<div class="product-card__image-wrapper">
-<div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
-<i class="fas fa-tshirt"></i>
-</div>
-<button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">
-<i class="far fa-heart"></i>
-</button>
-<button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
-<i class="fas fa-plus"></i> أضف للسلة
-                            </button>
-</div>
-<div class="product-card__info">
-<div class="product-card__title">عباية زرقاء داكنة فاخرة</div>
-<div class="product-card__price">
-<span class="product-card__price-current">1,300 ر.س</span>
-<span class="product-card__price-original">1,600 ر.س</span>
-</div>
-</div>
-</div>
-</div>
-</div>
+<section dir="auto" aria-labelledby="bestsellers-title" class="section"{% if component.spacing_top %} data-spacing-top="true"{% endif %}{% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %} style="background-color: {{ component.background_color ?: 'var(--color-bg)' }};">
+    {% if component.background_image %}
+    <style scoped>
+        .section-bestsellers {
+            background-image: url({{ component.background_image }});
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+    {% endif %}
+    <div class="container">
+        <div class="section-header">
+            {% if component.title %}
+            <h2 class="section-header__title" id="bestsellers-title">{{ component.title }}</h2>
+            {% endif %}
+            {% if component.show_view_all and component.view_all_link %}
+            <a class="section-header__link" href="{{ component.view_all_link }}">{{ component.view_all_text ?: 'عرض الكل' }}</a>
+            {% endif %}
+        </div>
+        {% if component.items %}
+        <div class="grid-2">
+            {% for item in component.items %}
+            <div class="product-card animate-in">
+                <div class="product-card__image-wrapper">
+                    {% if item.image %}
+                    <img src="{{ item.image }}" alt="{{ item.title }}" style="width:100%;height:100%;object-fit:cover;">
+                    {% else %}
+                    <div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    {% endif %}
+                    <button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
+                        <i class="fas fa-plus"></i> أضف للسلة
+                    </button>
+                </div>
+                <div class="product-card__info">
+                    <div class="product-card__title">{{ item.title }}</div>
+                    <div class="product-card__price">
+                        <span class="product-card__price-current">{{ item.price }}</span>
+                        {% if item.description %}
+                        <span class="product-card__price-original">{{ item.description }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
 </section>

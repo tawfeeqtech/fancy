@@ -1,5 +1,6 @@
 <header class="store-header sticky top-0 z-50"
-  style="background-color: {{ theme.settings.get('header_bg_color', '#ffffff') }};">
+  style="background-color: {{ theme.settings.get('header_bg_color', '#ffffff') }};
+         color: {{ theme.settings.get('header_text_color', '#1f2937') }};">
   <div class="container mx-auto px-4">
     <div class="flex items-center justify-between py-3">
 
@@ -12,12 +13,13 @@
         {% endif %}
       </a>
 
-      {# ── Desktop navigation with cookie preferences (v2.14.425) ── #}
+      {# ── Desktop navigation ── #}
       <nav class="hidden lg:flex items-center gap-6" aria-label="{{ trans('common.elements.main_menu') }}">
         <salla-menu>
         {% for menu in menus %}
           <div class="relative group">
-            <a href="{{ menu.url }}" class="text-sm font-medium hover:opacity-80 transition-opacity">
+            <a href="{{ menu.url }}" class="text-sm font-medium transition-opacity hover:opacity-80"
+               style="color: {{ theme.settings.get('header_text_color', '#1f2937') }};">
               {{ menu.title }}
             </a>
             {% if menu.children is not empty %}
@@ -36,13 +38,15 @@
       </nav>
 
       {# ── Actions ── #}
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-3"
+           style="color: {{ theme.settings.get('header_accent_color', theme.settings.get('header_text_color', '#1f2937')) }};">
         <salla-search></salla-search>
         <salla-cart-icon></salla-cart-icon>
         {% if user.isLoggedIn %}
           <salla-user-icon></salla-user-icon>
         {% else %}
-          <a href="{{ link('login') }}" class="text-sm font-medium hover:underline">
+          <a href="{{ link('login') }}" class="text-sm font-medium transition-colors hover:underline"
+             style="color: {{ theme.settings.get('header_accent_color', theme.settings.get('header_text_color', '#1f2937')) }};">
             {{ trans('common.elements.login') }}
           </a>
         {% endif %}
@@ -60,15 +64,17 @@
     {# ── Breadcrumbs (non-home pages) ── #}
     {% if breadcrumbs is defined and breadcrumbs is not empty %}
       <nav class="py-2 text-sm border-t" aria-label="Breadcrumb"
-           style="border-color: {{ theme.settings.get('header_bg_color', '#ffffff') }}1a;">
+           style="border-color: {{ theme.settings.get('header_accent_color', theme.settings.get('header_text_color', '#1f2937')) }}1a;">
         <ol class="flex items-center gap-1 flex-wrap">
           {% for crumb in breadcrumbs %}
             <li>
               {% if not loop.last %}
-                <a href="{{ crumb.url }}" class="hover:underline opacity-70">{{ crumb.title }}</a>
+                <a href="{{ crumb.url }}" class="hover:underline opacity-70"
+                   style="color: {{ theme.settings.get('header_text_color', '#1f2937') }};">{{ crumb.title }}</a>
                 <span class="mx-2 opacity-40">/</span>
               {% else %}
-                <span class="opacity-100 font-medium">{{ crumb.title }}</span>
+                <span class="opacity-100 font-medium"
+                      style="color: {{ theme.settings.get('header_text_color', '#1f2937') }};">{{ crumb.title }}</span>
               {% endif %}
             </li>
           {% endfor %}
@@ -81,7 +87,8 @@
   <div id="mobile-menu" class="hidden lg:hidden border-t bg-white px-4 py-3">
     <nav class="flex flex-col gap-2">
       {% for menu in menus %}
-        <a href="{{ menu.url }}" class="py-2 text-sm font-medium border-b last:border-0">
+        <a href="{{ menu.url }}" class="py-2 text-sm font-medium border-b last:border-0"
+           style="color: {{ theme.settings.get('header_text_color', '#1f2937') }};">
           {{ menu.title }}
         </a>
       {% endfor %}

@@ -1,21 +1,31 @@
-<section dir="auto" class="section section--sm" aria-labelledby="categories-title"{% if component.spacing_top %} data-spacing-top="true"{% endif %}{% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
-  <div class="container">
-    {% if component.title %}
-    <div class="section-header">
-      <h2 class="section-header__title" id="categories-title" style="{% if component.title_color %}color: {{ component.title_color }};{% endif %} {% if component.title_font_size %}font-size: {{ component.title_font_size }}px;{% endif %}">{{ component.title }}</h2>
-    </div>
-    {% endif %}
-    {% if component.categories %}
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-2);text-align:center">
-      {% for item in component.categories %}
-      <div onclick="showToast('جاري التوجيه لـ {{ item.title }}...'); location.href='{{ item.link }}';" style="cursor:pointer">
-        <div onmouseover="this.style.background='var(--color-border)'" style="width:64px;height:64px;border-radius:var(--radius-full);background:var(--color-primary-subtle);margin:0 auto var(--space-1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--color-secondary);transition:var(--transition-smooth)">
-          <i class="{{ item.icon_class }}"></i>
-        </div>
-        <span style="font-size:0.75rem;font-weight:500">{{ item.title }}</span>
-      </div>
-      {% endfor %}
-    </div>
-    {% endif %}
-  </div>
+{# cta — Custom Salla Component #}
+{% if component.background_image %}
+<style scoped>
+  .salla-component--home-converted-cta {
+    background-image: url({{ component.background_image }});
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+{% endif %}
+<section aria-labelledby="categories-title" class="section section--sm salla-component salla-component--home-converted-cta" data-bg-image="{{ component.background_image }}" data-spacing-bottom="true" data-spacing-top="true" dir="auto" style="background-color: {{ component.background_color }}; text-align: {{ component.alignment }}; color: {{ component.text_color }};">
+<div class="container">
+<div class="section-header">
+<h2 class="section-header__title" id="categories-title" style="font-size: {{ component.title_font_size }}px; color: {{ component.title_color }}">{% if component.title %}{{ component.title }}{% endif %}</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-2);text-align:center">
+
+  {% for item in component.items %}
+  <div onclick="showToast('جاري التوجيه للعبايات...')" style="cursor:pointer">
+<div onmouseover="this.style.background='var(--color-border)'" style="width:64px;height:64px;border-radius:var(--radius-full);background:var(--color-primary-subtle);margin:0 auto var(--space-1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--color-secondary);transition:var(--transition-smooth)">
+<i class="fas fa-tshirt"></i>
+</div>
+<span style="font-size:0.75rem;font-weight:500">عبايات</span>
+</div>
+  {% endfor %}
+
+
+
+</div>
+</div>
 </section>
