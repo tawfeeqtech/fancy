@@ -1,13 +1,21 @@
-<section aria-label="العرض الرئيسي" class="hero" dir="auto" {% if component.spacing_top %} data-spacing-top="true"{% endif %}{% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
+<section dir="auto" aria-label="العرض الرئيسي" class="hero">
 <div class="container" style="position:relative;z-index:2">
 <div class="hero__content">
-{% if component.badge_text %}<span class="hero__badge">{{ component.badge_text }}</span>{% endif %}
-<h1 class="hero__title"{% if component.title_color %} style="color: {{ component.title_color }}"{% else %} style="color: var(--converted-heading)"{% endif %}>{{ component.title }}</h1>
-{% if component.subtitle %}<p class="hero__subtitle"{% if component.subtitle_color %} style="color: {{ component.subtitle_color }}"{% else %} style="color: var(--converted-text)"{% endif %}>{{ component.subtitle }}</p>{% endif %}
-<button class="btn btn-primary" onclick="showToast('جاري التوجيه للمجموعة...')"{% if component.button_bg_color or component.button_color %} style="background-color: {{ component.button_bg_color ?: 'transparent' }}; color: {{ component.button_color ?: 'inherit' }};"{% endif %}>
-                        {% if component.button_text %}{{ component.button_text }}{% else %}تسوقي الآن{% endif %}
+{% if component.badge_text %}
+<span class="hero__badge">{{ component.badge_text }}</span>
+{% endif %}
+{% if component.title %}
+<h1 class="hero__title">{{ component.title|raw }}</h1>
+{% endif %}
+{% if component.subtitle %}
+<p class="hero__subtitle">{{ component.subtitle }}</p>
+{% endif %}
+{% if component.button_text %}
+<a href="{{ component.button_link }}" class="btn btn-primary" onclick="showToast('جاري التوجيه للمجموعة...')">
+                        {{ component.button_text }}
                         <i class="fas fa-arrow-left"></i>
-</button>
+</a>
+{% endif %}
 </div>
 </div>
 <div aria-hidden="true" class="hero__image">
