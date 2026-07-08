@@ -1,73 +1,107 @@
-<footer class="store-footer">
-	<div aria-label="footer" class="store-footer__inner">
-		<div class="container grid grid-col-1 lg:grid-cols-6 gap-8 lg:gap-6">
-			<div class="lg:col-span-2 rtl:lg:pl-20 ltr:lg:pr-20">
-				<a href="{{ link('/') }}" class="flex items-center m-0">
-					<h3>{{store.name}}</h3>
-				</a>
-				{% if store.description %}
-					<div class="max-w-sm leading-6 mb-6">
-						{{ store.description|raw }}
-          </div>
-				{% endif %}
+<footer class="store-footer"
+  style="background-color: {{ theme.settings.get('footer_bg_color', '#0a0a0a') }};
+         color: {{ theme.settings.get('footer_text_color', '#ffffff') }};">
+  <div class="container mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
 
-				<div class="hidden lg:block">
-					<salla-social class="block mb-6"></salla-social>
-				</div>
-
-		<div class="flex gap-4">
-		  {# trust badges #}
-		  <salla-trust-badges {% if theme.settings.get('footer_is_dark') %} dark {% endif %}></salla-trust-badges>
-          {# vat #}
-          {% if store.settings.tax.number %}
-            <div class="flex rtl:space-x-reverse space-x-2 items-end">
-              {% if store.settings.tax.certificate %}
-                <a class="load-img-onclick" data-modal-id="modal-value-tax" href="#/" alt="{{ store.settings.tax.number }}">
-                  <img width="40" height="50" src="{{ 'images/s-empty.png' | cdn }}" data-src="{{'images/tax.png' | cdn(70,70)}}" class="lazy w-10 rounded-sm hover:opacity-80 transition-opacity" alt="value added tax">
-                </a>
-              {% endif %}
-              <div>
-                <p class="text-sm text-text-grey mb-1">{{ trans('common.elements.tax_number') }}</p>
-                <b class="text-sm">{{ store.settings.tax.number }}</b>
-              </div>
-            </div>
-
-            {% if store.settings.tax.certificate %}
-              <salla-modal sub-title-first sub-title="{{ trans('common.elements.tax_number') }}" modal-title="{{ store.settings.tax.number }}" id="modal-value-tax">
-                <div class="flex justify-center max-w-full">
-                  <img class="w-full" loading="lazy" 
-                  src="{{ 'images/s-empty.png' | cdn }}" 
-                  data-src="{{ store.settings.tax.certificate }}" 
-                  alt="{{ store.settings.tax.number }}"/>
-                </div>
-              </salla-modal>
-            {% endif %}
+      {# ── Store info + social ── #}
+      <div class="md:col-span-1">
+        <a href="{{ link('/') }}" class="block mb-4">
+          {% if theme.settings.get('footer_logo') %}
+            <img src="{{ theme.settings.get('footer_logo') }}"
+                 alt="{{ store.name }}"
+                 loading="lazy"
+                 style="max-width: {{ theme.settings.get('footer_logo_width', '150') }}px;">
+          {% else %}
+            <h3 class="text-xl font-bold">{{ store.name }}</h3>
           {% endif %}
+        </a>
+        {% if store.description %}
+          <p class="text-sm opacity-80 leading-relaxed mb-4">{{ store.description|raw }}</p>
+        {% endif %}
+
+        {% if theme.settings.get('footer_show_social', true) and footer.social_links is not empty %}
+          <div class="flex gap-3">
+            {% for link in footer.social_links %}
+              <a href="{{ link.url }}" title="{{ link.name }}"
+                 class="hover:opacity-80 transition-opacity" target="_blank" rel="noopener">
+                <i class="{{ link.icon }} text-xl"></i>
+              </a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      {# ── Quick links ── #}
+      {% if theme.settings.get('footer_show_pages', true) and footer.pages is not empty %}
+        <div>
+          <h4 class="font-bold mb-3">{{ trans('blocks.footer.quick_links') }}</h4>
+          <ul class="space-y-2">
+            {% for page in footer.pages %}
+              <li>
+                <a href="{{ page.link }}" class="text-sm hover:underline opacity-80">
+                  {{ page.name }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
         </div>
+      {% endif %}
+
+      {# ── Contacts ── #}
+      {% if theme.settings.get('footer_show_contacts', true) and footer.contacts is not empty %}
+        <div>
+          <h4 class="font-bold mb-3">{{ trans('blocks.footer.contact_us') }}</h4>
+          <ul class="space-y-2">
+            {% for contact in footer.contacts %}
+              <li>
+                <a href="{{ contact.url }}" class="text-sm hover:underline opacity-80 flex items-center gap-2">
+                  <i class="{{ contact.icon }}"></i>
+                  <span>{{ contact.value }}</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
         </div>
+      {% endif %}
 
-			<div>
-				<h3>{{ trans('blocks.footer.pages_links') }}</h3>
-				<salla-menu source="footer"></salla-menu>
-			</div>
+      {# ── Payment methods ── #}
+      {% if theme.settings.get('footer_show_payments', true) and footer.payment_methods is not empty %}
+        <div>
+          <h4 class="font-bold mb-3">{{ trans('blocks.footer.payment_methods') }}</h4>
+          <div class="flex flex-wrap gap-2">
+            {% for method in footer.payment_methods %}
+              <img src="{{ method.image }}" alt="{{ method.name }}"
+                   class="h-8 rounded" loading="lazy" title="{{ method.name }}">
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
 
-			<div>
-				<salla-contacts></salla-contacts>
+    </div>
 
-				<div class="lg:hidden contact-social">
-					<salla-social></salla-social>
-				</div>
-			</div>
+    {# ── Copyright bar ── #}
+    <div class="border-t mt-8 pt-6 flex flex-col md:flex-row items-center justify-between text-sm opacity-70"
+         style="border-color: {{ theme.settings.get('footer_text_color', '#ffffff') }}1a;">
+      <span>{% hook copyright %}</span>
+      {% if theme.settings.get('show_powered_by', true) %}
+        <span class="mt-2 md:mt-0">
+          {{ trans('blocks.footer.powered_by') }}
+          <a href="https://salla.sa" target="_blank" rel="noopener" class="underline">Salla</a>
+        </span>
+      {% endif %}
+    </div>
 
-			<salla-apps-icons class="lg:col-span-2 rtl:lg:pr-20 ltr:lg:pl-20"></salla-apps-icons>
+    {# ── Map (optional) ── #}
+    {% if theme.settings.get('footer_show_map', false) and theme.settings.get('footer_map_embed') %}
+      <div class="mt-8 rounded-lg overflow-hidden">
+        {{ theme.settings.get('footer_map_embed')|raw }}
+      </div>
+    {% endif %}
 
-		</div>
-	</div>
-
-	<div class="md:flex items-center justify-between py-4 container text-center">
-		<span class="text-sm copyright-text">{% hook copyright %}</span>
-		<salla-payments></salla-payments>
-	</div>
-</div>
-
-<span class="hidden bottom-2 rtl:pl-24 ltr:pr-24 md:grid-cols-3 opacity-40"></span></footer>
+    {# ── Bottom Alert (address + map selection, v2.14.451) ── #}
+    <div class="mt-8">
+      <salla-bottom-alert></salla-bottom-alert>
+    </div>
+  </div>
+</footer>

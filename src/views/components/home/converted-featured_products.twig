@@ -1,0 +1,50 @@
+<section dir="auto" class="section" aria-labelledby="new-arrivals-title"{% if component.spacing_top %} data-spacing-top="true"{% endif %}{% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
+  <div class="container">
+    <div class="section-header">
+      {% if component.title %}
+      <h2 class="section-header__title" id="new-arrivals-title"
+        style="color: {{ component.title_color ?: 'var(--color-heading)' }}; font-size: {{ component.title_font_size ?: 'inherit' }};">
+        {{ component.title }}
+      </h2>
+      {% endif %}
+      {% if component.show_view_all and component.view_all_text %}
+      <a class="section-header__link" href="{{ component.view_all_link }}">{{ component.view_all_text }}</a>
+      {% endif %}
+    </div>
+    {% if component.items %}
+    <div class="grid-2">
+      {% for item in component.items %}
+      <div class="product-card animate-in animate-in--delay-{{ loop.index }}{% if loop.index > 2 %} hide-mobile{% endif %}">
+        <div class="product-card__image-wrapper" {% if item.image %}style="background-image: url({{ item.image }}); background-size: cover; background-position: center;"{% endif %}>
+          {% if not item.image %}
+          <div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+            <i class="fas fa-tshirt"></i>
+          </div>
+          {% endif %}
+          {% if item.badge_text %}
+          <div class="product-card__badges">
+            <span class="product-card__badge product-card__badge--{{ item.badge_type ?: 'new' }}">{{ item.badge_text }}</span>
+          </div>
+          {% endif %}
+          <button aria-label="إضافة إلى المفضلة" class="product-card__wishlist" onclick="this.classList.toggle('active')">
+            <i class="far fa-heart"></i>
+          </button>
+          <button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
+            <i class="fas fa-plus"></i> أضف للسلة
+          </button>
+        </div>
+        <div class="product-card__info">
+          <div class="product-card__title">{{ item.title }}</div>
+          <div class="product-card__price">
+            <span class="product-card__price-current">{{ item.price }}</span>
+            {% if item.original_price %}
+            <span class="product-card__price-original">{{ item.original_price }}</span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
