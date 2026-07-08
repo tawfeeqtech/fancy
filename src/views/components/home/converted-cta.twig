@@ -1,0 +1,39 @@
+<section dir="auto" class="section" aria-labelledby="newsletter-title"
+        style="background-color: {{ component.background_color ?: 'var(--converted-bg)' }}; color: {{ component.text_color ?: 'var(--converted-text)' }};"
+        {% if component.spacing_top %} data-spacing-top="true"{% endif %}
+        {% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
+  {% if component.background_image %}
+  <style scoped>
+    .newsletter-bg {
+      background-image: url({{ component.background_image }});
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+  {% endif %}
+  <div class="container">
+    <div class="newsletter {% if component.background_image %}newsletter-bg{% endif %}">
+      {% if component.title %}
+      <h2 class="newsletter__title" id="newsletter-title"
+          style="{% if component.title_font_size %}font-size: {{ component.title_font_size }}px;{% endif %} color: {{ component.title_color ?: 'var(--converted-heading)' }};">
+        {{ component.title }}
+      </h2>
+      {% endif %}
+      {% if component.subtitle %}
+      <p class="newsletter__subtitle"
+         style="{% if component.subtitle_font_size %}font-size: {{ component.subtitle_font_size }}px;{% endif %} color: {{ component.subtitle_color ?: 'var(--converted-text)' }};">
+        {{ component.subtitle }}
+      </p>
+      {% endif %}
+      <form class="newsletter__form" onsubmit="event.preventDefault();showToast('شكراً لانضمامك!')">
+        <input aria-label="البريد الإلكتروني" placeholder="بريدك الإلكتروني" required="" type="email"/>
+        {% if component.button_text %}
+        <button class="btn btn-primary" type="submit"
+                style="background-color: {{ component.button_bg_color ?: 'var(--converted-btn-bg)' }}; color: {{ component.button_color ?: 'var(--converted-btn-text)' }};">
+          {{ component.button_text }}
+        </button>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+</section>

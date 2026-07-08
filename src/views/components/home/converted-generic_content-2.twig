@@ -1,0 +1,22 @@
+<section dir="auto" class="section section--sm" aria-labelledby="categories-title"
+         {% if component.spacing_top %} data-spacing-top="true"{% endif %}
+         {% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-header__title" id="categories-title"
+          {% if component.title_color or component.title_font_size %} style="{% if component.title_color %}color: {{ component.title_color ?: 'var(--converted-heading)' }};{% endif %}{% if component.title_font_size %}font-size: {{ component.title_font_size }}px;{% endif %}"{% endif %}>
+        {{ component.title }}
+      </h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-2);text-align:center">
+      {% for item in component.categories %}
+      <div onclick="showToast('جاري التوجيه لل{{ item.title }}...')" style="cursor:pointer" data-link="{{ item.link }}">
+        <div onmouseover="this.style.background='var(--color-border)'" style="width:64px;height:64px;border-radius:var(--radius-full);background:var(--color-primary-subtle);margin:0 auto var(--space-1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--color-secondary);transition:var(--transition-smooth)">
+          {% if item.icon_class %}<i class="{{ item.icon_class }}"></i>{% endif %}
+        </div>
+        <span style="font-size:0.75rem;font-weight:500">{{ item.title }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

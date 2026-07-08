@@ -1,0 +1,46 @@
+<section dir="auto" aria-labelledby="new-arrivals-title" class="section" {% if component.spacing_top %} data-spacing-top="true"{% endif %} {% if component.spacing_bottom %} data-spacing-bottom="true"{% endif %}>
+<div class="container">
+<div class="section-header">
+{% if component.title %}
+<h2 class="section-header__title" id="new-arrivals-title">{{ component.title }}</h2>
+{% endif %}
+{% if component.link_text and component.link_url %}
+<a class="section-header__link" href="{{ component.link_url }}">{{ component.link_text }}</a>
+{% endif %}
+</div>
+{% if component.products %}
+<div class="grid-2">
+{% for item in component.products %}
+<!-- Product Card {{ loop.index }} -->
+<div class="product-card animate-in animate-in--delay-{{ loop.index }}{% if item.item_hide_mobile %} hide-mobile{% endif %}">
+<div class="product-card__image-wrapper">
+<div style="width:100%;height:100%;background:var(--color-primary-subtle);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--color-secondary)">
+<i class="fas fa-tshirt"></i>
+</div>
+{% if item.item_badge_text %}
+<div class="product-card__badges">
+<span class="product-card__badge product-card__badge--{{ item.item_badge_type }}">{{ item.item_badge_text }}</span>
+</div>
+{% endif %}
+<button aria-label="{{ component.wishlist_label }}" class="product-card__wishlist" onclick="this.classList.toggle('active')">
+<i class="far fa-heart"></i>
+</button>
+<button class="product-card__quick-add btn btn-primary btn-block" onclick="showToast('تمت الإضافة إلى السلة')" style="border-radius:var(--radius-full);padding:var(--space-2)">
+<i class="fas fa-plus"></i> {{ component.add_to_cart_text }}
+</button>
+</div>
+<div class="product-card__info">
+<div class="product-card__title">{{ item.item_title }}</div>
+<div class="product-card__price">
+<span class="product-card__price-current">{{ item.item_price_current }}</span>
+{% if item.item_price_original %}
+<span class="product-card__price-original">{{ item.item_price_original }}</span>
+{% endif %}
+</div>
+</div>
+</div>
+{% endfor %}
+</div>
+{% endif %}
+</div>
+</section>
