@@ -1,0 +1,52 @@
+{# cta — Custom Salla Component #}
+{% if component.background_image %}
+<style scoped>
+  .salla-component--home-converted-cta {
+    background-image: url({{ component.background_image }});
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+{% endif %}
+<section class="py-20 lg:py-32 salla-component salla-component--home-converted-cta" data-bg-image="{{ component.background_image }}" data-spacing-bottom="true" data-spacing-top="true" dir="auto" id="digital" style="background-color: {{ component.background_color }}; text-align: {{ component.alignment }}; color: {{ component.text_color }};">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal">
+<div class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 text-xs font-semibold px-4 py-2 rounded-full mb-6">
+<span class="iconify" data-icon="lucide:download"></span>
+                    منتجات رقمية
+                </div>
+<h2 class="text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-4" style="font-size: {{ component.title_font_size }}px; color: {{ component.title_color }}">{% if component.title %}{{ component.title }}{% endif %}<span class="text-emerald-800">جاهزة للتحميل</span>
+</h2>
+<p class="text-lg text-neutral-500">{% if component.subtitle %}{{ component.subtitle }}{% endif %}</p>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Digital Product 1 -->
+
+  {% for item in component.items %}
+  <div class="scroll-reveal group bg-white rounded-2xl border border-neutral-100 overflow-hidden hover:shadow-xl hover:border-emerald-200 transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<img alt="برنامج حرق الدهون" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="{{ item.image }}"/>
+<div class="absolute top-3 right-3 bg-emerald-800 text-white text-xs font-bold px-3 py-1 rounded-full">رقمي</div>
+</div>
+<div class="p-5">
+<h3 class="font-bold text-lg mb-2" style="font-size: {{ component.subtitle_font_size }}px; color: {{ component.subtitle_color }}">{{ item.title }}</h3>
+<p class="text-neutral-500 text-sm mb-4">{{ item.description }}</p>
+<div class="flex items-center justify-between">
+<span class="text-xl font-bold text-emerald-800 font-inter">149 <span class="text-xs text-neutral-400">ر.س</span></span>
+<button class="text-sm font-medium text-emerald-800 hover:text-emerald-600 transition-colors flex items-center gap-1" onclick="selectPackage('برنامج حرق الدهون - رقمي')">
+                                اشتري الآن
+                                <span class="iconify" data-icon="lucide:arrow-left"></span>
+</button>
+</div>
+</div>
+</div>
+  {% endfor %}
+<!-- Digital Product 2 -->
+
+<!-- Digital Product 3 -->
+
+<!-- Digital Product 4 -->
+
+</div>
+</div>
+</section>

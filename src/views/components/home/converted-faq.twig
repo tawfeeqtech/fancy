@@ -1,0 +1,45 @@
+{# faq — Custom Salla Component #}
+{% if component.background_image %}
+<style scoped>
+  .salla-component--home-converted-faq {
+    background-image: url({{ component.background_image }});
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+{% endif %}
+<section class="py-20 lg:py-32 salla-component salla-component--home-converted-faq" data-bg-image="{{ component.background_image }}" data-spacing-bottom="true" data-spacing-top="true" dir="auto" style="background-color: {{ component.background_color }}; text-align: {{ component.alignment }};">
+<div class="max-w-3xl mx-auto px-6 lg:px-8">
+<div class="text-center mb-16 scroll-reveal">
+<div class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 text-xs font-semibold px-4 py-2 rounded-full mb-6">
+<span class="iconify" data-icon="lucide:help-circle"></span>
+                    أسئلة شائعة
+                </div>
+<h2 class="text-3xl sm:text-4xl font-bold leading-tight tracking-tight" style="font-size: {{ component.title_font_size }}px; color: {{ component.title_color }}">{% if component.title %}{{ component.title }}{% endif %}<span class="text-emerald-800">سؤال؟</span>
+</h2>
+</div>
+<div class="space-y-3 scroll-reveal">
+<!-- FAQ 1 -->
+
+  {% for item in component.items %}
+  <div class="faq-item bg-neutral-50 rounded-xl border border-neutral-100 overflow-hidden">
+<button class="w-full flex items-center justify-between p-5 text-right" onclick="toggleFAQ(this)">
+<span class="font-semibold text-base">هل الباقات الرقمية فعّالة مثل الحضورية؟</span>
+<span class="iconify text-xl text-neutral-400 faq-icon transition-transform duration-300" data-icon="lucide:chevron-down"></span>
+</button>
+<div class="faq-answer hidden px-5 pb-5">
+<p class="text-neutral-600 leading-relaxed">{{ item.description }}</p>
+</div>
+</div>
+  {% endfor %}
+<!-- FAQ 2 -->
+
+<!-- FAQ 3 -->
+
+<!-- FAQ 4 -->
+
+<!-- FAQ 5 -->
+
+</div>
+</div>
+</section>

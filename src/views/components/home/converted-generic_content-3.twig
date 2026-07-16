@@ -1,0 +1,53 @@
+{# generic-content — Custom Salla Component #}
+{% if component.background_image %}
+<style scoped>
+  .salla-component--home-converted-generic_content-3 {
+    background-image: url({{ component.background_image }});
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+{% endif %}
+<section class="py-20 lg:py-32 salla-component salla-component--home-converted-generic_content-3" data-bg-image="{{ component.background_image }}" data-spacing-bottom="true" data-spacing-top="true" dir="auto" id="testimonials" style="background-color: {{ component.background_color }}; text-align: {{ component.alignment }};">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal">
+<div class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 text-xs font-semibold px-4 py-2 rounded-full mb-6">
+<span class="iconify" data-icon="lucide:message-circle"></span>
+                    آراء العملاء
+                </div>
+<h2 class="text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-4" style="font-size: {{ component.title_font_size }}px; color: {{ component.title_color }}">{% if component.title %}{{ component.title }}{% endif %}<span class="text-emerald-800">عملاؤنا</span>
+</h2>
+<p class="text-lg text-neutral-500" style="font-size: {{ component.description_font_size }}px; color: {{ component.description_color }}">{% if component.description %}{{ component.description }}{% endif %}</p>
+</div>
+<div class="grid md:grid-cols-3 gap-6">
+<!-- Testimonial 1 -->
+
+  {% for item in component.items %}
+  <div class="scroll-reveal bg-neutral-50 rounded-2xl p-7 border border-neutral-100 hover:border-emerald-200 hover:shadow-lg transition-all duration-300">
+<div class="flex items-center gap-1 mb-4">
+
+  {% for item in component.items %}
+  <span class="iconify text-amber-400 text-lg" data-icon="lucide:star"></span>
+  {% endfor %}
+
+
+
+
+</div>
+<p class="text-neutral-600 leading-relaxed mb-6">{{ item.description }}</p>
+<div class="flex items-center gap-3">
+<img alt="فهد" class="w-11 h-11 rounded-full object-cover" src="https://picsum.photos/seed/avatar-fahad/80/80.jpg"/>
+<div>
+<div class="font-bold text-sm">فهد الشمري</div>
+<div class="text-xs text-neutral-400">باقة التحدي — 3 أشهر</div>
+</div>
+</div>
+</div>
+  {% endfor %}
+<!-- Testimonial 2 -->
+
+<!-- Testimonial 3 -->
+
+</div>
+</div>
+</section>

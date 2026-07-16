@@ -1,0 +1,52 @@
+{# features — Custom Salla Component #}
+{% if component.background_image %}
+<style scoped>
+  .salla-component--home-converted-features {
+    background-image: url({{ component.background_image }});
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+{% endif %}
+<section class="py-20 lg:py-32 salla-component salla-component--home-converted-features" data-bg-image="{{ component.background_image }}" data-spacing-bottom="true" data-spacing-top="true" dir="auto" id="about" style="background-color: {{ component.background_color }}; text-align: {{ component.alignment }};">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<!-- Image -->
+<div class="relative scroll-reveal">
+<img alt="كوتش محمد في التدريب" class="w-full h-[400px] lg:h-[550px] object-cover rounded-2xl shadow-xl" src="{{ component.background_image }}"/>
+<div class="absolute inset-0 rounded-2xl bg-gradient-to-t from-emerald-900/40 via-transparent to-transparent"></div>
+<!-- Experience Badge -->
+<div class="absolute bottom-6 right-6 glass-dark rounded-2xl p-5">
+<div class="text-3xl font-bold text-emerald-400 font-inter">10+</div>
+<div class="text-sm text-neutral-300">سنوات من التميز</div>
+</div>
+</div>
+<!-- Content -->
+<div class="scroll-reveal">
+<div class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 text-xs font-semibold px-4 py-2 rounded-full mb-6">
+<span class="iconify" data-icon="lucide:user-check"></span>
+                        عن المدرب
+                    </div>
+<h2 class="text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-6" style="font-size: {{ component.title_font_size }}px; color: {{ component.title_color }}">{% if component.title %}{{ component.title }}{% endif %}<span class="text-emerald-800">— أكثر من مدرب</span>
+</h2>
+<p class="text-lg text-neutral-600 leading-relaxed mb-6" style="font-size: {{ component.description_font_size }}px; color: {{ component.description_color }}">{% if component.description %}{{ component.description }}{% endif %}</p>
+<div class="space-y-4 mb-8">
+
+  {% for item in component.items %}
+  <div class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center mt-0.5 flex-shrink-0">
+<span class="iconify text-emerald-700 text-sm" data-icon="lucide:check"></span>
+</div>
+<span class="text-neutral-700">شهادات معتمدة من ACE و NASM و ISSA</span>
+</div>
+  {% endfor %}
+
+
+
+</div>
+<a class="inline-flex items-center gap-2 text-emerald-800 font-semibold hover:gap-3 transition-all duration-300" href="{{ component.button_link }}" style="color: {{ component.button_color }}; background-color: {{ component.button_bg_color }}">{{ component.button_text }}<span class="iconify" data-icon="lucide:arrow-left"></span>
+</a>
+</div>
+</div>
+</div>
+</section>

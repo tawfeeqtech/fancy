@@ -1,0 +1,59 @@
+{# trusted-brands — Custom Salla Component #}
+{% if component.background_image %}
+<style scoped>
+  .salla-component--home-converted-trusted_brands {
+    background-image: url({{ component.background_image }});
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+{% endif %}
+<section class="section-gradient py-20 lg:py-32 salla-component salla-component--home-converted-trusted_brands" data-bg-image="{{ component.background_image }}" data-spacing-bottom="true" data-spacing-top="true" dir="auto" style="background-color: {{ component.background_color }}; text-align: {{ component.alignment }};">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal">
+<div class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 text-xs font-semibold px-4 py-2 rounded-full mb-6">
+<span class="iconify" data-icon="lucide:trending-up"></span>
+                    قصص التحول
+                </div>
+<h2 class="text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-4" style="font-size: {{ component.title_font_size }}px; color: {{ component.title_color }}">{% if component.title %}{{ component.title }}{% endif %}<span class="text-emerald-800">حقيقية</span> لعملاء حقيقيين
+                </h2>
+<p class="text-lg text-neutral-500" style="font-size: {{ component.description_font_size }}px; color: {{ component.description_color }}">{% if component.description %}{{ component.description }}{% endif %}</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Transformation 1 -->
+
+  {% for item in component.items %}
+  <div class="scroll-reveal bg-white rounded-2xl overflow-hidden border border-neutral-100 hover:shadow-xl transition-all duration-300">
+<div class="grid grid-cols-2 gap-1">
+<div class="relative">
+<img alt="قبل" class="w-full h-56 object-cover" src="{{ item.image }}"/>
+<span class="absolute bottom-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">قبل</span>
+</div>
+<div class="relative">
+<img alt="بعد" class="w-full h-56 object-cover" src="{{ component.image_2 }}"/>
+<span class="absolute bottom-2 left-2 bg-emerald-600 text-white text-xs font-bold px-2 py-1 rounded">بعد</span>
+</div>
+</div>
+<div class="p-5">
+<h4 class="font-bold text-lg">{{ item.title }}</h4>
+<p class="text-neutral-500 text-sm mb-2">{{ item.description }}</p>
+<div class="flex items-center gap-1">
+
+  {% for item in component.items %}
+  <span class="iconify text-amber-400" data-icon="lucide:star"></span>
+  {% endfor %}
+
+
+
+
+</div>
+</div>
+</div>
+  {% endfor %}
+<!-- Transformation 2 -->
+
+<!-- Transformation 3 -->
+
+</div>
+</div>
+</section>

@@ -1,0 +1,26 @@
+{# generic-content — Custom Salla Component #}
+{% if component.background_image %}
+<style scoped>
+  .salla-component--home-converted-generic_content {
+    background-image: url({{ component.background_image }});
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+{% endif %}
+<section class="bg-neutral-950 py-6 salla-component salla-component--home-converted-generic_content" data-bg-image="{{ component.background_image }}" data-spacing-bottom="true" data-spacing-top="true" dir="auto" style="background-color: {{ component.background_color }}; text-align: {{ component.alignment }};">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+
+  {% for item in component.items %}
+  <div class="scroll-reveal">
+<div class="text-3xl font-bold text-white font-inter">+5,000</div>
+<div class="text-sm text-neutral-400 mt-1">عميل تم تحقيق أهدافه</div>
+</div>
+  {% endfor %}
+
+
+
+</div>
+</div>
+</section>

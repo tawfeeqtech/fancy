@@ -1,0 +1,113 @@
+{# pricing-cards — Custom Salla Component #}
+{% if component.background_image %}
+<style scoped>
+  .salla-component--home-converted-pricing_cards {
+    background-image: url({{ component.background_image }});
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+{% endif %}
+<section class="dark-gradient py-20 lg:py-32 relative overflow-hidden salla-component salla-component--home-converted-pricing_cards" data-bg-image="{{ component.background_image }}" data-spacing-bottom="true" data-spacing-top="true" dir="auto" id="packages" style="background-color: {{ component.background_color }}; text-align: {{ component.alignment }};">
+<!-- Decorative -->
+<div class="absolute top-0 left-1/4 w-96 h-96 bg-emerald-900/20 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 right-1/4 w-72 h-72 bg-amber-900/10 rounded-full blur-3xl"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+<div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal">
+<div class="inline-flex items-center gap-2 bg-emerald-900/50 text-emerald-400 text-xs font-semibold px-4 py-2 rounded-full mb-6">
+<span class="iconify" data-icon="lucide:tag"></span>
+                    الباقات التدريبية
+                </div>
+<h2 class="text-3xl sm:text-4xl font-bold leading-tight tracking-tight mb-4 text-white" style="font-size: {{ component.title_font_size }}px; color: {{ component.title_color }}">{% if component.title %}{{ component.title }}{% endif %}<span class="text-emerald-400">طموحاتك</span>
+</h2>
+<p class="text-lg text-neutral-400">{% if component.subtitle %}{{ component.subtitle }}{% endif %}</p>
+</div>
+<!-- Toggle: Online / In-Person -->
+<div class="flex justify-center mb-12 scroll-reveal">
+<div class="glass-dark rounded-full p-1.5 inline-flex">
+<button class="tab-btn px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 bg-emerald-800 text-white" id="toggleOnline" onclick="switchTab('online')">
+                        تدريب رقمي
+                    </button>
+<button class="tab-btn px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 text-neutral-400 hover:text-white" id="toggleInPerson" onclick="switchTab('inperson')">
+                        تدريب حضورى
+                    </button>
+</div>
+</div>
+<!-- Online Packages -->
+<div class="grid md:grid-cols-3 gap-6" id="onlinePackages">
+<!-- Basic Online -->
+
+  {% for item in component.items %}
+  <div class="scroll-reveal pricing-regular rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 group">
+<div class="mb-6">
+<span class="inline-block bg-emerald-50 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full mb-3">باقة أساسية</span>
+<h3 class="text-2xl font-bold text-neutral-900">{{ item.title }}</h3>
+</div>
+<div class="mb-6">
+<span class="text-4xl font-bold text-emerald-800 font-inter">299</span>
+<span class="text-neutral-500 text-sm"> ر.س / شهرياً</span>
+</div>
+<ul class="space-y-3 mb-8">
+
+  {% for item in component.items %}
+  <li class="flex items-center gap-3 text-neutral-600">
+<span class="iconify text-emerald-600" data-icon="lucide:check-circle-2"></span>
+                            برنامج تدريبي مخصص
+                        </li>
+  {% endfor %}
+
+
+
+
+
+</ul>
+<button class="w-full py-3.5 rounded-full border-2 border-emerald-800 text-emerald-800 font-semibold hover:bg-emerald-800 hover:text-white transition-all duration-300" onclick="selectPackage('الانطلاقة - رقمي')">
+                        اختر الباقة
+                    </button>
+</div>
+  {% endfor %}
+<!-- Pro Online -->
+
+<!-- VIP Online -->
+
+</div>
+<!-- In-Person Packages -->
+<div class="grid md:grid-cols-3 gap-6 hidden" id="inpersonPackages">
+<!-- Basic In-Person -->
+
+  {% for item in component.items %}
+  <div class="scroll-reveal pricing-regular rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 group">
+<div class="mb-6">
+<span class="inline-block bg-emerald-50 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full mb-3">باقة أساسية</span>
+<h3 class="text-2xl font-bold text-neutral-900">{{ item.title }}</h3>
+</div>
+<div class="mb-6">
+<span class="text-4xl font-bold text-emerald-800 font-inter">1,499</span>
+<span class="text-neutral-500 text-sm"> ر.س / شهرياً</span>
+</div>
+<ul class="space-y-3 mb-8">
+
+  {% for item in component.items %}
+  <li class="flex items-center gap-3 text-neutral-600">
+<span class="iconify text-emerald-600" data-icon="lucide:check-circle-2"></span>
+                            8 حصص حضورية شهرياً
+                        </li>
+  {% endfor %}
+
+
+
+
+
+</ul>
+<button class="w-full py-3.5 rounded-full border-2 border-emerald-800 text-emerald-800 font-semibold hover:bg-emerald-800 hover:text-white transition-all duration-300" onclick="selectPackage('الأساسيات - حضورى')">
+                        اختر الباقة
+                    </button>
+</div>
+  {% endfor %}
+<!-- Pro In-Person -->
+
+<!-- VIP In-Person -->
+
+</div>
+</div>
+</section>
